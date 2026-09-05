@@ -323,26 +323,59 @@
            BLOG
         ========================= */
 
-        .blog-card {
+        .category-card {
+            display: block;
+            height: 100%;
+            padding: 35px 30px;
             background: var(--dark-card);
             border: 1px solid #292933;
+            border-radius: 18px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--burgundy);
+            box-shadow: 0 15px 35px rgba(159, 23, 72, 0.18);
+            color: var(--text);
+        }
+
+        .category-icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
             border-radius: 15px;
-            padding: 25px;
-            height: 100%;
+            background: rgba(159, 23, 72, 0.12);
+            color: var(--burgundy-light);
+            font-size: 1.6rem;
             transition: 0.3s;
         }
 
-        .blog-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--burgundy);
-        }
-
-        .blog-card h5 {
+        .category-card:hover .category-icon {
+            background: var(--burgundy);
             color: white;
         }
 
-        .blog-card p {
+        .category-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.35rem;
+            font-weight: 600;
+        }
+
+        .category-card p {
             color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .category-link {
+            color: var(--burgundy-light);
+            font-weight: 600;
         }
 
         /* =========================
@@ -491,63 +524,65 @@
     </nav>
 
 
-<!-- =========================
-     HOME
-========================= -->
+    <!-- =========================
+         HOME
+    ========================= -->
 
-<section id="home">
+    <section id="home">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="row align-items-center">
+            <div class="row align-items-center">
 
-            <div class="col-lg-8">
+                <div class="col-lg-8">
 
-                <p class="text-uppercase fw-semibold"
-                    style="color:#d6336c;">
+                    <p class="text-uppercase fw-semibold"
+                        style="color:#d6336c;">
 
-                    Computer Engineering Student
+                        Computer Engineering Student
 
-                </p>
+                    </p>
 
-                <h1 class="hero-title">
-                    Welcome to my <span>tech space.</span>
-                </h1>
+                    <h1 class="hero-title">
+                        Welcome to my <span>tech space.</span>
+                    </h1>
 
-                <h2 class="hero-subtitle mb-4">
-                    Cybersecurity • Data • IoT • Networks
-                </h2>
+                    <h2 class="hero-subtitle mb-4">
+                        Cybersecurity • Data • IoT • Networks
+                    </h2>
 
-                <p class="hero-text mb-2">
-                    Learning. Building. Sharing.
-                </p>
+                    <p class="hero-text mb-2">
+                        Learning. Building. Sharing.
+                    </p>
 
-                <p class="hero-text mb-4">
-                    A personal space where I document what I learn,
-                    explore technology, and share ideas along the way.
-                </p>
+                    <p class="hero-text mb-4">
+                        A personal space where I document what I learn,
+                        explore technology, and share ideas along the way.
+                    </p>
 
-                <a href="#blog"
-                    class="btn btn-main me-2">
+                    <a href="#blog"
+                        class="btn btn-main me-2">
 
-                    Explore My Blog
+                        Explore My Blog
 
-                </a>
+                    </a>
 
-                <a href="#about"
-                    class="btn btn-outline-main">
+                    <a href="#about"
+                        class="btn btn-outline-main">
 
-                    About Me
+                        About Me
 
-                </a>
+                    </a>
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+
     <!-- =========================
          ABOUT
     ========================= -->
@@ -638,8 +673,6 @@
 
             <div class="row g-4 justify-content-center">
 
-                <!-- Engineering Cycle -->
-
                 <div class="col-lg-4 col-md-6">
 
                     <div class="education-card">
@@ -658,8 +691,6 @@
 
                 </div>
 
-                <!-- BTS -->
-
                 <div class="col-lg-4 col-md-6">
 
                     <div class="education-card">
@@ -677,8 +708,6 @@
                     </div>
 
                 </div>
-
-                <!-- Baccalaureate -->
 
                 <div class="col-lg-4 col-md-6">
 
@@ -727,156 +756,92 @@
 
             <div class="row g-4">
 
-                <!-- Cybersecurity -->
-
                 <div class="col-md-6 col-lg-3">
-
                     <div class="skill-card">
-
                         <i class="bi bi-shield-lock skill-icon"></i>
-
                         <h5>Cybersecurity</h5>
-
                         <p>
                             Security concepts, threat detection,
                             vulnerabilities and SOC fundamentals.
                         </p>
-
                     </div>
-
                 </div>
 
-                <!-- Networking -->
-
                 <div class="col-md-6 col-lg-3">
-
                     <div class="skill-card">
-
                         <i class="bi bi-diagram-3 skill-icon"></i>
-
                         <h5>Networking</h5>
-
                         <p>
                             TCP/IP, routing, switching, network
                             services and network administration.
                         </p>
-
                     </div>
-
                 </div>
 
-                <!-- IoT -->
-
                 <div class="col-md-6 col-lg-3">
-
                     <div class="skill-card">
-
                         <i class="bi bi-cpu skill-icon"></i>
-
                         <h5>IoT</h5>
-
                         <p>
                             Sensors, connected devices,
                             Edge Computing and IoT security.
                         </p>
-
                     </div>
-
                 </div>
 
-                <!-- Python -->
-
                 <div class="col-md-6 col-lg-3">
-
                     <div class="skill-card">
-
                         <i class="bi bi-code-slash skill-icon"></i>
-
                         <h5>Python</h5>
-
                         <p>
                             Object-oriented programming,
                             data science and machine learning.
                         </p>
-
                     </div>
-
                 </div>
 
-                <!-- Linux -->
-
                 <div class="col-md-6 col-lg-3">
-
                     <div class="skill-card">
-
                         <i class="bi bi-terminal skill-icon"></i>
-
                         <h5>Linux</h5>
-
                         <p>
                             Linux administration, services,
                             networking and system management.
                         </p>
-
                     </div>
-
                 </div>
 
-                <!-- Databases -->
-
                 <div class="col-md-6 col-lg-3">
-
                     <div class="skill-card">
-
                         <i class="bi bi-database skill-icon"></i>
-
                         <h5>Databases</h5>
-
                         <p>
                             SQL, Oracle, PL/SQL, SQL Server
                             and database management.
                         </p>
-
                     </div>
-
                 </div>
 
-                <!-- Java -->
-
                 <div class="col-md-6 col-lg-3">
-
                     <div class="skill-card">
-
                         <i class="bi bi-filetype-java skill-icon"></i>
-
                         <h5>Java</h5>
-
                         <p>
                             Object-oriented programming
                             and database applications.
                         </p>
-
                     </div>
-
                 </div>
 
-                <!-- Cloud -->
-
                 <div class="col-md-6 col-lg-3">
-
                     <div class="skill-card">
-
                         <i class="bi bi-cloud skill-icon"></i>
-
                         <h5>Cloud</h5>
-
                         <p>
                             Cloud computing and modern
                             infrastructure concepts.
                         </p>
-
                     </div>
-
                 </div>
 
             </div>
@@ -908,8 +873,6 @@
 
             <div class="row g-4">
 
-                <!-- DRIVIO -->
-
                 <div class="col-lg-4">
 
                     <div class="project-card">
@@ -927,25 +890,15 @@
                                 using data scraping and machine learning.
                             </p>
 
-                            <span class="badge badge-tech">
-                                Python
-                            </span>
-
-                            <span class="badge badge-tech">
-                                Machine Learning
-                            </span>
-
-                            <span class="badge badge-tech">
-                                Web
-                            </span>
+                            <span class="badge badge-tech">Python</span>
+                            <span class="badge badge-tech">Machine Learning</span>
+                            <span class="badge badge-tech">Web</span>
 
                         </div>
 
                     </div>
 
                 </div>
-
-                <!-- IoT Diabetes -->
 
                 <div class="col-lg-4">
 
@@ -964,29 +917,16 @@
                                 designed for health monitoring and prediction.
                             </p>
 
-                            <span class="badge badge-tech">
-                                Python
-                            </span>
-
-                            <span class="badge badge-tech">
-                                IoT
-                            </span>
-
-                            <span class="badge badge-tech">
-                                Machine Learning
-                            </span>
-
-                            <span class="badge badge-tech">
-                                Django
-                            </span>
+                            <span class="badge badge-tech">Python</span>
+                            <span class="badge badge-tech">IoT</span>
+                            <span class="badge badge-tech">Machine Learning</span>
+                            <span class="badge badge-tech">Django</span>
 
                         </div>
 
                     </div>
 
                 </div>
-
-                <!-- Student Absence -->
 
                 <div class="col-lg-4">
 
@@ -1005,17 +945,9 @@
                                 to manage student attendance and absences.
                             </p>
 
-                            <span class="badge badge-tech">
-                                Django
-                            </span>
-
-                            <span class="badge badge-tech">
-                                Python
-                            </span>
-
-                            <span class="badge badge-tech">
-                                Database
-                            </span>
+                            <span class="badge badge-tech">Django</span>
+                            <span class="badge badge-tech">Python</span>
+                            <span class="badge badge-tech">Database</span>
 
                         </div>
 
@@ -1052,160 +984,70 @@
 
             <div class="row g-4">
 
-                <!-- CCNA 1 -->
-
                 <div class="col-md-6 col-lg-4">
-
                     <div class="cert-card">
-
                         <div class="cert-icon mb-3">
                             <i class="bi bi-router"></i>
                         </div>
-
-                        <h5>
-                            CCNA 1 – Introduction to Networks (ITN)
-                        </h5>
-
-                        <p class="mb-1">
-                            Cisco
-                        </p>
-
-                        <small>
-                            August 2026
-                        </small>
-
+                        <h5>CCNA 1 – Introduction to Networks (ITN)</h5>
+                        <p class="mb-1">Cisco</p>
+                        <small>August 2026</small>
                     </div>
-
                 </div>
 
-                <!-- Cybersecurity Defense Analyst -->
-
                 <div class="col-md-6 col-lg-4">
-
                     <div class="cert-card">
-
                         <div class="cert-icon mb-3">
                             <i class="bi bi-shield-lock"></i>
                         </div>
-
-                        <h5>
-                            Cybersecurity Defense Analyst Career Path
-                        </h5>
-
-                        <p class="mb-1">
-                            Cisco Networking Academy
-                        </p>
-
-                        <small>
-                            July 2026
-                        </small>
-
+                        <h5>Cybersecurity Defense Analyst Career Path</h5>
+                        <p class="mb-1">Cisco Networking Academy</p>
+                        <small>July 2026</small>
                     </div>
-
                 </div>
 
-                <!-- Google Cybersecurity -->
-
                 <div class="col-md-6 col-lg-4">
-
                     <div class="cert-card">
-
                         <div class="cert-icon mb-3">
                             <i class="bi bi-shield-check"></i>
                         </div>
-
-                        <h5>
-                            Foundations of Cybersecurity
-                        </h5>
-
-                        <p class="mb-1">
-                            Google
-                        </p>
-
-                        <small>
-                            May 2026
-                        </small>
-
+                        <h5>Foundations of Cybersecurity</h5>
+                        <p class="mb-1">Google</p>
+                        <small>May 2026</small>
                     </div>
-
                 </div>
 
-                <!-- Data Security -->
-
                 <div class="col-md-6 col-lg-4">
-
                     <div class="cert-card">
-
                         <div class="cert-icon mb-3">
                             <i class="bi bi-database-lock"></i>
                         </div>
-
-                        <h5>
-                            Data Security
-                        </h5>
-
-                        <p class="mb-1">
-                            Cisco
-                        </p>
-
-                        <small>
-                            May 2026
-                        </small>
-
+                        <h5>Data Security</h5>
+                        <p class="mb-1">Cisco</p>
+                        <small>May 2026</small>
                     </div>
-
                 </div>
 
-                <!-- Data Science -->
-
                 <div class="col-md-6 col-lg-4">
-
                     <div class="cert-card">
-
                         <div class="cert-icon mb-3">
                             <i class="bi bi-bar-chart-line"></i>
                         </div>
-
-                        <h5>
-                            Introduction to Data Science
-                        </h5>
-
-                        <p class="mb-1">
-                            Cisco
-                        </p>
-
-                        <small>
-                            July 2026
-                        </small>
-
+                        <h5>Introduction to Data Science</h5>
+                        <p class="mb-1">Cisco</p>
+                        <small>July 2026</small>
                     </div>
-
                 </div>
 
-                <!-- AI Literacy -->
-
                 <div class="col-md-6 col-lg-4">
-
                     <div class="cert-card">
-
                         <div class="cert-icon mb-3">
                             <i class="bi bi-robot"></i>
                         </div>
-
-                        <h5>
-                            Artificial Intelligence Literacy
-                        </h5>
-
-                        <p class="mb-1">
-                            IBM
-                        </p>
-
-                        <small>
-                            February 2026
-                        </small>
-
+                        <h5>Artificial Intelligence Literacy</h5>
+                        <p class="mb-1">IBM</p>
+                        <small>February 2026</small>
                     </div>
-
                 </div>
 
             </div>
@@ -1235,96 +1077,207 @@
 
             </div>
 
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
 
-                <!-- Edge Computing -->
+                <!-- Cybersecurity -->
 
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
 
-                    <div class="blog-card">
+                    <a href="blog/cybersecurity.html"
+                        class="category-card">
 
-                        <span class="badge badge-tech mb-3">
-                            IoT
-                        </span>
+                        <div class="category-icon">
+                            <i class="bi bi-shield-lock-fill"></i>
+                        </div>
 
-                        <h5>
-                            What is Edge Computing?
-                        </h5>
-
-                        <p>
-                            Understanding how computing at the edge
-                            can process IoT sensor data closer to
-                            where it is generated.
-                        </p>
-
-                        <a href="#"
-                            class="btn btn-sm btn-outline-main">
-
-                            Read More
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <!-- IDS -->
-
-                <div class="col-md-4">
-
-                    <div class="blog-card">
-
-                        <span class="badge badge-tech mb-3">
+                        <h3>
                             Cybersecurity
-                        </span>
-
-                        <h5>
-                            What is an IDS?
-                        </h5>
+                        </h3>
 
                         <p>
-                            A simple introduction to Intrusion
-                            Detection Systems and attack signatures.
+                            Security concepts, threats, tools,
+                            vulnerabilities and defensive techniques.
                         </p>
 
-                        <a href="#"
-                            class="btn btn-sm btn-outline-main">
+                        <span class="category-link">
+                            Explore →
+                        </span>
 
-                            Read More
-
-                        </a>
-
-                    </div>
+                    </a>
 
                 </div>
 
-                <!-- LAN MAN WAN -->
 
-                <div class="col-md-4">
+                <!-- IoT -->
 
-                    <div class="blog-card">
+                <div class="col-md-6 col-lg-4">
 
-                        <span class="badge badge-tech mb-3">
-                            Networking
-                        </span>
+                    <a href="blog/iot.html"
+                        class="category-card">
 
-                        <h5>
-                            LAN vs MAN vs WAN
-                        </h5>
+                        <div class="category-icon">
+                            <i class="bi bi-cpu-fill"></i>
+                        </div>
+
+                        <h3>
+                            IoT
+                        </h3>
 
                         <p>
-                            Understanding the differences between
-                            common network types and their coverage.
+                            Connected devices, sensors, Edge Computing
+                            and IoT security.
                         </p>
 
-                        <a href="#"
-                            class="btn btn-sm btn-outline-main">
+                        <span class="category-link">
+                            Explore →
+                        </span>
 
-                            Read More
+                    </a>
 
-                        </a>
+                </div>
 
-                    </div>
+
+                <!-- Artificial Intelligence -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <a href="blog/ai.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            <i class="bi bi-robot"></i>
+                        </div>
+
+                        <h3>
+                            Artificial Intelligence
+                        </h3>
+
+                        <p>
+                            Artificial intelligence, machine learning,
+                            deep learning and AI concepts.
+                        </p>
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Data -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <a href="blog/data.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            <i class="bi bi-bar-chart-fill"></i>
+                        </div>
+
+                        <h3>
+                            Data
+                        </h3>
+
+                        <p>
+                            Data science, data analysis, databases,
+                            SQL and machine learning.
+                        </p>
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Networking -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <a href="blog/networking.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            <i class="bi bi-diagram-3-fill"></i>
+                        </div>
+
+                        <h3>
+                            Networking
+                        </h3>
+
+                        <p>
+                            Networks, protocols, architectures,
+                            routing, switching and network services.
+                        </p>
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Linux -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <a href="blog/linux.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            <i class="bi bi-terminal-fill"></i>
+                        </div>
+
+                        <h3>
+                            Linux
+                        </h3>
+
+                        <p>
+                            Linux commands, administration,
+                            services and system management.
+                        </p>
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Cloud -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <a href="blog/cloud.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            <i class="bi bi-cloud-fill"></i>
+                        </div>
+
+                        <h3>
+                            Cloud
+                        </h3>
+
+                        <p>
+                            Cloud computing, infrastructure,
+                            services and modern cloud technologies.
+                        </p>
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
 
                 </div>
 
@@ -1364,8 +1317,6 @@
                         through technology, cybersecurity, data and IoT.
                     </p>
 
-                    <!-- EMAIL -->
-
                     <a
                         href="mailto:ghitakhaifallah@gmail.com"
                         class="social-link"
@@ -1376,8 +1327,6 @@
 
                     </a>
 
-                    <!-- LINKEDIN -->
-
                     <a
                         href="https://www.linkedin.com/in/ghita-khaif-allah-145743301/"
                         class="social-link"
@@ -1387,8 +1336,6 @@
                         <i class="bi bi-linkedin"></i>
 
                     </a>
-
-                    <!-- GITHUB -->
 
                     <a
                         href="https://github.com/ghitousha"
