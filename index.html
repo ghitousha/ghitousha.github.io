@@ -168,6 +168,11 @@
 
         .about-card p {
             color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .about-card strong {
+            color: #fff;
         }
 
         /* =========================
@@ -310,6 +315,10 @@
             color: var(--muted);
         }
 
+        .cert-card small {
+            color: #777;
+        }
+
         /* =========================
            BLOG
         ========================= */
@@ -320,6 +329,12 @@
             border-radius: 15px;
             padding: 25px;
             height: 100%;
+            transition: 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--burgundy);
         }
 
         .blog-card h5 {
@@ -393,6 +408,10 @@
                 padding: 80px 0;
             }
 
+            .about-card {
+                padding: 25px;
+            }
+
         }
 
     </style>
@@ -400,6 +419,7 @@
 </head>
 
 <body>
+
 
     <!-- =========================
          NAVBAR
@@ -542,69 +562,68 @@
          ABOUT
     ========================= -->
 
-   <!-- =========================
-     ABOUT
-========================= -->
+    <section id="about">
 
-<section id="about">
+        <div class="container">
 
-    <div class="container">
+            <div class="text-center">
 
-        <div class="text-center">
+                <h2 class="section-title">
+                    About Me
+                </h2>
 
-            <h2 class="section-title">
-                About Me
-            </h2>
+                <p class="section-subtitle">
+                    A little bit about my journey
+                </p>
 
-            <p class="section-subtitle">
-                A little bit about my journey
-            </p>
+            </div>
 
-        </div>
+            <div class="row justify-content-center">
 
-        <div class="row justify-content-center">
+                <div class="col-lg-9">
 
-            <div class="col-lg-9">
+                    <div class="about-card">
 
-                <div class="about-card">
+                        <p>
+                            <strong>
+                                Welcome to my little corner of the internet.
+                            </strong>
+                        </p>
 
-                    <p>
+                        <p>
 
-                        <strong>Welcome to my little corner of the internet.</strong>
+                            I’m Ghita, a Computer Engineering student with
+                            a strong curiosity for technology and a particular
+                            interest in
+                            <strong>Cybersecurity, Data, IoT and Networking</strong>.
 
-                    </p>
+                        </p>
 
-                    <p>
+                        <p>
 
-                        I’m Ghita, a Computer Engineering student with
-                        a strong curiosity for technology and a particular
-                        interest in <strong>Cybersecurity, Data, IoT and Networking</strong>.
+                            I enjoy learning by doing — building projects,
+                            experimenting with new technologies, and exploring
+                            anything that catches my curiosity.
 
-                    </p>
+                        </p>
 
-                    <p>
+                        <p>
 
-                        I enjoy learning by doing — building projects,
-                        experimenting with new technologies, and exploring
-                        anything that catches my curiosity.
+                            I created this blog to document my learning journey
+                            and share the things I discover along the way.
+                            You’ll find technical notes, tutorials, projects,
+                            ideas and sometimes just something interesting I’ve learned.
 
-                    </p>
+                        </p>
 
-                    <p>
+                        <p class="mb-0">
 
-                        I created this blog to document my learning journey
-                        and share the things I discover along the way.
-                        You’ll find technical notes, tutorials, projects,
-                        ideas and sometimes just something interesting I’ve learned.
+                            I’m still learning, still experimenting, and always
+                            curious about what comes next. 💻✨
 
-                    </p>
+                        </p>
 
-                    <p class="mb-0">
-
-                        I’m still learning, still experimenting, and always
-                        curious about what comes next. 💻✨
-
-                    </p>
+                    </div>
 
                 </div>
 
@@ -612,9 +631,7 @@
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
     <!-- =========================
@@ -1072,88 +1089,192 @@
          CERTIFICATIONS
     ========================= -->
 
-  <!-- Certifications -->
-<section id="certifications" class="py-5">
-    <div class="container">
-        <h2 class="section-title">Certifications</h2>
+    <section id="certifications">
 
-        <div class="row g-4">
+        <div class="container">
 
-            <!-- CCNA 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="cert-card">
-                    <div class="cert-icon mb-3">
-                        <i class="bi bi-router"></i>
-                    </div>
-                    <h5>CCNA 1 – Introduction to Networks (ITN)</h5>
-                    <p class="mb-1">Cisco</p>
-                    <small>August 2026</small>
-                </div>
+            <div class="text-center">
+
+                <h2 class="section-title">
+                    Certifications
+                </h2>
+
+                <p class="section-subtitle">
+                    Courses and certifications I've completed
+                </p>
+
             </div>
 
-            <!-- Cybersecurity Defense Analyst -->
-            <div class="col-md-6 col-lg-4">
-                <div class="cert-card">
-                    <div class="cert-icon mb-3">
-                        <i class="bi bi-shield-lock"></i>
-                    </div>
-                    <h5>Cybersecurity Defense Analyst Career Path</h5>
-                    <p class="mb-1">Cisco Networking Academy</p>
-                    <small>July 2026</small>
-                </div>
-            </div>
+            <div class="row g-4">
 
-            <!-- Google Cybersecurity -->
-            <div class="col-md-6 col-lg-4">
-                <div class="cert-card">
-                    <div class="cert-icon mb-3">
-                        <i class="bi bi-shield-check"></i>
-                    </div>
-                    <h5>Foundations of Cybersecurity</h5>
-                    <p class="mb-1">Google</p>
-                    <small>May 2026</small>
-                </div>
-            </div>
 
-            <!-- Data Security -->
-            <div class="col-md-6 col-lg-4">
-                <div class="cert-card">
-                    <div class="cert-icon mb-3">
-                        <i class="bi bi-database-lock"></i>
-                    </div>
-                    <h5>Data Security</h5>
-                    <p class="mb-1">Cisco</p>
-                    <small>May 2026</small>
-                </div>
-            </div>
+                <!-- CCNA 1 -->
 
-            <!-- Data Science -->
-            <div class="col-md-6 col-lg-4">
-                <div class="cert-card">
-                    <div class="cert-icon mb-3">
-                        <i class="bi bi-bar-chart-line"></i>
-                    </div>
-                    <h5>Introduction to Data Science</h5>
-                    <p class="mb-1">Cisco</p>
-                    <small>July 2026</small>
-                </div>
-            </div>
+                <div class="col-md-6 col-lg-4">
 
-            <!-- AI Literacy -->
-            <div class="col-md-6 col-lg-4">
-                <div class="cert-card">
-                    <div class="cert-icon mb-3">
-                        <i class="bi bi-robot"></i>
+                    <div class="cert-card">
+
+                        <div class="cert-icon mb-3">
+                            <i class="bi bi-router"></i>
+                        </div>
+
+                        <h5>
+                            CCNA 1 – Introduction to Networks (ITN)
+                        </h5>
+
+                        <p class="mb-1">
+                            Cisco
+                        </p>
+
+                        <small>
+                            August 2026
+                        </small>
+
                     </div>
-                    <h5>Artificial Intelligence Literacy</h5>
-                    <p class="mb-1">IBM</p>
-                    <small>February 2026</small>
+
                 </div>
+
+
+                <!-- Cybersecurity Defense Analyst -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cert-card">
+
+                        <div class="cert-icon mb-3">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+
+                        <h5>
+                            Cybersecurity Defense Analyst Career Path
+                        </h5>
+
+                        <p class="mb-1">
+                            Cisco Networking Academy
+                        </p>
+
+                        <small>
+                            July 2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Google Cybersecurity -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cert-card">
+
+                        <div class="cert-icon mb-3">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+
+                        <h5>
+                            Foundations of Cybersecurity
+                        </h5>
+
+                        <p class="mb-1">
+                            Google
+                        </p>
+
+                        <small>
+                            May 2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Data Security -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cert-card">
+
+                        <div class="cert-icon mb-3">
+                            <i class="bi bi-database-lock"></i>
+                        </div>
+
+                        <h5>
+                            Data Security
+                        </h5>
+
+                        <p class="mb-1">
+                            Cisco
+                        </p>
+
+                        <small>
+                            May 2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Data Science -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cert-card">
+
+                        <div class="cert-icon mb-3">
+                            <i class="bi bi-bar-chart-line"></i>
+                        </div>
+
+                        <h5>
+                            Introduction to Data Science
+                        </h5>
+
+                        <p class="mb-1">
+                            Cisco
+                        </p>
+
+                        <small>
+                            July 2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AI Literacy -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cert-card">
+
+                        <div class="cert-icon mb-3">
+                            <i class="bi bi-robot"></i>
+                        </div>
+
+                        <h5>
+                            Artificial Intelligence Literacy
+                        </h5>
+
+                        <p class="mb-1">
+                            IBM
+                        </p>
+
+                        <small>
+                            February 2026
+                        </small>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
-    </div>
-</section>
+
+    </section>
+
 
     <!-- =========================
          BLOG
@@ -1299,7 +1420,7 @@
                 </h2>
 
                 <p class="section-subtitle">
-                    Let's connect and talk about technology, projects and opportunities.
+                    Let's connect and share the passion for technology.
                 </p>
 
             </div>
@@ -1310,11 +1431,11 @@
 
                     <p class="lead mb-4">
 
-                        I'm always open to discussing internships,
-                        projects, collaborations and opportunities
-                        in technology.
+                        Feel free to connect with me and follow my journey
+                        through technology, cybersecurity, data and IoT.
 
                     </p>
+
 
                     <!-- EMAIL -->
 
