@@ -22,40 +22,60 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
         rel="stylesheet">
 
+
     <style>
+
+        /* =========================
+           COLORS
+        ========================= */
 
         :root {
             --bg: #151017;
             --bg-soft: #1b141b;
             --card: #211820;
             --card-border: #392732;
+
             --burgundy: #8e3a5d;
             --burgundy-light: #c76a8f;
+
             --pink: #efa8be;
             --pink-light: #f7d6e0;
+
             --gold: #e8c07a;
+
             --text: #fff7fa;
             --muted: #c9b7c0;
         }
+
+
+        /* =========================
+           GENERAL
+        ========================= */
 
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px;
         }
 
+
         @media (prefers-reduced-motion: reduce) {
+
             html {
                 scroll-behavior: auto;
             }
+
             * {
                 animation-duration: 0.001ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.001ms !important;
             }
+
         }
+
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -64,22 +84,30 @@
             overflow-x: hidden;
         }
 
+
         section {
             padding: 100px 0;
             position: relative;
         }
 
-        h1, h2, h3, h4, h5 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
             font-family: 'DM Serif Display', serif;
             font-weight: 400;
             letter-spacing: 0.2px;
         }
+
 
         .section-title {
             font-size: clamp(2rem, 3.5vw, 2.6rem);
             margin-bottom: 12px;
             color: var(--text);
         }
+
 
         .section-subtitle {
             font-family: 'Poppins', sans-serif;
@@ -88,13 +116,18 @@
             font-size: 1.02rem;
         }
 
-        a { -webkit-tap-highlight-color: transparent; }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
 
         a:focus-visible,
         button:focus-visible {
             outline: 2px solid var(--pink);
             outline-offset: 3px;
         }
+
 
         /* =========================
            SPARKLES
@@ -106,13 +139,32 @@
             animation: twinkle 2.6s ease-in-out infinite;
         }
 
-        .sparkle.delay1 { animation-delay: .6s; }
-        .sparkle.delay2 { animation-delay: 1.2s; }
+
+        .sparkle.delay1 {
+            animation-delay: .6s;
+        }
+
+
+        .sparkle.delay2 {
+            animation-delay: 1.2s;
+        }
+
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.4; transform: scale(0.85); }
-            50% { opacity: 1; transform: scale(1.1); }
+
+            0%,
+            100% {
+                opacity: 0.4;
+                transform: scale(0.85);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+
         }
+
 
         .float-deco {
             position: absolute;
@@ -124,10 +176,20 @@
             user-select: none;
         }
 
+
         @keyframes floaty {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-14px) rotate(8deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-14px) rotate(8deg);
+            }
+
         }
+
 
         /* =========================
            NAVBAR
@@ -139,10 +201,12 @@
             transition: background 0.35s ease, box-shadow 0.35s ease;
         }
 
+
         .navbar.scrolled {
             background: rgba(21, 16, 23, 0.94);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
         }
+
 
         .navbar-brand {
             font-family: 'DM Serif Display', serif;
@@ -150,6 +214,7 @@
             font-weight: 400;
             font-size: 1.5rem;
         }
+
 
         .nav-link {
             font-family: 'Poppins', sans-serif;
@@ -159,23 +224,28 @@
             position: relative;
         }
 
+
         .nav-link::after {
             content: "";
             position: absolute;
-            left: 0; bottom: -2px;
+            left: 0;
+            bottom: -2px;
             width: 0%;
             height: 1px;
             background: var(--pink);
             transition: width 0.3s ease;
         }
 
+
         .nav-link:hover {
             color: var(--pink) !important;
         }
 
+
         .nav-link:hover::after {
             width: 100%;
         }
+
 
         /* =========================
            HERO
@@ -192,13 +262,16 @@
                     rgba(142, 58, 93, 0.35),
                     transparent 32%
                 ),
+
                 radial-gradient(
                     circle at 85% 75%,
                     rgba(239, 168, 190, 0.14),
                     transparent 35%
                 ),
+
                 var(--bg);
         }
+
 
         .hero-eyebrow {
             color: var(--pink);
@@ -207,15 +280,18 @@
             letter-spacing: 0.3px;
         }
 
+
         .hero-title {
             font-size: clamp(2.3rem, 4.6vw, 3.9rem);
             line-height: 1.15;
         }
 
+
         .hero-title .accent {
             color: var(--pink);
             font-style: italic;
         }
+
 
         .hero-typing-wrap {
             font-family: 'Poppins', sans-serif;
@@ -225,16 +301,19 @@
             min-height: 1.6em;
         }
 
+
         #typed-text {
             border-right: 2px solid var(--pink);
             padding-right: 4px;
         }
+
 
         .hero-text {
             color: var(--muted);
             max-width: 620px;
             line-height: 1.75;
         }
+
 
         .btn-main {
             font-family: 'Poppins', sans-serif;
@@ -246,12 +325,14 @@
             transition: 0.3s;
         }
 
+
         .btn-main:hover {
             background: var(--burgundy-light);
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 10px 26px rgba(199, 106, 143, 0.35);
         }
+
 
         .btn-outline-main {
             font-family: 'Poppins', sans-serif;
@@ -262,13 +343,17 @@
             transition: 0.3s;
         }
 
+
         .btn-outline-main:hover {
             background: var(--burgundy);
             color: white;
             border-color: var(--burgundy);
         }
 
-        /* Hero portrait frame */
+
+        /* =========================
+           PORTRAIT
+        ========================= */
 
         .portrait-wrap {
             position: relative;
@@ -277,54 +362,133 @@
             margin: 0 auto;
         }
 
+
+        /* Animated ring */
+
         .portrait-ring {
             position: absolute;
             inset: -14px;
+
             border: 1px dashed rgba(239, 168, 190, 0.55);
+
             border-radius: 50%;
+
             animation: spin 18s linear infinite;
         }
+
 
         .portrait-ring::before,
         .portrait-ring::after {
             content: "✦";
+
             position: absolute;
+
             color: var(--pink);
+
             font-size: 0.9rem;
         }
 
-        .portrait-ring::before { top: -6px; left: 50%; transform: translateX(-50%); }
-        .portrait-ring::after { bottom: -6px; left: 50%; transform: translateX(-50%); }
+
+        .portrait-ring::before {
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+        .portrait-ring::after {
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
 
         @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
         }
+
+
+        /* Photo frame */
 
         .portrait-frame {
             width: 100%;
             height: 100%;
+
             border-radius: 50%;
-            background: linear-gradient(160deg, #2a1b25, #1b1420);
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #2a1b25,
+                    #1b1420
+                );
+
             border: 3px solid var(--pink);
-            box-shadow: 0 0 45px rgba(239, 168, 190, 0.25);
+
+            box-shadow:
+                0 0 20px rgba(239, 168, 190, 0.35),
+                0 0 50px rgba(142, 58, 93, 0.25);
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             overflow: hidden;
+
+            position: relative;
         }
+
+
+        /* Photo */
 
         .portrait-frame img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
+
+            /*
+            Duotone effect
+            */
+
+            filter:
+                grayscale(100%)
+                contrast(1.05);
+
+            transform: scale(1.02);
         }
 
-        .portrait-frame i {
-            font-size: 4.5rem;
-            color: var(--pink);
-            opacity: 0.85;
+
+        /* Pink / burgundy overlay */
+
+        .portrait-frame::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink-light),
+                    var(--burgundy)
+                );
+
+            mix-blend-mode: color;
+
+            opacity: 0.30;
+
+            pointer-events: none;
         }
+
 
         /* =========================
            ABOUT
@@ -337,15 +501,18 @@
             padding: 45px;
         }
 
+
         .about-card p {
             color: var(--muted);
             line-height: 1.85;
         }
 
+
         .about-card strong {
             color: var(--pink-light);
             font-weight: 600;
         }
+
 
         /* =========================
            EDUCATION
@@ -357,38 +524,55 @@
             border-radius: 22px;
             padding: 32px;
             height: 100%;
-            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
         }
+
 
         .education-card:hover {
             border-color: var(--pink);
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(239, 168, 190, 0.10);
+
+            box-shadow:
+                0 20px 40px rgba(239, 168, 190, 0.10);
         }
+
 
         .education-icon {
             width: 54px;
             height: 54px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             border-radius: 16px;
+
             background: rgba(239, 168, 190, 0.12);
+
             font-size: 1.5rem;
+
             color: var(--pink);
+
             margin-bottom: 22px;
         }
+
 
         .education-card h5 {
             margin-bottom: 12px;
             font-size: 1.2rem;
         }
 
+
         .education-card p {
             font-family: 'Poppins', sans-serif;
             color: var(--muted);
             margin-bottom: 0;
         }
+
 
         /* =========================
            PROJECTS
@@ -398,52 +582,82 @@
             background: var(--card);
             border: 1px solid var(--card-border);
             border-radius: 24px;
+
             overflow: hidden;
+
             height: 100%;
-            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
         }
+
 
         .project-card:hover {
             transform: translateY(-8px);
+
             border-color: var(--pink);
-            box-shadow: 0 20px 40px rgba(239, 168, 190, 0.12);
+
+            box-shadow:
+                0 20px 40px rgba(239, 168, 190, 0.12);
         }
+
 
         .project-icon {
             height: 180px;
+
             display: flex;
             align-items: center;
             justify-content: center;
 
-            background: linear-gradient(135deg, #2a1520, #17121a);
+            background:
+                linear-gradient(
+                    135deg,
+                    #2a1520,
+                    #17121a
+                );
 
             font-size: 3.6rem;
+
             color: var(--pink);
         }
+
 
         .project-content {
             padding: 26px;
         }
 
+
         .project-content h4 {
             font-size: 1.3rem;
         }
+
 
         .project-content p {
             font-family: 'Poppins', sans-serif;
             color: var(--muted);
         }
 
+
         .badge-tech {
             font-family: 'Poppins', sans-serif;
+
             font-weight: 400;
-            background: rgba(142, 58, 93, 0.28);
+
+            background:
+                rgba(142, 58, 93, 0.28);
+
             color: var(--pink-light);
+
             margin-right: 5px;
             margin-bottom: 5px;
+
             border-radius: 20px;
+
             padding: 6px 12px;
         }
+
 
         /* =========================
            CERTIFICATIONS
@@ -452,44 +666,66 @@
         .cert-card {
             background: var(--card);
             border: 1px solid var(--card-border);
+
             border-radius: 22px;
+
             padding: 26px;
+
             height: 100%;
-            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
         }
+
 
         .cert-card:hover {
             border-color: var(--pink);
+
             transform: translateY(-6px);
-            box-shadow: 0 18px 36px rgba(239, 168, 190, 0.10);
+
+            box-shadow:
+                0 18px 36px rgba(239, 168, 190, 0.10);
         }
+
 
         .cert-icon {
             width: 48px;
             height: 48px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             border-radius: 14px;
-            background: rgba(232, 192, 122, 0.14);
+
+            background:
+                rgba(232, 192, 122, 0.14);
+
             font-size: 1.35rem;
+
             color: var(--gold);
         }
+
 
         .cert-card h5 {
             font-size: 1.08rem;
             margin-top: 16px;
         }
 
+
         .cert-card p {
             font-family: 'Poppins', sans-serif;
             color: var(--muted);
         }
 
+
         .cert-card small {
             font-family: 'Poppins', sans-serif;
             color: #8f8290;
         }
+
 
         /* =========================
            BLOG
@@ -497,59 +733,94 @@
 
         .category-card {
             display: block;
+
             height: 100%;
+
             padding: 36px 32px;
+
             background: var(--card);
+
             border: 1px solid var(--card-border);
+
             border-radius: 24px;
+
             text-decoration: none;
+
             color: var(--text);
-            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
         }
+
 
         .category-card:hover {
             transform: translateY(-8px);
+
             border-color: var(--pink);
-            box-shadow: 0 20px 40px rgba(239, 168, 190, 0.16);
+
+            box-shadow:
+                0 20px 40px rgba(239, 168, 190, 0.16);
+
             color: var(--text);
         }
+
 
         .category-icon {
             width: 58px;
             height: 58px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             margin-bottom: 22px;
+
             border-radius: 16px;
-            background: rgba(142, 58, 93, 0.22);
+
+            background:
+                rgba(142, 58, 93, 0.22);
+
             color: var(--pink);
+
             font-size: 1.6rem;
+
             transition: 0.3s;
         }
+
 
         .category-card:hover .category-icon {
             background: var(--burgundy);
             color: white;
         }
 
+
         .category-card h3 {
             margin-bottom: 12px;
             font-size: 1.4rem;
         }
 
+
         .category-card p {
             font-family: 'Poppins', sans-serif;
+
             color: var(--muted);
+
             line-height: 1.7;
+
             margin-bottom: 22px;
         }
 
+
         .category-link {
             font-family: 'Poppins', sans-serif;
+
             color: var(--pink);
+
             font-weight: 500;
         }
+
 
         /* =========================
            CONTACT
@@ -559,32 +830,42 @@
             background: var(--bg-soft);
         }
 
+
         .social-link {
             width: 50px;
             height: 50px;
 
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
 
             border: 1px solid #40323b;
+
             border-radius: 50%;
 
             color: white;
+
             text-decoration: none;
 
             margin: 5px;
+
             transition: 0.3s;
 
             cursor: pointer;
         }
 
+
         .social-link:hover {
             background: var(--burgundy);
+
             border-color: var(--burgundy);
+
             color: white;
+
             transform: translateY(-4px);
         }
+
 
         /* =========================
            FOOTER
@@ -592,10 +873,14 @@
 
         footer {
             background: #100c12;
+
             color: #8f8290;
+
             padding: 25px 0;
+
             font-family: 'Poppins', sans-serif;
         }
+
 
         /* =========================
            SCROLL REVEAL
@@ -603,14 +888,21 @@
 
         .reveal {
             opacity: 0;
+
             transform: translateY(24px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
         }
+
 
         .reveal.is-visible {
             opacity: 1;
+
             transform: translateY(0);
         }
+
 
         /* =========================
            MOBILE
@@ -622,24 +914,30 @@
                 font-size: 2.4rem;
             }
 
+
             section {
                 padding: 80px 0;
             }
+
 
             .about-card {
                 padding: 26px;
             }
 
+
             .portrait-wrap {
                 width: 190px;
                 height: 190px;
+
                 margin-bottom: 40px;
             }
+
         }
 
     </style>
 
 </head>
+
 
 <body>
 
@@ -656,6 +954,7 @@
                 GK ♡
             </a>
 
+
             <button
                 class="navbar-toggler"
                 type="button"
@@ -669,36 +968,57 @@
 
             </button>
 
+
             <div class="collapse navbar-collapse" id="navbarNav">
 
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#home">
+                            Home
+                        </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
+                        <a class="nav-link" href="#about">
+                            About
+                        </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#certifications">Certifications</a>
+                        <a class="nav-link" href="#education">
+                            Education
+                        </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog</a>
-                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#projects">
+                            Projects
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certifications">
+                            Certifications
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">
+                            Blog
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            Contact
+                        </a>
                     </li>
 
                 </ul>
@@ -708,6 +1028,7 @@
         </div>
 
     </nav>
+
 
 
     <!-- =========================
@@ -720,46 +1041,85 @@
 
             <div class="row align-items-center g-5">
 
+
+                <!-- PHOTO -->
+
                 <div class="col-lg-4 order-lg-2 text-center">
 
                     <div class="portrait-wrap">
+
                         <div class="portrait-ring"></div>
+
+
                         <div class="portrait-frame">
-                            <i class="bi bi-person-heart"></i>
+
+                            <img
+                                src="images/ghita.jpg"
+                                alt="Ghita KHAIF-ALLAH">
+
                         </div>
+
                     </div>
 
                 </div>
 
+
+
+                <!-- TEXT -->
+
                 <div class="col-lg-8 order-lg-1">
 
                     <p class="hero-eyebrow mb-2">
+
                         Computer Engineering Student
-                        <span class="sparkle">✦</span>
+
+                        <span class="sparkle">
+                            ✦
+                        </span>
+
                     </p>
+
 
                     <h1 class="hero-title mb-3">
-                        Welcome to my <span class="accent">tech space</span>
+
+                        Welcome to my
+                        <span class="accent">
+                            tech space
+                        </span>
+
                     </h1>
 
+
                     <div class="hero-typing-wrap">
+
                         <span id="typed-text"></span>
+
                     </div>
 
+
                     <p class="hero-text mb-4">
+
                         A personal space where I document what I learn,
                         explore technology, and share ideas along the way
-                        <span class="sparkle delay1">♡</span>
+
+                        <span class="sparkle delay1">
+                            ♡
+                        </span>
+
                     </p>
 
-                    <a href="#blog"
+
+                    <a
+                        href="#blog"
                         class="btn btn-main me-2">
 
                         Explore My Blog
 
                     </a>
 
-                    <a href="#about"
+
+                    <a
+                        href="#about"
                         class="btn btn-outline-main">
 
                         About Me
@@ -775,6 +1135,7 @@
     </section>
 
 
+
     <!-- =========================
          ABOUT
     ========================= -->
@@ -783,17 +1144,28 @@
 
         <div class="container">
 
+
             <div class="text-center reveal">
 
                 <h2 class="section-title">
-                    About Me <span class="sparkle">♡</span>
+
+                    About Me
+
+                    <span class="sparkle">
+                        ♡
+                    </span>
+
                 </h2>
 
+
                 <p class="section-subtitle">
+
                     A little bit about my journey
+
                 </p>
 
             </div>
+
 
             <div class="row justify-content-center reveal">
 
@@ -801,35 +1173,56 @@
 
                     <div class="about-card">
 
+
                         <p>
+
                             <strong>
                                 Welcome to my little corner of the internet.
                             </strong>
+
                         </p>
 
+
                         <p>
-                            I'm KHAIF-ALLAH Ghita, a Computer Engineering student with
-                            a strong curiosity for technology and a particular
+
+                            I'm KHAIF-ALLAH Ghita, a Computer Engineering student
+                            with a strong curiosity for technology and a particular
                             interest in
-                            <strong>Cybersecurity, Data, IoT and Networking</strong>.
+
+                            <strong>
+                                Cybersecurity, Data, IoT and Networking
+                            </strong>.
+
                         </p>
 
+
                         <p>
+
                             I enjoy learning by doing — building projects,
                             experimenting with new technologies, and exploring
                             anything that catches my curiosity.
+
                         </p>
+
 
                         <p>
+
                             I created this blog to document my learning journey
                             and share the things I discover along the way.
+
                             You'll find technical notes, tutorials, projects,
                             ideas and sometimes just something interesting I've learned.
+
                         </p>
 
+
                         <p class="mb-0">
+
                             I'm still learning, still experimenting, and always
-                            curious about what comes next. 💻✨
+                            curious about what comes next.
+
+                            💻✨
+
                         </p>
 
                     </div>
@@ -843,6 +1236,7 @@
     </section>
 
 
+
     <!-- =========================
          EDUCATION
     ========================= -->
@@ -850,6 +1244,7 @@
     <section id="education">
 
         <div class="container">
+
 
             <div class="text-center reveal">
 
@@ -863,19 +1258,25 @@
 
             </div>
 
+
             <div class="row g-4 justify-content-center">
+
 
                 <div class="col-lg-4 col-md-6 reveal">
 
                     <div class="education-card">
 
                         <div class="education-icon">
+
                             <i class="bi bi-mortarboard-fill"></i>
+
                         </div>
+
 
                         <h5>
                             Engineering Cycle — Computer Science, Data & IoT
                         </h5>
+
 
                         <p>
                             4th Year — SUPMTI, Rabat
@@ -885,17 +1286,23 @@
 
                 </div>
 
+
+
                 <div class="col-lg-4 col-md-6 reveal">
 
                     <div class="education-card">
 
                         <div class="education-icon">
+
                             <i class="bi bi-award-fill"></i>
+
                         </div>
+
 
                         <h5>
                             BTS — Computer Systems & Networks
                         </h5>
+
 
                         <p>
                             2025 — Highest-ranked student in the cohort
@@ -905,17 +1312,23 @@
 
                 </div>
 
+
+
                 <div class="col-lg-4 col-md-6 reveal">
 
                     <div class="education-card">
 
                         <div class="education-icon">
+
                             <i class="bi bi-book-fill"></i>
+
                         </div>
+
 
                         <h5>
                             Baccalaureate — Physics & Chemistry
                         </h5>
+
 
                         <p>
                             2023
@@ -932,6 +1345,7 @@
     </section>
 
 
+
     <!-- =========================
          PROJECTS
     ========================= -->
@@ -939,6 +1353,7 @@
     <section id="projects">
 
         <div class="container">
+
 
             <div class="text-center reveal">
 
@@ -952,31 +1367,54 @@
 
             </div>
 
+
             <div class="row g-4 justify-content-center">
 
-                <!-- IoT Diabetes Monitoring -->
+
+                <!-- IoT -->
 
                 <div class="col-lg-5 col-md-6 reveal">
 
                     <div class="project-card">
 
+
                         <div class="project-icon">
+
                             <i class="bi bi-heart-pulse"></i>
+
                         </div>
+
 
                         <div class="project-content">
 
-                            <h4>IoT Diabetes Monitoring</h4>
+                            <h4>
+                                IoT Diabetes Monitoring
+                            </h4>
+
 
                             <p>
+
                                 An IoT and machine learning project
                                 designed for health monitoring and prediction.
+
                             </p>
 
-                            <span class="badge-tech">Python</span>
-                            <span class="badge-tech">IoT</span>
-                            <span class="badge-tech">Machine Learning</span>
-                            <span class="badge-tech">Django</span>
+
+                            <span class="badge-tech">
+                                Python
+                            </span>
+
+                            <span class="badge-tech">
+                                IoT
+                            </span>
+
+                            <span class="badge-tech">
+                                Machine Learning
+                            </span>
+
+                            <span class="badge-tech">
+                                Django
+                            </span>
 
                         </div>
 
@@ -985,28 +1423,47 @@
                 </div>
 
 
-                <!-- Student Absence Management -->
+
+                <!-- Absence -->
 
                 <div class="col-lg-5 col-md-6 reveal">
 
                     <div class="project-card">
 
+
                         <div class="project-icon">
+
                             <i class="bi bi-calendar-check"></i>
+
                         </div>
+
 
                         <div class="project-content">
 
-                            <h4>Student Absence Management</h4>
+                            <h4>
+                                Student Absence Management
+                            </h4>
+
 
                             <p>
+
                                 A Django web application designed
                                 to manage student attendance and absences.
+
                             </p>
 
-                            <span class="badge-tech">Django</span>
-                            <span class="badge-tech">Python</span>
-                            <span class="badge-tech">Database</span>
+
+                            <span class="badge-tech">
+                                Django
+                            </span>
+
+                            <span class="badge-tech">
+                                Python
+                            </span>
+
+                            <span class="badge-tech">
+                                Database
+                            </span>
 
                         </div>
 
@@ -1021,6 +1478,7 @@
     </section>
 
 
+
     <!-- =========================
          CERTIFICATIONS
     ========================= -->
@@ -1028,6 +1486,7 @@
     <section id="certifications">
 
         <div class="container">
+
 
             <div class="text-center reveal">
 
@@ -1041,7 +1500,9 @@
 
             </div>
 
+
             <div class="row g-4">
+
 
                 <div class="col-md-6 col-lg-4 reveal">
 
@@ -1067,6 +1528,8 @@
 
                 </div>
 
+
+
                 <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
@@ -1090,6 +1553,8 @@
                     </div>
 
                 </div>
+
+
 
                 <div class="col-md-6 col-lg-4 reveal">
 
@@ -1115,6 +1580,8 @@
 
                 </div>
 
+
+
                 <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
@@ -1139,6 +1606,8 @@
 
                 </div>
 
+
+
                 <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
@@ -1162,6 +1631,8 @@
                     </div>
 
                 </div>
+
+
 
                 <div class="col-md-6 col-lg-4 reveal">
 
@@ -1194,206 +1665,264 @@
     </section>
 
 
- <!-- =========================
-     BLOG
-========================= -->
 
-<section id="blog">
+    <!-- =========================
+         BLOG
+    ========================= -->
 
-    <div class="container">
+    <section id="blog">
 
-        <div class="text-center reveal">
+        <div class="container">
 
-            <h2 class="section-title">
-                Blog
-            </h2>
 
-            <p class="section-subtitle">
-                Notes, tutorials and things I'm learning
-            </p>
+            <div class="text-center reveal">
+
+                <h2 class="section-title">
+                    Blog
+                </h2>
+
+                <p class="section-subtitle">
+                    Notes, tutorials and things I'm learning
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 justify-content-center">
+
+
+                <!-- Cybersecurity -->
+
+                <div class="col-md-6 col-lg-4 reveal">
+
+                    <a
+                        href="blog/cybersecurity.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-shield-lock-fill"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Cybersecurity
+                        </h3>
+
+
+                        <p>
+
+                            Security concepts, threats, tools,
+                            vulnerabilities and defensive techniques.
+
+                        </p>
+
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- IoT -->
+
+                <div class="col-md-6 col-lg-4 reveal">
+
+                    <a
+                        href="blog/iot.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-cpu-fill"></i>
+
+                        </div>
+
+
+                        <h3>
+                            IoT
+                        </h3>
+
+
+                        <p>
+
+                            Connected devices, sensors, Edge Computing
+                            and IoT security.
+
+                        </p>
+
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- AI -->
+
+                <div class="col-md-6 col-lg-4 reveal">
+
+                    <a
+                        href="blog/ai.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-robot"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Artificial Intelligence
+                        </h3>
+
+
+                        <p>
+
+                            Artificial intelligence, machine learning,
+                            deep learning and AI concepts.
+
+                        </p>
+
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- DATA -->
+
+                <div class="col-md-6 col-lg-4 reveal">
+
+                    <a
+                        href="blog/data.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-bar-chart-fill"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Data
+                        </h3>
+
+
+                        <p>
+
+                            Data science, data analysis, databases,
+                            SQL and machine learning.
+
+                        </p>
+
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- NETWORKING -->
+
+                <div class="col-md-6 col-lg-4 reveal">
+
+                    <a
+                        href="blog/networking.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-diagram-3-fill"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Networking
+                        </h3>
+
+
+                        <p>
+
+                            Networks, protocols, architectures,
+                            routing, switching and network services.
+
+                        </p>
+
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- CLOUD -->
+
+                <div class="col-md-6 col-lg-4 reveal">
+
+                    <a
+                        href="blog/cloud.html"
+                        class="category-card">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-cloud-fill"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Cloud
+                        </h3>
+
+
+                        <p>
+
+                            Cloud computing, infrastructure,
+                            services and modern cloud technologies.
+
+                        </p>
+
+
+                        <span class="category-link">
+                            Explore →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="row g-4 justify-content-center">
+    </section>
 
-            <!-- Cybersecurity -->
-
-            <div class="col-md-6 col-lg-4 reveal">
-
-                <a href="blog/cybersecurity.html"
-                    class="category-card">
-
-                    <div class="category-icon">
-                        <i class="bi bi-shield-lock-fill"></i>
-                    </div>
-
-                    <h3>
-                        Cybersecurity
-                    </h3>
-
-                    <p>
-                        Security concepts, threats, tools,
-                        vulnerabilities and defensive techniques.
-                    </p>
-
-                    <span class="category-link">
-                        Explore →
-                    </span>
-
-                </a>
-
-            </div>
-
-
-            <!-- IoT -->
-
-            <div class="col-md-6 col-lg-4 reveal">
-
-                <a href="blog/iot.html"
-                    class="category-card">
-
-                    <div class="category-icon">
-                        <i class="bi bi-cpu-fill"></i>
-                    </div>
-
-                    <h3>
-                        IoT
-                    </h3>
-
-                    <p>
-                        Connected devices, sensors, Edge Computing
-                        and IoT security.
-                    </p>
-
-                    <span class="category-link">
-                        Explore →
-                    </span>
-
-                </a>
-
-            </div>
-
-
-            <!-- Artificial Intelligence -->
-
-            <div class="col-md-6 col-lg-4 reveal">
-
-                <a href="blog/ai.html"
-                    class="category-card">
-
-                    <div class="category-icon">
-                        <i class="bi bi-robot"></i>
-                    </div>
-
-                    <h3>
-                        Artificial Intelligence
-                    </h3>
-
-                    <p>
-                        Artificial intelligence, machine learning,
-                        deep learning and AI concepts.
-                    </p>
-
-                    <span class="category-link">
-                        Explore →
-                    </span>
-
-                </a>
-
-            </div>
-
-
-            <!-- Data -->
-
-            <div class="col-md-6 col-lg-4 reveal">
-
-                <a href="blog/data.html"
-                    class="category-card">
-
-                    <div class="category-icon">
-                        <i class="bi bi-bar-chart-fill"></i>
-                    </div>
-
-                    <h3>
-                        Data
-                    </h3>
-
-                    <p>
-                        Data science, data analysis, databases,
-                        SQL and machine learning.
-                    </p>
-
-                    <span class="category-link">
-                        Explore →
-                    </span>
-
-                </a>
-
-            </div>
-
-
-            <!-- Networking -->
-
-            <div class="col-md-6 col-lg-4 reveal">
-
-                <a href="blog/networking.html"
-                    class="category-card">
-
-                    <div class="category-icon">
-                        <i class="bi bi-diagram-3-fill"></i>
-                    </div>
-
-                    <h3>
-                        Networking
-                    </h3>
-
-                    <p>
-                        Networks, protocols, architectures,
-                        routing, switching and network services.
-                    </p>
-
-                    <span class="category-link">
-                        Explore →
-                    </span>
-
-                </a>
-
-            </div>
-
-
-            <!-- Cloud -->
-
-            <div class="col-md-6 col-lg-4 reveal">
-
-                <a href="blog/cloud.html"
-                    class="category-card">
-
-                    <div class="category-icon">
-                        <i class="bi bi-cloud-fill"></i>
-                    </div>
-
-                    <h3>
-                        Cloud
-                    </h3>
-
-                    <p>
-                        Cloud computing, infrastructure,
-                        services and modern cloud technologies.
-                    </p>
-
-                    <span class="category-link">
-                        Explore →
-                    </span>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 
     <!-- =========================
@@ -1404,29 +1933,56 @@
 
         <div class="container text-center reveal">
 
+
             <h2 class="section-title">
-                Let's Connect <span class="sparkle">✧</span>
+
+                Let's Connect
+
+                <span class="sparkle">
+                    ✧
+                </span>
+
             </h2>
+
 
             <p class="section-subtitle">
                 Feel free to reach out
             </p>
 
-            <a href="#" class="social-link" aria-label="LinkedIn">
+
+            <a
+                href="#"
+                class="social-link"
+                aria-label="LinkedIn">
+
                 <i class="bi bi-linkedin"></i>
+
             </a>
 
-            <a href="#" class="social-link" aria-label="GitHub">
+
+            <a
+                href="#"
+                class="social-link"
+                aria-label="GitHub">
+
                 <i class="bi bi-github"></i>
+
             </a>
 
-            <a href="#" class="social-link" aria-label="Gmail">
+
+            <a
+                href="#"
+                class="social-link"
+                aria-label="Gmail">
+
                 <i class="bi bi-envelope-fill"></i>
+
             </a>
 
         </div>
 
     </section>
+
 
 
     <!-- =========================
@@ -1438,8 +1994,11 @@
         <div class="container text-center">
 
             <p class="mb-0">
+
                 © 2026 Ghita KHAIF-ALLAH.
+
                 Built with HTML, CSS & Bootstrap.
+
             </p>
 
         </div>
@@ -1447,7 +2006,10 @@
     </footer>
 
 
-    <!-- Bootstrap JavaScript -->
+
+    <!-- =========================
+         BOOTSTRAP JAVASCRIPT
+    ========================= -->
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -1455,73 +2017,175 @@
         crossorigin="anonymous">
     </script>
 
-    <!-- Custom JS: typing effect, scroll reveal, navbar shadow -->
+
+
+    <!-- =========================
+         CUSTOM JAVASCRIPT
+    ========================= -->
+
     <script>
-        // Typing effect
+
+
+        /* =========================
+           TYPING EFFECT
+        ========================= */
+
         const phrases = [
+
             "Cybersecurity • Data ✦",
+
             "Cybersecurity • IoT ✦",
+
             "Cybersecurity • Networking ✦",
+
             "Cybersecurity • AI ✦"
+
         ];
 
-        const typedEl = document.getElementById('typed-text');
+
+        const typedEl =
+            document.getElementById('typed-text');
+
+
         let phraseIndex = 0;
+
         let charIndex = 0;
+
         let deleting = false;
 
+
         function typeLoop() {
-            const current = phrases[phraseIndex];
+
+            const current =
+                phrases[phraseIndex];
+
 
             if (!deleting) {
+
                 charIndex++;
-                typedEl.textContent = current.slice(0, charIndex);
+
+                typedEl.textContent =
+                    current.slice(0, charIndex);
+
 
                 if (charIndex === current.length) {
+
                     deleting = true;
+
                     setTimeout(typeLoop, 1400);
+
                     return;
                 }
-            } else {
-                charIndex--;
-                typedEl.textContent = current.slice(0, charIndex);
 
-                if (charIndex === 0) {
-                    deleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                }
             }
 
-            setTimeout(typeLoop, deleting ? 45 : 65);
+            else {
+
+                charIndex--;
+
+                typedEl.textContent =
+                    current.slice(0, charIndex);
+
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    phraseIndex =
+                        (phraseIndex + 1) %
+                        phrases.length;
+
+                }
+
+            }
+
+
+            setTimeout(
+                typeLoop,
+                deleting ? 45 : 65
+            );
+
         }
+
 
         typeLoop();
 
-        // Navbar shadow on scroll
-        const nav = document.getElementById('mainNav');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 40) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
 
-        // Scroll reveal
-        const revealEls = document.querySelectorAll('.reveal');
+        /* =========================
+           NAVBAR SHADOW
+        ========================= */
 
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    revealObserver.unobserve(entry.target);
+        const nav =
+            document.getElementById('mainNav');
+
+
+        window.addEventListener(
+            'scroll',
+            () => {
+
+                if (window.scrollY > 40) {
+
+                    nav.classList.add('scrolled');
+
                 }
-            });
-        }, { threshold: 0.15 });
 
-        revealEls.forEach(el => revealObserver.observe(el));
+                else {
+
+                    nav.classList.remove('scrolled');
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        const revealEls =
+            document.querySelectorAll('.reveal');
+
+
+        const revealObserver =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                'is-visible'
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        revealEls.forEach(
+            el => revealObserver.observe(el)
+        );
+
+
     </script>
+
 
 </body>
 
