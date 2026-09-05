@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +11,9 @@
 
     <title>Ghita KHAIF-ALLAH | Computer Engineering</title>
 
-    <!-- Bootstrap 5.3.8 -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous">
+        rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet"
@@ -23,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
 
@@ -78,10 +77,11 @@
 
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             background: var(--bg);
             color: var(--text);
             overflow-x: hidden;
+            font-weight: 500;
         }
 
 
@@ -110,10 +110,11 @@
 
 
         .section-subtitle {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             color: var(--muted);
             margin-bottom: 55px;
             font-size: 1.02rem;
+            font-weight: 500;
         }
 
 
@@ -217,11 +218,12 @@
 
 
         .nav-link {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             color: #ecdfe6 !important;
             margin-left: 15px;
             transition: 0.3s;
             position: relative;
+            font-weight: 600;
         }
 
 
@@ -275,8 +277,8 @@
 
         .hero-eyebrow {
             color: var(--pink);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
             letter-spacing: 0.3px;
         }
 
@@ -294,11 +296,12 @@
 
 
         .hero-typing-wrap {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             font-size: clamp(1.1rem, 2vw, 1.45rem);
             color: #e4d3db;
             margin-bottom: 1.4rem;
             min-height: 1.6em;
+            font-weight: 600;
         }
 
 
@@ -311,18 +314,20 @@
         .hero-text {
             color: var(--muted);
             max-width: 620px;
-            line-height: 1.75;
+            line-height: 1.8;
+            font-weight: 500;
         }
 
 
         .btn-main {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             background: var(--burgundy);
             border: none;
             color: white;
             padding: 13px 30px;
             border-radius: 30px;
             transition: 0.3s;
+            font-weight: 600;
         }
 
 
@@ -335,12 +340,13 @@
 
 
         .btn-outline-main {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             border: 1px solid var(--pink);
             color: var(--pink-light);
             padding: 12px 30px;
             border-radius: 30px;
             transition: 0.3s;
+            font-weight: 600;
         }
 
 
@@ -362,8 +368,6 @@
             margin: 0 auto;
         }
 
-
-        /* Animated ring */
 
         .portrait-ring {
             position: absolute;
@@ -416,8 +420,6 @@
         }
 
 
-        /* Photo frame */
-
         .portrait-frame {
             width: 100%;
             height: 100%;
@@ -447,17 +449,11 @@
         }
 
 
-        /* Photo */
-
         .portrait-frame img {
             width: 100%;
             height: 100%;
 
             object-fit: cover;
-
-            /*
-            Duotone effect
-            */
 
             filter:
                 grayscale(100%)
@@ -466,8 +462,6 @@
             transform: scale(1.02);
         }
 
-
-        /* Pink / burgundy overlay */
 
         .portrait-frame::after {
             content: "";
@@ -502,6 +496,32 @@
         }
 
 
+        /* CENTERED CUTE INTRO */
+
+        .about-intro {
+            text-align: center;
+            color: var(--pink-light) !important;
+            font-family: 'DM Serif Display', serif !important;
+            font-size: 1.7rem;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+
+        .about-intro::before {
+            content: "♡";
+            color: var(--pink);
+            margin-right: 10px;
+        }
+
+
+        .about-intro::after {
+            content: "♡";
+            color: var(--pink);
+            margin-left: 10px;
+        }
+
+
         .about-card p {
             color: var(--muted);
             line-height: 1.85;
@@ -510,7 +530,7 @@
 
         .about-card strong {
             color: var(--pink-light);
-            font-weight: 600;
+            font-weight: 700;
         }
 
 
@@ -568,9 +588,10 @@
 
 
         .education-card p {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             color: var(--muted);
             margin-bottom: 0;
+            font-weight: 500;
         }
 
 
@@ -635,15 +656,16 @@
 
 
         .project-content p {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             color: var(--muted);
+            line-height: 1.7;
         }
 
 
         .badge-tech {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
 
-            font-weight: 400;
+            font-weight: 600;
 
             background:
                 rgba(142, 58, 93, 0.28);
@@ -716,13 +738,13 @@
 
 
         .cert-card p {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             color: var(--muted);
         }
 
 
         .cert-card small {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             color: #8f8290;
         }
 
@@ -803,7 +825,7 @@
 
 
         .category-card p {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
 
             color: var(--muted);
 
@@ -814,11 +836,11 @@
 
 
         .category-link {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
 
             color: var(--pink);
 
-            font-weight: 500;
+            font-weight: 700;
         }
 
 
@@ -878,7 +900,7 @@
 
             padding: 25px 0;
 
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
         }
 
 
@@ -922,6 +944,11 @@
 
             .about-card {
                 padding: 26px;
+            }
+
+
+            .about-intro {
+                font-size: 1.35rem;
             }
 
 
@@ -974,51 +1001,31 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">
-                            Home
-                        </a>
+                        <a class="nav-link" href="#home">Home</a>
                     </li>
 
-
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">
-                            About
-                        </a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
 
-
                     <li class="nav-item">
-                        <a class="nav-link" href="#education">
-                            Education
-                        </a>
+                        <a class="nav-link" href="#education">Education</a>
                     </li>
 
-
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">
-                            Projects
-                        </a>
+                        <a class="nav-link" href="#projects">Projects</a>
                     </li>
 
-
                     <li class="nav-item">
-                        <a class="nav-link" href="#certifications">
-                            Certifications
-                        </a>
+                        <a class="nav-link" href="#certifications">Certifications</a>
                     </li>
 
-
                     <li class="nav-item">
-                        <a class="nav-link" href="#blog">
-                            Blog
-                        </a>
+                        <a class="nav-link" href="#blog">Blog</a>
                     </li>
 
-
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">
-                            Contact
-                        </a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
 
                 </ul>
@@ -1028,7 +1035,6 @@
         </div>
 
     </nav>
-
 
 
     <!-- =========================
@@ -1041,7 +1047,6 @@
 
             <div class="row align-items-center g-5">
 
-
                 <!-- PHOTO -->
 
                 <div class="col-lg-4 order-lg-2 text-center">
@@ -1049,7 +1054,6 @@
                     <div class="portrait-wrap">
 
                         <div class="portrait-ring"></div>
-
 
                         <div class="portrait-frame">
 
@@ -1062,7 +1066,6 @@
                     </div>
 
                 </div>
-
 
 
                 <!-- TEXT -->
@@ -1109,21 +1112,13 @@
                     </p>
 
 
-                    <a
-                        href="#blog"
-                        class="btn btn-main me-2">
-
+                    <a href="#blog" class="btn btn-main me-2">
                         Explore My Blog
-
                     </a>
 
 
-                    <a
-                        href="#about"
-                        class="btn btn-outline-main">
-
+                    <a href="#about" class="btn btn-outline-main">
                         About Me
-
                     </a>
 
                 </div>
@@ -1135,7 +1130,6 @@
     </section>
 
 
-
     <!-- =========================
          ABOUT
     ========================= -->
@@ -1143,7 +1137,6 @@
     <section id="about">
 
         <div class="container">
-
 
             <div class="text-center reveal">
 
@@ -1157,11 +1150,8 @@
 
                 </h2>
 
-
                 <p class="section-subtitle">
-
                     A little bit about my journey
-
                 </p>
 
             </div>
@@ -1173,13 +1163,10 @@
 
                     <div class="about-card">
 
+                        <!-- CENTERED SENTENCE -->
 
-                        <p>
-
-                            <strong>
-                                Welcome to my little corner of the internet.
-                            </strong>
-
+                        <p class="about-intro">
+                            Welcome to my little corner of the internet.
                         </p>
 
 
@@ -1236,7 +1223,6 @@
     </section>
 
 
-
     <!-- =========================
          EDUCATION
     ========================= -->
@@ -1244,7 +1230,6 @@
     <section id="education">
 
         <div class="container">
-
 
             <div class="text-center reveal">
 
@@ -1261,22 +1246,17 @@
 
             <div class="row g-4 justify-content-center">
 
-
                 <div class="col-lg-4 col-md-6 reveal">
 
                     <div class="education-card">
 
                         <div class="education-icon">
-
                             <i class="bi bi-mortarboard-fill"></i>
-
                         </div>
-
 
                         <h5>
                             Engineering Cycle — Computer Science, Data & IoT
                         </h5>
-
 
                         <p>
                             4th Year — SUPMTI, Rabat
@@ -1287,22 +1267,17 @@
                 </div>
 
 
-
                 <div class="col-lg-4 col-md-6 reveal">
 
                     <div class="education-card">
 
                         <div class="education-icon">
-
                             <i class="bi bi-award-fill"></i>
-
                         </div>
-
 
                         <h5>
                             BTS — Computer Systems & Networks
                         </h5>
-
 
                         <p>
                             2025 — Highest-ranked student in the cohort
@@ -1313,22 +1288,17 @@
                 </div>
 
 
-
                 <div class="col-lg-4 col-md-6 reveal">
 
                     <div class="education-card">
 
                         <div class="education-icon">
-
                             <i class="bi bi-book-fill"></i>
-
                         </div>
-
 
                         <h5>
                             Baccalaureate — Physics & Chemistry
                         </h5>
-
 
                         <p>
                             2023
@@ -1345,7 +1315,6 @@
     </section>
 
 
-
     <!-- =========================
          PROJECTS
     ========================= -->
@@ -1353,7 +1322,6 @@
     <section id="projects">
 
         <div class="container">
-
 
             <div class="text-center reveal">
 
@@ -1370,20 +1338,13 @@
 
             <div class="row g-4 justify-content-center">
 
-
-                <!-- IoT -->
-
                 <div class="col-lg-5 col-md-6 reveal">
 
                     <div class="project-card">
 
-
                         <div class="project-icon">
-
                             <i class="bi bi-heart-pulse"></i>
-
                         </div>
-
 
                         <div class="project-content">
 
@@ -1391,30 +1352,15 @@
                                 IoT Diabetes Monitoring
                             </h4>
 
-
                             <p>
-
                                 An IoT and machine learning project
                                 designed for health monitoring and prediction.
-
                             </p>
 
-
-                            <span class="badge-tech">
-                                Python
-                            </span>
-
-                            <span class="badge-tech">
-                                IoT
-                            </span>
-
-                            <span class="badge-tech">
-                                Machine Learning
-                            </span>
-
-                            <span class="badge-tech">
-                                Django
-                            </span>
+                            <span class="badge-tech">Python</span>
+                            <span class="badge-tech">IoT</span>
+                            <span class="badge-tech">Machine Learning</span>
+                            <span class="badge-tech">Django</span>
 
                         </div>
 
@@ -1423,20 +1369,13 @@
                 </div>
 
 
-
-                <!-- Absence -->
-
                 <div class="col-lg-5 col-md-6 reveal">
 
                     <div class="project-card">
 
-
                         <div class="project-icon">
-
                             <i class="bi bi-calendar-check"></i>
-
                         </div>
-
 
                         <div class="project-content">
 
@@ -1444,26 +1383,14 @@
                                 Student Absence Management
                             </h4>
 
-
                             <p>
-
                                 A Django web application designed
                                 to manage student attendance and absences.
-
                             </p>
 
-
-                            <span class="badge-tech">
-                                Django
-                            </span>
-
-                            <span class="badge-tech">
-                                Python
-                            </span>
-
-                            <span class="badge-tech">
-                                Database
-                            </span>
+                            <span class="badge-tech">Django</span>
+                            <span class="badge-tech">Python</span>
+                            <span class="badge-tech">Database</span>
 
                         </div>
 
@@ -1478,7 +1405,6 @@
     </section>
 
 
-
     <!-- =========================
          CERTIFICATIONS
     ========================= -->
@@ -1486,7 +1412,6 @@
     <section id="certifications">
 
         <div class="container">
-
 
             <div class="text-center reveal">
 
@@ -1502,7 +1427,6 @@
 
 
             <div class="row g-4">
-
 
                 <div class="col-md-6 col-lg-4 reveal">
 
@@ -1527,7 +1451,6 @@
                     </div>
 
                 </div>
-
 
 
                 <div class="col-md-6 col-lg-4 reveal">
@@ -1555,7 +1478,6 @@
                 </div>
 
 
-
                 <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
@@ -1579,7 +1501,6 @@
                     </div>
 
                 </div>
-
 
 
                 <div class="col-md-6 col-lg-4 reveal">
@@ -1607,7 +1528,6 @@
                 </div>
 
 
-
                 <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
@@ -1631,7 +1551,6 @@
                     </div>
 
                 </div>
-
 
 
                 <div class="col-md-6 col-lg-4 reveal">
@@ -1665,7 +1584,6 @@
     </section>
 
 
-
     <!-- =========================
          BLOG
     ========================= -->
@@ -1673,7 +1591,6 @@
     <section id="blog">
 
         <div class="container">
-
 
             <div class="text-center reveal">
 
@@ -1690,34 +1607,23 @@
 
             <div class="row g-4 justify-content-center">
 
-
-                <!-- Cybersecurity -->
-
                 <div class="col-md-6 col-lg-4 reveal">
 
-                    <a
-                        href="blog/cybersecurity.html"
+                    <a href="blog/cybersecurity.html"
                         class="category-card">
 
                         <div class="category-icon">
-
                             <i class="bi bi-shield-lock-fill"></i>
-
                         </div>
-
 
                         <h3>
                             Cybersecurity
                         </h3>
 
-
                         <p>
-
                             Security concepts, threats, tools,
                             vulnerabilities and defensive techniques.
-
                         </p>
-
 
                         <span class="category-link">
                             Explore →
@@ -1728,34 +1634,23 @@
                 </div>
 
 
-
-                <!-- IoT -->
-
                 <div class="col-md-6 col-lg-4 reveal">
 
-                    <a
-                        href="blog/iot.html"
+                    <a href="blog/iot.html"
                         class="category-card">
 
                         <div class="category-icon">
-
                             <i class="bi bi-cpu-fill"></i>
-
                         </div>
-
 
                         <h3>
                             IoT
                         </h3>
 
-
                         <p>
-
                             Connected devices, sensors, Edge Computing
                             and IoT security.
-
                         </p>
-
 
                         <span class="category-link">
                             Explore →
@@ -1766,34 +1661,23 @@
                 </div>
 
 
-
-                <!-- AI -->
-
                 <div class="col-md-6 col-lg-4 reveal">
 
-                    <a
-                        href="blog/ai.html"
+                    <a href="blog/ai.html"
                         class="category-card">
 
                         <div class="category-icon">
-
                             <i class="bi bi-robot"></i>
-
                         </div>
-
 
                         <h3>
                             Artificial Intelligence
                         </h3>
 
-
                         <p>
-
                             Artificial intelligence, machine learning,
                             deep learning and AI concepts.
-
                         </p>
-
 
                         <span class="category-link">
                             Explore →
@@ -1804,34 +1688,23 @@
                 </div>
 
 
-
-                <!-- DATA -->
-
                 <div class="col-md-6 col-lg-4 reveal">
 
-                    <a
-                        href="blog/data.html"
+                    <a href="blog/data.html"
                         class="category-card">
 
                         <div class="category-icon">
-
                             <i class="bi bi-bar-chart-fill"></i>
-
                         </div>
-
 
                         <h3>
                             Data
                         </h3>
 
-
                         <p>
-
                             Data science, data analysis, databases,
                             SQL and machine learning.
-
                         </p>
-
 
                         <span class="category-link">
                             Explore →
@@ -1842,34 +1715,23 @@
                 </div>
 
 
-
-                <!-- NETWORKING -->
-
                 <div class="col-md-6 col-lg-4 reveal">
 
-                    <a
-                        href="blog/networking.html"
+                    <a href="blog/networking.html"
                         class="category-card">
 
                         <div class="category-icon">
-
                             <i class="bi bi-diagram-3-fill"></i>
-
                         </div>
-
 
                         <h3>
                             Networking
                         </h3>
 
-
                         <p>
-
                             Networks, protocols, architectures,
                             routing, switching and network services.
-
                         </p>
-
 
                         <span class="category-link">
                             Explore →
@@ -1880,34 +1742,23 @@
                 </div>
 
 
-
-                <!-- CLOUD -->
-
                 <div class="col-md-6 col-lg-4 reveal">
 
-                    <a
-                        href="blog/cloud.html"
+                    <a href="blog/cloud.html"
                         class="category-card">
 
                         <div class="category-icon">
-
                             <i class="bi bi-cloud-fill"></i>
-
                         </div>
-
 
                         <h3>
                             Cloud
                         </h3>
 
-
                         <p>
-
                             Cloud computing, infrastructure,
                             services and modern cloud technologies.
-
                         </p>
-
 
                         <span class="category-link">
                             Explore →
@@ -1924,7 +1775,6 @@
     </section>
 
 
-
     <!-- =========================
          CONTACT
     ========================= -->
@@ -1932,7 +1782,6 @@
     <section id="contact">
 
         <div class="container text-center reveal">
-
 
             <h2 class="section-title">
 
@@ -1944,14 +1793,12 @@
 
             </h2>
 
-
             <p class="section-subtitle">
                 Feel free to reach out
             </p>
 
 
-            <a
-                href="#"
+            <a href="#"
                 class="social-link"
                 aria-label="LinkedIn">
 
@@ -1960,8 +1807,7 @@
             </a>
 
 
-            <a
-                href="#"
+            <a href="#"
                 class="social-link"
                 aria-label="GitHub">
 
@@ -1970,8 +1816,7 @@
             </a>
 
 
-            <a
-                href="#"
+            <a href="#"
                 class="social-link"
                 aria-label="Gmail">
 
@@ -1982,7 +1827,6 @@
         </div>
 
     </section>
-
 
 
     <!-- =========================
@@ -2006,17 +1850,13 @@
     </footer>
 
 
-
     <!-- =========================
          BOOTSTRAP JAVASCRIPT
     ========================= -->
 
     <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwxHj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous">
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
-
 
 
     <!-- =========================
@@ -2024,7 +1864,6 @@
     ========================= -->
 
     <script>
-
 
         /* =========================
            TYPING EFFECT
@@ -2111,7 +1950,6 @@
         typeLoop();
 
 
-
         /* =========================
            NAVBAR SHADOW
         ========================= */
@@ -2138,7 +1976,6 @@
 
             }
         );
-
 
 
         /* =========================
@@ -2183,10 +2020,10 @@
             el => revealObserver.observe(el)
         );
 
-
     </script>
 
 
 </body>
 
 </html>
+```
