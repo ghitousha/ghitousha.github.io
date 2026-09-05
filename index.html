@@ -20,19 +20,25 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
         rel="stylesheet">
 
     <style>
 
         :root {
-            --burgundy: #9f1748;
-            --burgundy-light: #d6336c;
-            --dark: #0b0b10;
-            --dark-card: #15151d;
-            --text: #f5f5f5;
-            --muted: #a9a9b2;
+            --bg: #151017;
+            --bg-soft: #1b141b;
+            --card: #211820;
+            --card-border: #392732;
+            --burgundy: #8e3a5d;
+            --burgundy-light: #c76a8f;
+            --pink: #efa8be;
+            --pink-light: #f7d6e0;
+            --gold: #e8c07a;
+            --text: #fff7fa;
+            --muted: #c9b7c0;
         }
 
         html {
@@ -40,24 +46,87 @@
             scroll-padding-top: 80px;
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            * {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--dark);
+            background: var(--bg);
             color: var(--text);
+            overflow-x: hidden;
         }
 
         section {
             padding: 100px 0;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            letter-spacing: 0.2px;
         }
 
         .section-title {
-            font-weight: 700;
-            margin-bottom: 15px;
+            font-size: clamp(2rem, 3.5vw, 2.6rem);
+            margin-bottom: 12px;
+            color: var(--text);
         }
 
         .section-subtitle {
+            font-family: 'Poppins', sans-serif;
             color: var(--muted);
-            margin-bottom: 50px;
+            margin-bottom: 55px;
+            font-size: 1.02rem;
+        }
+
+        a { -webkit-tap-highlight-color: transparent; }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--pink);
+            outline-offset: 3px;
+        }
+
+        /* =========================
+           SPARKLES
+        ========================= */
+
+        .sparkle {
+            display: inline-block;
+            color: var(--pink);
+            animation: twinkle 2.6s ease-in-out infinite;
+        }
+
+        .sparkle.delay1 { animation-delay: .6s; }
+        .sparkle.delay2 { animation-delay: 1.2s; }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; transform: scale(0.85); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .float-deco {
+            position: absolute;
+            color: var(--pink);
+            opacity: 0.35;
+            font-size: 1.4rem;
+            animation: floaty 6s ease-in-out infinite;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @keyframes floaty {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-14px) rotate(8deg); }
         }
 
         /* =========================
@@ -65,24 +134,47 @@
         ========================= */
 
         .navbar {
-            background: rgba(11, 11, 16, 0.95);
+            background: rgba(21, 16, 23, 0.55);
             backdrop-filter: blur(10px);
+            transition: background 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(21, 16, 23, 0.94);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.35);
         }
 
         .navbar-brand {
-            color: var(--burgundy-light) !important;
-            font-weight: 700;
-            font-size: 1.4rem;
+            font-family: 'DM Serif Display', serif;
+            color: var(--pink) !important;
+            font-weight: 400;
+            font-size: 1.5rem;
         }
 
         .nav-link {
-            color: #ddd !important;
+            font-family: 'Poppins', sans-serif;
+            color: #ecdfe6 !important;
             margin-left: 15px;
             transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0; bottom: -2px;
+            width: 0%;
+            height: 1px;
+            background: var(--pink);
+            transition: width 0.3s ease;
         }
 
         .nav-link:hover {
-            color: var(--burgundy-light) !important;
+            color: var(--pink) !important;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         /* =========================
@@ -96,42 +188,60 @@
 
             background:
                 radial-gradient(
-                    circle at 20% 30%,
-                    rgba(159, 23, 72, 0.25),
-                    transparent 30%
+                    circle at 15% 25%,
+                    rgba(142, 58, 93, 0.35),
+                    transparent 32%
                 ),
                 radial-gradient(
-                    circle at 80% 70%,
-                    rgba(214, 51, 108, 0.12),
-                    transparent 30%
+                    circle at 85% 75%,
+                    rgba(239, 168, 190, 0.14),
+                    transparent 35%
                 ),
-                var(--dark);
+                var(--bg);
+        }
+
+        .hero-eyebrow {
+            color: var(--pink);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.3px;
         }
 
         .hero-title {
-            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-            font-weight: 700;
+            font-size: clamp(2.3rem, 4.6vw, 3.9rem);
+            line-height: 1.15;
         }
 
-        .hero-title span {
-            color: var(--burgundy-light);
+        .hero-title .accent {
+            color: var(--pink);
+            font-style: italic;
         }
 
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: #ddd;
+        .hero-typing-wrap {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.1rem, 2vw, 1.45rem);
+            color: #e4d3db;
+            margin-bottom: 1.4rem;
+            min-height: 1.6em;
+        }
+
+        #typed-text {
+            border-right: 2px solid var(--pink);
+            padding-right: 4px;
         }
 
         .hero-text {
             color: var(--muted);
-            max-width: 650px;
+            max-width: 620px;
+            line-height: 1.75;
         }
 
         .btn-main {
+            font-family: 'Poppins', sans-serif;
             background: var(--burgundy);
             border: none;
             color: white;
-            padding: 13px 28px;
+            padding: 13px 30px;
             border-radius: 30px;
             transition: 0.3s;
         }
@@ -140,12 +250,14 @@
             background: var(--burgundy-light);
             color: white;
             transform: translateY(-3px);
+            box-shadow: 0 10px 26px rgba(199, 106, 143, 0.35);
         }
 
         .btn-outline-main {
-            border: 1px solid var(--burgundy-light);
-            color: white;
-            padding: 12px 28px;
+            font-family: 'Poppins', sans-serif;
+            border: 1px solid var(--pink);
+            color: var(--pink-light);
+            padding: 12px 30px;
             border-radius: 30px;
             transition: 0.3s;
         }
@@ -153,6 +265,65 @@
         .btn-outline-main:hover {
             background: var(--burgundy);
             color: white;
+            border-color: var(--burgundy);
+        }
+
+        /* Hero portrait frame */
+
+        .portrait-wrap {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            margin: 0 auto;
+        }
+
+        .portrait-ring {
+            position: absolute;
+            inset: -14px;
+            border: 1px dashed rgba(239, 168, 190, 0.55);
+            border-radius: 50%;
+            animation: spin 18s linear infinite;
+        }
+
+        .portrait-ring::before,
+        .portrait-ring::after {
+            content: "✦";
+            position: absolute;
+            color: var(--pink);
+            font-size: 0.9rem;
+        }
+
+        .portrait-ring::before { top: -6px; left: 50%; transform: translateX(-50%); }
+        .portrait-ring::after { bottom: -6px; left: 50%; transform: translateX(-50%); }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .portrait-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(160deg, #2a1b25, #1b1420);
+            border: 3px solid var(--pink);
+            box-shadow: 0 0 45px rgba(239, 168, 190, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portrait-frame i {
+            font-size: 4.5rem;
+            color: var(--pink);
+            opacity: 0.85;
         }
 
         /* =========================
@@ -160,19 +331,20 @@
         ========================= */
 
         .about-card {
-            background: var(--dark-card);
-            border: 1px solid #292933;
-            border-radius: 20px;
-            padding: 40px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 45px;
         }
 
         .about-card p {
             color: var(--muted);
-            line-height: 1.8;
+            line-height: 1.85;
         }
 
         .about-card strong {
-            color: #fff;
+            color: var(--pink-light);
+            font-weight: 600;
         }
 
         /* =========================
@@ -180,30 +352,40 @@
         ========================= */
 
         .education-card {
-            background: var(--dark-card);
-            border: 1px solid #292933;
-            border-radius: 15px;
-            padding: 30px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 22px;
+            padding: 32px;
             height: 100%;
-            transition: 0.3s;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
         }
 
         .education-card:hover {
-            border-color: var(--burgundy);
-            transform: translateY(-5px);
+            border-color: var(--pink);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(239, 168, 190, 0.10);
         }
 
         .education-icon {
-            font-size: 2.2rem;
-            color: var(--burgundy-light);
-            margin-bottom: 20px;
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background: rgba(239, 168, 190, 0.12);
+            font-size: 1.5rem;
+            color: var(--pink);
+            margin-bottom: 22px;
         }
 
         .education-card h5 {
             margin-bottom: 12px;
+            font-size: 1.2rem;
         }
 
         .education-card p {
+            font-family: 'Poppins', sans-serif;
             color: var(--muted);
             margin-bottom: 0;
         }
@@ -213,17 +395,18 @@
         ========================= */
 
         .project-card {
-            background: var(--dark-card);
-            border: 1px solid #292933;
-            border-radius: 18px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
             overflow: hidden;
             height: 100%;
-            transition: 0.3s;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
         }
 
         .project-card:hover {
             transform: translateY(-8px);
-            border-color: var(--burgundy);
+            border-color: var(--pink);
+            box-shadow: 0 20px 40px rgba(239, 168, 190, 0.12);
         }
 
         .project-icon {
@@ -232,26 +415,34 @@
             align-items: center;
             justify-content: center;
 
-            background:
-                linear-gradient(135deg, #260b17, #111117);
+            background: linear-gradient(135deg, #2a1520, #17121a);
 
-            font-size: 4rem;
-            color: var(--burgundy-light);
+            font-size: 3.6rem;
+            color: var(--pink);
         }
 
         .project-content {
-            padding: 25px;
+            padding: 26px;
+        }
+
+        .project-content h4 {
+            font-size: 1.3rem;
         }
 
         .project-content p {
+            font-family: 'Poppins', sans-serif;
             color: var(--muted);
         }
 
         .badge-tech {
-            background: rgba(159, 23, 72, 0.2);
-            color: #f08aaa;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            background: rgba(142, 58, 93, 0.28);
+            color: var(--pink-light);
             margin-right: 5px;
             margin-bottom: 5px;
+            border-radius: 20px;
+            padding: 6px 12px;
         }
 
         /* =========================
@@ -259,30 +450,45 @@
         ========================= */
 
         .cert-card {
-            background: var(--dark-card);
-            border: 1px solid #292933;
-            border-radius: 15px;
-            padding: 25px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 22px;
+            padding: 26px;
             height: 100%;
-            transition: 0.3s;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
         }
 
         .cert-card:hover {
-            border-color: var(--burgundy);
-            transform: translateY(-5px);
+            border-color: var(--pink);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(239, 168, 190, 0.10);
         }
 
         .cert-icon {
-            font-size: 2rem;
-            color: #e8b94a;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: rgba(232, 192, 122, 0.14);
+            font-size: 1.35rem;
+            color: var(--gold);
+        }
+
+        .cert-card h5 {
+            font-size: 1.08rem;
+            margin-top: 16px;
         }
 
         .cert-card p {
+            font-family: 'Poppins', sans-serif;
             color: var(--muted);
         }
 
         .cert-card small {
-            color: #777;
+            font-family: 'Poppins', sans-serif;
+            color: #8f8290;
         }
 
         /* =========================
@@ -292,19 +498,19 @@
         .category-card {
             display: block;
             height: 100%;
-            padding: 35px 30px;
-            background: var(--dark-card);
-            border: 1px solid #292933;
-            border-radius: 18px;
+            padding: 36px 32px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
             text-decoration: none;
             color: var(--text);
-            transition: all 0.3s ease;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
         }
 
         .category-card:hover {
             transform: translateY(-8px);
-            border-color: var(--burgundy);
-            box-shadow: 0 15px 35px rgba(159, 23, 72, 0.18);
+            border-color: var(--pink);
+            box-shadow: 0 20px 40px rgba(239, 168, 190, 0.16);
             color: var(--text);
         }
 
@@ -315,9 +521,9 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 22px;
-            border-radius: 15px;
-            background: rgba(159, 23, 72, 0.12);
-            color: var(--burgundy-light);
+            border-radius: 16px;
+            background: rgba(142, 58, 93, 0.22);
+            color: var(--pink);
             font-size: 1.6rem;
             transition: 0.3s;
         }
@@ -329,19 +535,20 @@
 
         .category-card h3 {
             margin-bottom: 12px;
-            font-size: 1.35rem;
-            font-weight: 600;
+            font-size: 1.4rem;
         }
 
         .category-card p {
+            font-family: 'Poppins', sans-serif;
             color: var(--muted);
             line-height: 1.7;
             margin-bottom: 22px;
         }
 
         .category-link {
-            color: var(--burgundy-light);
-            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            color: var(--pink);
+            font-weight: 500;
         }
 
         /* =========================
@@ -349,7 +556,7 @@
         ========================= */
 
         #contact {
-            background: #0e0e14;
+            background: var(--bg-soft);
         }
 
         .social-link {
@@ -360,7 +567,7 @@
             align-items: center;
             justify-content: center;
 
-            border: 1px solid #33333d;
+            border: 1px solid #40323b;
             border-radius: 50%;
 
             color: white;
@@ -384,9 +591,25 @@
         ========================= */
 
         footer {
-            background: #07070a;
-            color: #777;
+            background: #100c12;
+            color: #8f8290;
             padding: 25px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* =========================
@@ -396,11 +619,7 @@
         @media (max-width: 768px) {
 
             .hero-title {
-                font-size: 2.6rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 2.4rem;
             }
 
             section {
@@ -408,9 +627,14 @@
             }
 
             .about-card {
-                padding: 25px;
+                padding: 26px;
             }
 
+            .portrait-wrap {
+                width: 190px;
+                height: 190px;
+                margin-bottom: 40px;
+            }
         }
 
     </style>
@@ -424,12 +648,12 @@
          NAVBAR
     ========================= -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
         <div class="container">
 
             <a class="navbar-brand" href="#home">
-                KHAIF-ALLAH Ghita
+                Ghita ♡
             </a>
 
             <button
@@ -494,32 +718,38 @@
 
         <div class="container">
 
-            <div class="row align-items-center">
+            <div class="row align-items-center g-5">
 
-                <div class="col-lg-8">
+                <div class="col-lg-4 order-lg-2 text-center">
 
-                    <p class="text-uppercase fw-semibold"
-                        style="color:#d6336c;">
+                    <div class="portrait-wrap">
+                        <div class="portrait-ring"></div>
+                        <div class="portrait-frame">
+                            <i class="bi bi-person-heart"></i>
+                        </div>
+                    </div>
 
+                </div>
+
+                <div class="col-lg-8 order-lg-1">
+
+                    <p class="hero-eyebrow mb-2">
                         Computer Engineering Student
-
+                        <span class="sparkle">✦</span>
                     </p>
 
-                    <h1 class="hero-title">
-                        Welcome to my <span>tech space.</span>
+                    <h1 class="hero-title mb-3">
+                        Welcome to my <span class="accent">tech space</span>
                     </h1>
 
-                    <h2 class="hero-subtitle mb-4">
-                        Cybersecurity • Data • IoT • Networks
-                    </h2>
-
-                    <p class="hero-text mb-2">
-                        Learning. Building. Sharing.
-                    </p>
+                    <div class="hero-typing-wrap">
+                        <span id="typed-text"></span>
+                    </div>
 
                     <p class="hero-text mb-4">
                         A personal space where I document what I learn,
-                        explore technology, and share ideas along the way.
+                        explore technology, and share ideas along the way
+                        <span class="sparkle delay1">♡</span>
                     </p>
 
                     <a href="#blog"
@@ -553,10 +783,10 @@
 
         <div class="container">
 
-            <div class="text-center">
+            <div class="text-center reveal">
 
                 <h2 class="section-title">
-                    About Me
+                    About Me <span class="sparkle">♡</span>
                 </h2>
 
                 <p class="section-subtitle">
@@ -565,7 +795,7 @@
 
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center reveal">
 
                 <div class="col-lg-9">
 
@@ -578,7 +808,7 @@
                         </p>
 
                         <p>
-                            I’m KHAIF-ALLAH Ghita, a Computer Engineering student with
+                            I'm KHAIF-ALLAH Ghita, a Computer Engineering student with
                             a strong curiosity for technology and a particular
                             interest in
                             <strong>Cybersecurity, Data, IoT and Networking</strong>.
@@ -593,12 +823,12 @@
                         <p>
                             I created this blog to document my learning journey
                             and share the things I discover along the way.
-                            You’ll find technical notes, tutorials, projects,
-                            ideas and sometimes just something interesting I’ve learned.
+                            You'll find technical notes, tutorials, projects,
+                            ideas and sometimes just something interesting I've learned.
                         </p>
 
                         <p class="mb-0">
-                            I’m still learning, still experimenting, and always
+                            I'm still learning, still experimenting, and always
                             curious about what comes next. 💻✨
                         </p>
 
@@ -621,7 +851,7 @@
 
         <div class="container">
 
-            <div class="text-center">
+            <div class="text-center reveal">
 
                 <h2 class="section-title">
                     Education
@@ -635,11 +865,13 @@
 
             <div class="row g-4 justify-content-center">
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 reveal">
 
                     <div class="education-card">
 
-                        <i class="bi bi-mortarboard-fill education-icon"></i>
+                        <div class="education-icon">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
 
                         <h5>
                             Engineering Cycle — Computer Science, Data & IoT
@@ -653,11 +885,13 @@
 
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 reveal">
 
                     <div class="education-card">
 
-                        <i class="bi bi-award-fill education-icon"></i>
+                        <div class="education-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
 
                         <h5>
                             BTS — Computer Systems & Networks
@@ -671,11 +905,13 @@
 
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 reveal">
 
                     <div class="education-card">
 
-                        <i class="bi bi-book-fill education-icon"></i>
+                        <div class="education-icon">
+                            <i class="bi bi-book-fill"></i>
+                        </div>
 
                         <h5>
                             Baccalaureate — Physics & Chemistry
@@ -704,7 +940,7 @@
 
         <div class="container">
 
-            <div class="text-center">
+            <div class="text-center reveal">
 
                 <h2 class="section-title">
                     My Projects
@@ -720,7 +956,7 @@
 
                 <!-- IoT Diabetes Monitoring -->
 
-                <div class="col-lg-5 col-md-6">
+                <div class="col-lg-5 col-md-6 reveal">
 
                     <div class="project-card">
 
@@ -737,10 +973,10 @@
                                 designed for health monitoring and prediction.
                             </p>
 
-                            <span class="badge badge-tech">Python</span>
-                            <span class="badge badge-tech">IoT</span>
-                            <span class="badge badge-tech">Machine Learning</span>
-                            <span class="badge badge-tech">Django</span>
+                            <span class="badge-tech">Python</span>
+                            <span class="badge-tech">IoT</span>
+                            <span class="badge-tech">Machine Learning</span>
+                            <span class="badge-tech">Django</span>
 
                         </div>
 
@@ -751,7 +987,7 @@
 
                 <!-- Student Absence Management -->
 
-                <div class="col-lg-5 col-md-6">
+                <div class="col-lg-5 col-md-6 reveal">
 
                     <div class="project-card">
 
@@ -768,9 +1004,9 @@
                                 to manage student attendance and absences.
                             </p>
 
-                            <span class="badge badge-tech">Django</span>
-                            <span class="badge badge-tech">Python</span>
-                            <span class="badge badge-tech">Database</span>
+                            <span class="badge-tech">Django</span>
+                            <span class="badge-tech">Python</span>
+                            <span class="badge-tech">Database</span>
 
                         </div>
 
@@ -793,7 +1029,7 @@
 
         <div class="container">
 
-            <div class="text-center">
+            <div class="text-center reveal">
 
                 <h2 class="section-title">
                     Certifications
@@ -807,11 +1043,11 @@
 
             <div class="row g-4">
 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
 
-                        <div class="cert-icon mb-3">
+                        <div class="cert-icon">
                             <i class="bi bi-router"></i>
                         </div>
 
@@ -831,11 +1067,11 @@
 
                 </div>
 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
 
-                        <div class="cert-icon mb-3">
+                        <div class="cert-icon">
                             <i class="bi bi-shield-lock"></i>
                         </div>
 
@@ -855,11 +1091,11 @@
 
                 </div>
 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
 
-                        <div class="cert-icon mb-3">
+                        <div class="cert-icon">
                             <i class="bi bi-shield-check"></i>
                         </div>
 
@@ -879,11 +1115,11 @@
 
                 </div>
 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
 
-                        <div class="cert-icon mb-3">
+                        <div class="cert-icon">
                             <i class="bi bi-database-lock"></i>
                         </div>
 
@@ -903,11 +1139,11 @@
 
                 </div>
 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
 
-                        <div class="cert-icon mb-3">
+                        <div class="cert-icon">
                             <i class="bi bi-bar-chart-line"></i>
                         </div>
 
@@ -927,11 +1163,11 @@
 
                 </div>
 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 reveal">
 
                     <div class="cert-card">
 
-                        <div class="cert-icon mb-3">
+                        <div class="cert-icon">
                             <i class="bi bi-robot"></i>
                         </div>
 
@@ -966,7 +1202,7 @@
 
     <div class="container">
 
-        <div class="text-center">
+        <div class="text-center reveal">
 
             <h2 class="section-title">
                 Blog
@@ -982,7 +1218,7 @@
 
             <!-- Cybersecurity -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal">
 
                 <a href="blog/cybersecurity.html"
                     class="category-card">
@@ -1011,7 +1247,7 @@
 
             <!-- IoT -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal">
 
                 <a href="blog/iot.html"
                     class="category-card">
@@ -1040,7 +1276,7 @@
 
             <!-- Artificial Intelligence -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal">
 
                 <a href="blog/ai.html"
                     class="category-card">
@@ -1069,7 +1305,7 @@
 
             <!-- Data -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal">
 
                 <a href="blog/data.html"
                     class="category-card">
@@ -1098,7 +1334,7 @@
 
             <!-- Networking -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal">
 
                 <a href="blog/networking.html"
                     class="category-card">
@@ -1127,7 +1363,7 @@
 
             <!-- Cloud -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal">
 
                 <a href="blog/cloud.html"
                     class="category-card">
@@ -1161,6 +1397,39 @@
 
 
     <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+        <div class="container text-center reveal">
+
+            <h2 class="section-title">
+                Let's Connect <span class="sparkle">✧</span>
+            </h2>
+
+            <p class="section-subtitle">
+                Feel free to reach out
+            </p>
+
+            <a href="#" class="social-link" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+            </a>
+
+            <a href="#" class="social-link" aria-label="GitHub">
+                <i class="bi bi-github"></i>
+            </a>
+
+            <a href="#" class="social-link" aria-label="Gmail">
+                <i class="bi bi-envelope-fill"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
          FOOTER
     ========================= -->
 
@@ -1184,6 +1453,74 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwxHj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous">
+    </script>
+
+    <!-- Custom JS: typing effect, scroll reveal, navbar shadow -->
+    <script>
+        // Typing effect
+        const phrases = [
+            "Cybersecurity • Data ✦",
+            "Cybersecurity • IoT ✦",
+            "Cybersecurity • Networking ✦",
+            "Cybersecurity • AI ✦"
+        ];
+
+        const typedEl = document.getElementById('typed-text');
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeLoop() {
+            const current = phrases[phraseIndex];
+
+            if (!deleting) {
+                charIndex++;
+                typedEl.textContent = current.slice(0, charIndex);
+
+                if (charIndex === current.length) {
+                    deleting = true;
+                    setTimeout(typeLoop, 1400);
+                    return;
+                }
+            } else {
+                charIndex--;
+                typedEl.textContent = current.slice(0, charIndex);
+
+                if (charIndex === 0) {
+                    deleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                }
+            }
+
+            setTimeout(typeLoop, deleting ? 45 : 65);
+        }
+
+        typeLoop();
+
+        // Navbar shadow on scroll
+        const nav = document.getElementById('mainNav');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealEls.forEach(el => revealObserver.observe(el));
     </script>
 
 </body>
