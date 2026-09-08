@@ -228,7 +228,7 @@
 
         .category-hero p {
 
-            max-width: 650px;
+            max-width: 680px;
 
             margin: 0 auto;
 
@@ -249,7 +249,7 @@
 
 
         /* =========================
-           ARTICLES
+           ARTICLES SECTION
         ========================= */
 
         .articles-section {
@@ -287,152 +287,6 @@
 
 
         /* =========================
-           ARTICLE CARD
-        ========================= */
-
-        .article-card {
-
-            display: flex;
-
-            flex-direction: column;
-
-            height: 100%;
-
-            padding: 30px;
-
-            background: var(--card);
-
-            border: 1px solid var(--card-border);
-
-            border-radius: 24px;
-
-            color: var(--text);
-
-            transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
-
-        }
-
-
-        .article-card:hover {
-
-            transform: translateY(-8px);
-
-            border-color: var(--pink);
-
-            box-shadow:
-                0 20px 45px rgba(239, 168, 190, 0.12);
-
-            color: var(--text);
-
-        }
-
-
-        .article-top {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            margin-bottom: 22px;
-
-        }
-
-
-        .article-category {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 7px;
-
-            padding: 6px 12px;
-
-            border-radius: 20px;
-
-            background: rgba(142, 58, 93, 0.25);
-
-            color: var(--pink-light);
-
-            font-size: 0.82rem;
-
-            font-weight: 700;
-
-        }
-
-
-        .article-date {
-
-            color: #968591;
-
-            font-size: 0.82rem;
-
-            font-weight: 600;
-
-        }
-
-
-        .article-card h3 {
-
-            font-size: 1.55rem;
-
-            line-height: 1.3;
-
-            margin-bottom: 15px;
-
-        }
-
-
-        .article-card p {
-
-            color: var(--muted);
-
-            line-height: 1.75;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        .article-bottom {
-
-            margin-top: auto;
-
-        }
-
-
-        .read-more {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-            color: var(--pink);
-
-            font-weight: 700;
-
-            transition: 0.3s;
-
-        }
-
-
-        .article-card:hover .read-more {
-
-            color: var(--pink-light);
-
-            gap: 12px;
-
-        }
-
-
-        /* =========================
            BACK BUTTON
         ========================= */
 
@@ -458,6 +312,343 @@
         .back-home:hover {
 
             color: var(--pink);
+
+        }
+
+
+        /* =========================
+           CATEGORY ACCORDION
+        ========================= */
+
+        .category-block {
+
+            max-width: 950px;
+
+            margin: 0 auto 22px;
+
+            background: var(--card);
+
+            border: 1px solid var(--card-border);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+
+        }
+
+
+        .category-block:hover {
+
+            border-color: rgba(239, 168, 190, 0.35);
+
+        }
+
+
+        .category-header {
+
+            width: 100%;
+
+            border: none;
+
+            background: transparent;
+
+            color: var(--text);
+
+            padding: 25px 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            text-align: left;
+
+            cursor: pointer;
+
+        }
+
+
+        .category-header:hover {
+
+            color: var(--pink);
+
+        }
+
+
+        .category-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+        }
+
+
+        .category-number {
+
+            width: 45px;
+
+            height: 45px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: rgba(142, 58, 93, 0.25);
+
+            border: 1px solid var(--card-border);
+
+            color: var(--pink);
+
+            font-weight: 700;
+
+            font-size: 0.9rem;
+
+        }
+
+
+        .category-name {
+
+            margin: 0;
+
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 1.6rem;
+
+            font-weight: 400;
+
+        }
+
+
+        .category-description {
+
+            margin: 4px 0 0;
+
+            color: var(--muted);
+
+            font-size: 0.9rem;
+
+        }
+
+
+        .toggle-icon {
+
+            color: var(--pink);
+
+            font-size: 1.4rem;
+
+            transition: transform 0.3s ease;
+
+        }
+
+
+        .category-block.active .toggle-icon {
+
+            transform: rotate(45deg);
+
+        }
+
+
+        /* =========================
+           CATEGORY CONTENT
+        ========================= */
+
+        .category-content {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.45s ease;
+
+        }
+
+
+        .category-inner {
+
+            padding: 0 30px 30px;
+
+            border-top: 1px solid rgba(239, 168, 190, 0.08);
+
+        }
+
+
+        /* =========================
+           ARTICLE ITEM
+        ========================= */
+
+        .article-item {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 20px 0;
+
+            border-bottom: 1px solid rgba(239, 168, 190, 0.08);
+
+            color: var(--text);
+
+            transition: 0.3s;
+
+        }
+
+
+        .article-item:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .article-item:hover {
+
+            color: var(--pink);
+
+            padding-left: 8px;
+
+        }
+
+
+        .article-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+        }
+
+
+        .article-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: rgba(142, 58, 93, 0.20);
+
+            color: var(--pink);
+
+        }
+
+
+        .article-title {
+
+            font-weight: 600;
+
+            margin: 0;
+
+        }
+
+
+        .article-description {
+
+            color: var(--muted);
+
+            font-size: 0.85rem;
+
+            margin: 3px 0 0;
+
+        }
+
+
+        .article-arrow {
+
+            color: var(--pink);
+
+            font-size: 1.1rem;
+
+            transition: 0.3s;
+
+        }
+
+
+        .article-item:hover .article-arrow {
+
+            transform: translateX(5px);
+
+        }
+
+
+        /* =========================
+           COMING SOON
+        ========================= */
+
+        .coming-soon {
+
+            cursor: default;
+
+            opacity: 0.75;
+
+        }
+
+
+        .coming-soon:hover {
+
+            padding-left: 0;
+
+            color: var(--text);
+
+        }
+
+
+        .coming-soon .article-icon {
+
+            background: rgba(255, 255, 255, 0.04);
+
+            color: #a8959e;
+
+        }
+
+
+        .status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            color: #a8959e;
+
+            font-size: 0.72rem;
+
+            font-weight: 700;
+
+            white-space: nowrap;
 
         }
 
@@ -501,9 +692,51 @@
             }
 
 
-            .article-card {
+            .category-header {
 
-                padding: 25px;
+                padding: 22px;
+
+            }
+
+
+            .category-inner {
+
+                padding: 0 22px 25px;
+
+            }
+
+
+            .category-info {
+
+                gap: 12px;
+
+            }
+
+
+            .category-name {
+
+                font-size: 1.35rem;
+
+            }
+
+
+            .category-description {
+
+                font-size: 0.82rem;
+
+            }
+
+
+            .article-item {
+
+                align-items: flex-start;
+
+            }
+
+
+            .article-description {
+
+                display: none;
 
             }
 
@@ -526,7 +759,7 @@
         <div class="container">
 
             <a class="navbar-brand" href="../index.html">
-                GK 
+                GK
             </a>
 
 
@@ -585,7 +818,7 @@
 
 
     <!-- =========================
-         CATEGORY HERO
+         HERO
     ========================= -->
 
     <header class="category-hero">
@@ -600,18 +833,15 @@
 
 
             <h1>
-
                 Cybersecurity
-                <span></span>
-
             </h1>
 
 
             <p>
 
-                Notes, concepts, tools and things I'm learning
-                about cybersecurity, from fundamental concepts
-                to defensive techniques.
+                Exploring cybersecurity through concepts, threats,
+                defensive techniques and technologies I'm learning
+                along the way.
 
                 <span class="sparkle">✦</span>
 
@@ -623,7 +853,7 @@
 
 
     <!-- =========================
-         ARTICLES
+         CONTENT
     ========================= -->
 
     <main class="articles-section">
@@ -647,193 +877,712 @@
             <div class="articles-title">
 
                 <h2>
-                    Cybersecurity Articles
+                    Explore My Cybersecurity Journey
                 </h2>
 
                 <p>
-                    Explore what I've been learning
+                    Concepts, attacks, defense and technologies I'm learning.
                 </p>
 
             </div>
 
 
-            <!-- ARTICLES -->
+            <!-- =========================
+                 01 — FUNDAMENTALS
+            ========================= -->
 
-            <div class="row g-4">
+            <div class="category-block">
 
+                <button class="category-header" type="button">
 
-                <!-- ARTICLE 1 -->
+                    <div class="category-info">
 
-                <div class="col-md-6 col-lg-4">
+                        <div class="category-number">
+                            01
+                        </div>
 
-                    <a
-                        href="cybersecurity/cia-triad.html"
-                        class="article-card">
+                        <div>
 
-                        <div class="article-top">
+                            <h3 class="category-name">
+                                Fundamentals
+                            </h3>
 
-                            <span class="article-category">
-
-                                <i class="bi bi-shield-check"></i>
-
-                                Cybersecurity
-
-                            </span>
-
-
-                            <span class="article-date">
-                                September 2026
-                            </span>
+                            <p class="category-description">
+                                The essential concepts behind cybersecurity.
+                            </p>
 
                         </div>
 
-
-                        <h3>
-                            Understanding the CIA Triad
-                        </h3>
+                    </div>
 
 
-                        <p>
+                    <i class="bi bi-plus-lg toggle-icon"></i>
 
-                            An introduction to the three fundamental
-                            principles of cybersecurity: Confidentiality,
-                            Integrity and Availability.
-
-                        </p>
+                </button>
 
 
-                        <div class="article-bottom">
+                <div class="category-content">
 
-                            <span class="read-more">
-
-                                Read article
-
-                                <i class="bi bi-arrow-right"></i>
-
-                            </span>
-
-                        </div>
-
-                    </a>
-
-                </div>
+                    <div class="category-inner">
 
 
-                <!-- ARTICLE 2 -->
+                        <!-- ARTICLE -->
 
-                <div class="col-md-6 col-lg-4">
+                        <a
+                            href="cybersecurity/what-is-cybersecurity.html"
+                            class="article-item">
 
-                    <a
-                        href="cybersecurity/owasp-top-10.html"
-                        class="article-card">
+                            <div class="article-info">
 
-                        <div class="article-top">
+                                <div class="article-icon">
+                                    <i class="bi bi-shield-lock"></i>
+                                </div>
 
-                            <span class="article-category">
+                                <div>
 
-                                <i class="bi bi-shield-lock"></i>
+                                    <p class="article-title">
+                                        What Is Cybersecurity?
+                                    </p>
 
-                                Cybersecurity
+                                    <p class="article-description">
+                                        Understanding cybersecurity, personal data,
+                                        digital identity and cyber risks.
+                                    </p>
 
-                            </span>
+                                </div>
+
+                            </div>
 
 
-                            <span class="article-date">
+                            <i class="bi bi-arrow-right article-arrow"></i>
+
+                        </a>
+
+
+                        <!-- COMING SOON -->
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Understanding the CIA Triad
+                                    </p>
+
+                                    <p class="article-description">
+                                        Confidentiality, Integrity and Availability.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
                                 Coming soon
                             </span>
 
                         </div>
 
 
-                        <h3>
-                            OWASP Top 10
-                        </h3>
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-person-lock"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Authentication & Authorization
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding identity, access and permissions.
+                                    </p>
+
+                                </div>
+
+                            </div>
 
 
-                        <p>
-
-                            A beginner-friendly introduction to the
-                            most important web application security
-                            risks.
-
-                        </p>
-
-
-                        <div class="article-bottom">
-
-                            <span class="read-more">
-
-                                Read article
-
-                                <i class="bi bi-arrow-right"></i>
-
-                            </span>
-
-                        </div>
-
-                    </a>
-
-                </div>
-
-
-                <!-- ARTICLE 3 -->
-
-                <div class="col-md-6 col-lg-4">
-
-                    <a
-                        href="cybersecurity/mitre-attack.html"
-                        class="article-card">
-
-                        <div class="article-top">
-
-                            <span class="article-category">
-
-                                <i class="bi bi-crosshair"></i>
-
-                                Cybersecurity
-
-                            </span>
-
-
-                            <span class="article-date">
+                            <span class="status">
                                 Coming soon
                             </span>
 
                         </div>
 
 
-                        <h3>
-                            Introduction to MITRE ATT&CK
-                        </h3>
-
-
-                        <p>
-
-                            Discover how MITRE ATT&CK helps security
-                            professionals understand attacker tactics
-                            and techniques.
-
-                        </p>
-
-
-                        <div class="article-bottom">
-
-                            <span class="read-more">
-
-                                Read article
-
-                                <i class="bi bi-arrow-right"></i>
-
-                            </span>
-
-                        </div>
-
-                    </a>
+                    </div>
 
                 </div>
-
 
             </div>
+
+
+            <!-- =========================
+                 02 — ATTACKS & THREATS
+            ========================= -->
+
+            <div class="category-block">
+
+                <button class="category-header" type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                Attacks & Threats
+                            </h3>
+
+                            <p class="category-description">
+                                Understanding how cyberattacks happen.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-database-x"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        How Do Data Breaches Happen?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding how attackers gain access
+                                        to sensitive information.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-envelope-exclamation"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        What Is Phishing?
+                                    </p>
+
+                                    <p class="article-description">
+                                        How attackers use deception to steal
+                                        information and credentials.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-bug"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        What Is Malware?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring malicious software and its
+                                        different forms.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        How Does Social Engineering Work?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding the human side of
+                                        cyberattacks.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 03 — NETWORK SECURITY
+            ========================= -->
+
+            <div class="category-block">
+
+                <button class="category-header" type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                Network Security
+                            </h3>
+
+                            <p class="category-description">
+                                Protecting networks, traffic and connected systems.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-diagram-3"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        What Is Network Security?
+                                    </p>
+
+                                    <p class="article-description">
+                                        The fundamentals of protecting
+                                        connected systems and networks.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-bricks"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        How Do Firewalls Work?
+                                    </p>
+
+                                    <p class="article-description">
+                                        How firewalls control and filter
+                                        network traffic.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-radar"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        IDS vs IPS: What's the Difference?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Comparing two important network
+                                        security technologies.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 04 — BLUE TEAM
+            ========================= -->
+
+            <div class="category-block">
+
+                <button class="category-header" type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                Blue Team
+                            </h3>
+
+                            <p class="category-description">
+                                Detecting, defending and responding to threats.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-shield-fill-check"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        What Is a SOC?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Inside the Security Operations Center
+                                        and its role in cybersecurity.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-bar-chart-line"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        What Is a SIEM?
+                                    </p>
+
+                                    <p class="article-description">
+                                        How security teams collect and analyze
+                                        security events.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-arrow-repeat"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        How Does Incident Response Work?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding the process of responding
+                                        to cybersecurity incidents.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 05 — IOT SECURITY
+            ========================= -->
+
+            <div class="category-block">
+
+                <button class="category-header" type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            05
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                IoT Security
+                            </h3>
+
+                            <p class="category-description">
+                                Securing connected devices and smart systems.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-cpu"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Why Is IoT Security Important?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding the security challenges
+                                        of connected devices.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-lock"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        How Can IoT Devices Be Secured?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Practical approaches to protecting
+                                        connected devices.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
 
@@ -861,8 +1610,68 @@
 
 
     <!-- =========================
-         BOOTSTRAP JS
+         JAVASCRIPT
     ========================= -->
+
+    <script>
+
+        const categoryHeaders =
+            document.querySelectorAll('.category-header');
+
+
+        categoryHeaders.forEach(header => {
+
+            header.addEventListener('click', () => {
+
+                const category =
+                    header.parentElement;
+
+                const content =
+                    category.querySelector('.category-content');
+
+
+                const isOpen =
+                    category.classList.contains('active');
+
+
+                /*
+                 * Close all categories
+                 */
+
+                document
+                    .querySelectorAll('.category-block')
+                    .forEach(block => {
+
+                        block.classList.remove('active');
+
+                        block
+                            .querySelector('.category-content')
+                            .style.maxHeight = null;
+
+                    });
+
+
+                /*
+                 * Open selected category
+                 */
+
+                if (!isOpen) {
+
+                    category.classList.add('active');
+
+                    content.style.maxHeight =
+                        content.scrollHeight + 'px';
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+    <!-- Bootstrap JS -->
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
