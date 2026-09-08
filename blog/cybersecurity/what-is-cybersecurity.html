@@ -21,6 +21,7 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+
     <style>
 
         /* =========================
@@ -61,18 +62,25 @@
             justify-content: space-between;
             align-items: center;
 
-            background: #f1d5e1;
-            border-bottom: 1px solid #e4bdce;
+            background: #ffffff;
+            border-bottom: 1px solid #f0e3e8;
         }
 
         .logo {
             text-decoration: none;
+
             color: #681b3b;
 
             font-size: 1.2rem;
             font-weight: 700;
 
             letter-spacing: 1px;
+
+            transition: 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #9c315c;
         }
 
         .back-link {
@@ -81,6 +89,7 @@
             gap: 8px;
 
             text-decoration: none;
+
             color: #681b3b;
 
             font-size: 0.95rem;
@@ -101,17 +110,21 @@
 
         .article-header {
             max-width: 900px;
+
             margin: 60px auto 55px;
 
             padding: 48px 30px;
 
             text-align: center;
 
-            background: #f1d5e1;
-            border: 1px solid #e4bdce;
+            /* Very light blush */
+            background: #f9eef3;
+
+            border: 1px solid #f0dfe6;
+
             border-radius: 24px;
 
-            box-shadow: 0 10px 30px rgba(122, 31, 69, 0.08);
+            box-shadow: 0 10px 30px rgba(104, 27, 59, 0.05);
         }
 
         .category {
@@ -120,7 +133,8 @@
             padding: 6px 14px;
             margin-bottom: 18px;
 
-            background: #ead0dc;
+            background: #f1dfe7;
+
             color: #7a1f45;
 
             border-radius: 30px;
@@ -168,12 +182,15 @@
 
         main {
             max-width: 850px;
+
             margin: 0 auto;
+
             padding: 0 25px 70px;
         }
 
         .intro {
             font-size: 1.05rem;
+
             margin-bottom: 25px;
         }
 
@@ -184,14 +201,19 @@
 
         .highlight {
             margin: 35px 0;
+
             padding: 25px 28px;
 
-            background: #f8e9ef;
+            background: #fff;
 
             border-left: 4px solid #9c315c;
-            border-radius: 14px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(104, 27, 59, 0.04);
 
             color: #633d4c;
+
             font-weight: 600;
         }
 
@@ -207,20 +229,24 @@
 
             background: #ffffff;
 
-            border: 1px solid #efd9e3;
+            border: 1px solid #eee1e6;
+
             border-radius: 18px;
 
-            box-shadow: 0 8px 25px rgba(122, 31, 69, 0.05);
+            box-shadow: 0 8px 25px rgba(104, 27, 59, 0.04);
         }
 
         .article-nav h2 {
             display: flex;
+
             align-items: center;
+
             gap: 10px;
 
             margin-bottom: 18px;
 
             font-size: 1.15rem;
+
             color: #681b3b;
         }
 
@@ -252,6 +278,7 @@
             color: #6f5260;
 
             font-size: 0.95rem;
+
             font-weight: 500;
 
             transition: 0.25s ease;
@@ -284,6 +311,7 @@
 
         section h3 {
             margin-top: 25px;
+
             margin-bottom: 10px;
 
             color: #7a1f45;
@@ -297,6 +325,7 @@
 
         ul.content-list {
             padding-left: 25px;
+
             margin: 15px 0 20px;
         }
 
@@ -314,10 +343,11 @@
 
             padding: 28px;
 
-            background: #f8e9ef;
+            background: #fdf7f9;
+
+            border: 1px solid #f0e3e8;
 
             border-radius: 18px;
-            border: 1px solid #efd1de;
         }
 
         .key-points h2 {
@@ -363,7 +393,9 @@
 
             padding: 30px 20px;
 
-            border-top: 1px solid #efd9e3;
+            background: #ffffff;
+
+            border-top: 1px solid #f0e3e8;
 
             color: #9b7283;
 
@@ -387,6 +419,7 @@
 
             .article-header {
                 margin: 35px 15px 40px;
+
                 padding: 38px 20px;
 
                 border-radius: 20px;
@@ -414,6 +447,7 @@
         }
 
     </style>
+
 </head>
 
 
@@ -431,8 +465,11 @@
         </a>
 
         <a href="../cybersecurity.html" class="back-link">
+
             <i class="bi bi-arrow-left"></i>
+
             Back to Cybersecurity
+
         </a>
 
     </nav>
@@ -507,8 +544,11 @@
         <div class="article-nav">
 
             <h2>
+
                 <i class="bi bi-list"></i>
+
                 In this article
+
             </h2>
 
             <ul>
