@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="What is cybersecurity? An introduction to cybersecurity, personal data, digital identity, cyber threats, and why protecting our digital lives matters.">
+        content="What is cybersecurity? Learn what cybersecurity protects, why personal data matters, and how cyber threats affect our digital lives.">
 
     <title>What Is Cybersecurity? | Ghita Khaifallah</title>
 
@@ -14,8 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Bootstrap Icons -->
@@ -23,6 +22,10 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
 
         * {
             margin: 0;
@@ -37,8 +40,12 @@
         body {
             font-family: "Quicksand", sans-serif;
             background: #fff8fb;
-            color: #3d2632;
+            color: #4f3943;
             line-height: 1.8;
+        }
+
+        a {
+            color: inherit;
         }
 
 
@@ -49,30 +56,42 @@
         .navbar {
             width: 100%;
             padding: 22px 8%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #fff8fb;
-            border-bottom: 1px solid #f0dce5;
+
+            background: #f1d5e1;
+            border-bottom: 1px solid #e4bdce;
         }
 
         .logo {
             text-decoration: none;
-            color: #7a1f45;
-            font-weight: 700;
+            color: #681b3b;
+
             font-size: 1.2rem;
+            font-weight: 700;
+
             letter-spacing: 1px;
         }
 
         .back-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
             text-decoration: none;
-            color: #7a1f45;
+            color: #681b3b;
+
+            font-size: 0.95rem;
             font-weight: 600;
-            transition: 0.3s;
+
+            transition: 0.3s ease;
         }
 
         .back-link:hover {
-            color: #b33d6e;
+            color: #9c315c;
+            transform: translateX(-3px);
         }
 
 
@@ -83,211 +102,206 @@
         .article-header {
             max-width: 900px;
             margin: 60px auto 55px;
+
             padding: 48px 30px;
+
             text-align: center;
 
-            background: #f6e3eb;
-            border: 1px solid #efd1de;
+            background: #f1d5e1;
+            border: 1px solid #e4bdce;
             border-radius: 24px;
 
-            box-shadow: 0 10px 30px rgba(122, 31, 69, 0.06);
+            box-shadow: 0 10px 30px rgba(122, 31, 69, 0.08);
         }
 
         .category {
             display: inline-block;
-            padding: 7px 16px;
-            border-radius: 30px;
+
+            padding: 6px 14px;
+            margin-bottom: 18px;
 
             background: #ead0dc;
             color: #7a1f45;
 
-            font-size: 0.85rem;
+            border-radius: 30px;
+
+            font-size: 0.78rem;
             font-weight: 700;
 
-            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .article-header h1 {
             font-family: "DM Serif Display", serif;
-            font-size: clamp(3rem, 7vw, 5rem);
+
+            font-size: clamp(2.4rem, 6vw, 4rem);
 
             color: #681b3b;
 
-            line-height: 1.1;
-            margin-bottom: 22px;
+            line-height: 1.2;
+
+            margin-bottom: 18px;
         }
 
         .subtitle {
-            max-width: 720px;
-            margin: auto;
+            max-width: 700px;
 
-            font-size: 1.1rem;
+            margin: 0 auto 18px;
+
             color: #795c68;
+
+            font-size: 1.05rem;
         }
 
         .meta {
-            margin-top: 25px;
-
-            font-size: 0.9rem;
             color: #9b7283;
+
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
 
         /* =========================
-           ARTICLE
+           MAIN CONTENT
         ========================= */
 
-        .article-container {
+        main {
             max-width: 850px;
-            margin: 0 auto 80px;
-            padding: 0 25px;
+            margin: 0 auto;
+            padding: 0 25px 70px;
         }
 
-        .article-container h2 {
-            font-family: "DM Serif Display", serif;
-
-            color: #681b3b;
-
-            font-size: 2rem;
-            margin: 55px 0 18px;
-
-            line-height: 1.3;
-
-            scroll-margin-top: 35px;
-        }
-
-        .article-container h3 {
-            color: #7a1f45;
-            margin: 30px 0 12px;
-        }
-
-        .article-container p {
-            margin-bottom: 20px;
-
-            color: #4f3b44;
-
-            font-size: 1.02rem;
-        }
-
-        .article-container strong {
-            color: #681b3b;
+        .intro {
+            font-size: 1.05rem;
+            margin-bottom: 25px;
         }
 
 
         /* =========================
-           HIGHLIGHT BOX
+           DEFINITION BOX
         ========================= */
 
         .highlight {
             margin: 35px 0;
-            padding: 25px 30px;
+            padding: 25px 28px;
 
-            background: #f8e8ef;
+            background: #f8e9ef;
 
             border-left: 4px solid #9c315c;
+            border-radius: 14px;
 
-            border-radius: 12px;
-        }
-
-        .highlight p {
-            margin: 0;
-            color: #5d3445;
+            color: #633d4c;
+            font-weight: 600;
         }
 
 
         /* =========================
-           ARTICLE NAVIGATION
+           IN THIS ARTICLE
         ========================= */
 
         .article-nav {
-            margin: 45px 0 55px;
-            padding: 28px 30px;
+            margin: 45px 0;
+
+            padding: 25px 28px;
 
             background: #ffffff;
 
             border: 1px solid #efd9e3;
             border-radius: 18px;
 
-            box-shadow: 0 8px 25px rgba(122, 31, 69, 0.06);
+            box-shadow: 0 8px 25px rgba(122, 31, 69, 0.05);
         }
 
-        .article-nav-title {
+        .article-nav h2 {
             display: flex;
             align-items: center;
             gap: 10px;
 
-            margin-bottom: 20px;
+            margin-bottom: 18px;
 
+            font-size: 1.15rem;
             color: #681b3b;
-
-            font-family: "DM Serif Display", serif;
-            font-size: 1.5rem;
         }
 
-        .article-nav-title i {
-            color: #9c315c;
-            font-size: 1.1rem;
+        .article-nav h2 i {
+            font-size: 1rem;
         }
 
         .article-nav ul {
             list-style: none;
-
-            padding: 0;
-            margin: 0;
         }
 
         .article-nav li {
-            margin-bottom: 8px;
+            margin: 9px 0;
         }
 
-        .article-nav li:last-child {
-            margin-bottom: 0;
+        .article-nav li::before {
+            content: "•";
+
+            color: #9c315c;
+
+            font-weight: 700;
+
+            margin-right: 9px;
         }
 
         .article-nav a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            padding: 10px 13px;
-
-            border-radius: 10px;
-
             text-decoration: none;
 
-            color: #795c68;
+            color: #6f5260;
 
             font-size: 0.95rem;
-            font-weight: 600;
-
-            transition: all 0.25s ease;
-        }
-
-        .article-nav a::before {
-            content: "";
-
-            width: 7px;
-            height: 7px;
-
-            flex-shrink: 0;
-
-            border-radius: 50%;
-
-            background: #b33d6e;
+            font-weight: 500;
 
             transition: 0.25s ease;
         }
 
         .article-nav a:hover {
-            background: #f8e8ef;
+            color: #9c315c;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            margin-top: 55px;
+        }
+
+        section h2 {
+            scroll-margin-top: 35px;
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 2rem;
+
+            color: #681b3b;
+
+            margin-bottom: 18px;
+        }
+
+        section h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
 
             color: #7a1f45;
 
-            padding-left: 18px;
+            font-size: 1.15rem;
         }
 
-        .article-nav a:hover::before {
-            transform: scale(1.3);
+        section p {
+            margin-bottom: 16px;
+        }
+
+        ul.content-list {
+            padding-left: 25px;
+            margin: 15px 0 20px;
+        }
+
+        ul.content-list li {
+            margin-bottom: 8px;
         }
 
 
@@ -296,19 +310,22 @@
         ========================= */
 
         .key-points {
-            margin: 30px 0;
-            padding: 28px 30px;
+            margin-top: 50px;
 
-            background: #ffffff;
+            padding: 28px;
 
-            border: 1px solid #efd9e3;
-            border-radius: 16px;
+            background: #f8e9ef;
 
-            box-shadow: 0 8px 25px rgba(122, 31, 69, 0.06);
+            border-radius: 18px;
+            border: 1px solid #efd1de;
         }
 
-        .key-points h3 {
-            margin-top: 0;
+        .key-points h2 {
+            font-family: "DM Serif Display", serif;
+
+            color: #681b3b;
+
+            margin-bottom: 15px;
         }
 
         .key-points ul {
@@ -316,9 +333,7 @@
         }
 
         .key-points li {
-            margin-bottom: 10px;
-
-            color: #4f3b44;
+            margin-bottom: 8px;
         }
 
 
@@ -327,26 +342,15 @@
         ========================= */
 
         .conclusion {
-            margin-top: 60px;
-            padding: 35px;
-
-            text-align: center;
-
-            background: #681b3b;
-
-            color: white;
-
-            border-radius: 18px;
+            margin-top: 55px;
         }
 
         .conclusion h2 {
-            color: white;
-            margin-top: 0;
-        }
+            font-family: "DM Serif Display", serif;
 
-        .conclusion p {
-            color: #f9e9f0;
-            margin-bottom: 0;
+            color: #681b3b;
+
+            margin-bottom: 18px;
         }
 
 
@@ -359,11 +363,11 @@
 
             padding: 30px 20px;
 
-            border-top: 1px solid #f0dce5;
+            border-top: 1px solid #efd9e3;
 
-            color: #987683;
+            color: #9b7283;
 
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
 
@@ -377,31 +381,36 @@
                 padding: 18px 6%;
             }
 
+            .back-link {
+                font-size: 0.82rem;
+            }
+
             .article-header {
-                margin-top: 40px;
-                padding: 35px 20px;
+                margin: 35px 15px 40px;
+                padding: 38px 20px;
+
                 border-radius: 20px;
             }
 
             .article-header h1 {
-                font-size: 3rem;
+                font-size: 2.4rem;
             }
 
-            .article-container h2 {
+            .subtitle {
+                font-size: 0.95rem;
+            }
+
+            main {
+                padding: 0 18px 50px;
+            }
+
+            section h2 {
                 font-size: 1.7rem;
             }
 
-            .highlight,
-            .key-points,
-            .conclusion,
             .article-nav {
                 padding: 22px;
             }
-
-            .article-nav a {
-                font-size: 0.9rem;
-            }
-
         }
 
     </style>
@@ -427,6 +436,7 @@
         </a>
 
     </nav>
+
 
 
     <!-- =========================
@@ -455,50 +465,51 @@
     </header>
 
 
+
     <!-- =========================
-         ARTICLE CONTENT
+         MAIN ARTICLE
     ========================= -->
 
-    <main class="article-container">
+    <main>
 
 
         <!-- INTRODUCTION -->
 
-        <p>
+        <p class="intro">
             We live in a world where almost everything is connected.
-            We communicate through messaging apps, store documents in the cloud,
-            shop online, use connected devices, and share information across
-            countless digital platforms.
+            We use smartphones, computers, online services, social networks,
+            cloud platforms, and smart devices every day.
         </p>
 
-        <p>
-            But as our lives become more digital, protecting our information
-            becomes increasingly important. This is where
-            <strong>cybersecurity</strong> comes in.
+        <p class="intro">
+            But as our lives become more digital, the amount of information
+            we create and share also increases. This information can become
+            a target for cybercriminals.
         </p>
 
+
+        <!-- DEFINITION -->
 
         <div class="highlight">
 
-            <p>
-                <strong>Cybersecurity</strong> is the practice of protecting
-                systems, networks, devices, applications, and data from
-                unauthorized access, attacks, damage, or disruption.
-            </p>
+            Cybersecurity is the practice of protecting systems, networks,
+            devices, applications, and data from unauthorized access,
+            attacks, damage, or disruption.
 
         </div>
 
 
+
         <!-- =========================
-             ARTICLE QUESTIONS
+             IN THIS ARTICLE
         ========================= -->
 
-        <nav class="article-nav" aria-label="Article navigation">
+        <div class="article-nav">
 
-            <div class="article-nav-title">
+            <h2>
                 <i class="bi bi-list"></i>
                 In this article
-            </div>
+            </h2>
 
             <ul>
 
@@ -552,255 +563,371 @@
 
             </ul>
 
-        </nav>
+        </div>
+
 
 
         <!-- =========================
              SECTION 1
         ========================= -->
 
-        <h2 id="why-cybersecurity">
-            Why Does Cybersecurity Matter?
-        </h2>
+        <section id="why-cybersecurity">
 
-        <p>
-            Cybersecurity is not only about protecting computers from viruses.
-            It is about protecting the digital environments that we rely on
-            every day.
-        </p>
+            <h2>
+                Why Does Cybersecurity Matter?
+            </h2>
 
-        <p>
-            A cyberattack can expose personal information, interrupt services,
-            cause financial losses, damage an organization's reputation, or
-            even affect critical infrastructure.
-        </p>
+            <p>
+                Cybersecurity is not only about protecting computers from viruses.
+                It is about protecting the digital environments that individuals,
+                organizations, and society rely on every day.
+            </p>
 
-        <p>
-            For individuals, this could mean losing access to an account or
-            having personal information stolen. For organizations, the
-            consequences can be much larger because they often store massive
-            amounts of sensitive data.
-        </p>
+            <p>
+                A cyberattack can expose personal information, interrupt services,
+                cause financial losses, damage an organization's reputation,
+                or even affect critical infrastructure.
+            </p>
+
+            <p>
+                For individuals, cybersecurity helps protect personal information,
+                online accounts, financial data, and digital identity.
+                For organizations, it also helps protect systems, customers,
+                employees, intellectual property, and business operations.
+            </p>
+
+        </section>
+
 
 
         <!-- =========================
              SECTION 2
         ========================= -->
 
-        <h2 id="personal-data">
-            What Is Personal Data?
-        </h2>
+        <section id="personal-data">
 
-        <p>
-            Personal data is information that can identify or describe a
-            person. Some examples are obvious, such as your name, phone number,
-            address, or email address.
-        </p>
+            <h2>
+                What Is Personal Data?
+            </h2>
 
-        <p>
-            However, our digital activities can reveal much more.
-            Search history, online purchases, location information, photographs,
-            social media activity, and device information can all contribute
-            to a digital profile.
-        </p>
+            <p>
+                Personal data is information that can identify, describe,
+                or provide information about a person.
+            </p>
 
-
-        <div class="key-points">
+            <p>
+                Some information is obvious, such as your name or phone number.
+                Other information is created through your digital activities,
+                including your searches, purchases, location, photos,
+                social media activity, and device information.
+            </p>
 
             <h3>
                 Examples of personal data
             </h3>
 
-            <ul>
+            <ul class="content-list">
 
-                <li>
-                    Name and contact information
-                </li>
+                <li>Name and contact information</li>
 
-                <li>
-                    Passwords and account credentials
-                </li>
+                <li>Passwords and account credentials</li>
 
-                <li>
-                    Location information
-                </li>
+                <li>Location information</li>
 
-                <li>
-                    Photos and personal documents
-                </li>
+                <li>Photos and personal documents</li>
 
-                <li>
-                    Online activity and browsing history
-                </li>
+                <li>Online activity and browsing history</li>
 
-                <li>
-                    Financial and identification information
-                </li>
+                <li>Financial and identification information</li>
 
             </ul>
 
-        </div>
+        </section>
+
 
 
         <!-- =========================
              SECTION 3
         ========================= -->
 
-        <h2 id="data-location">
-            Where Does Our Data Live?
-        </h2>
+        <section id="data-location">
 
-        <p>
-            Our data is no longer stored only on our personal computers.
-            Today, information can exist across smartphones, laptops,
-            cloud platforms, social networks, websites, databases, and
-            connected devices.
-        </p>
+            <h2>
+                Where Does Our Data Live?
+            </h2>
 
-        <p>
-            Even devices that do not look like traditional computers can
-            collect and process information. Smart watches, cameras,
-            televisions, cars, and other Internet of Things
-            (<strong>IoT</strong>) devices can generate valuable data.
-        </p>
+            <p>
+                Our data is stored in many different places.
+                It can exist on smartphones, laptops, cloud platforms,
+                social networks, websites, databases, and connected devices.
+            </p>
 
-        <p>
-            This interconnected environment creates enormous opportunities,
-            but it also creates more potential entry points for attackers.
-        </p>
+            <p>
+                The growth of the Internet of Things (IoT) has increased
+                the number of devices that collect and exchange data.
+            </p>
+
+            <h3>
+                Examples of connected devices
+            </h3>
+
+            <ul class="content-list">
+
+                <li>Smartwatches</li>
+
+                <li>Security cameras</li>
+
+                <li>Smart TVs</li>
+
+                <li>Connected cars</li>
+
+                <li>Smart home devices</li>
+
+            </ul>
+
+            <p>
+                Each connected device can become another potential entry point
+                for an attacker if it is not properly secured.
+            </p>
+
+        </section>
+
 
 
         <!-- =========================
              SECTION 4
         ========================= -->
 
-        <h2 id="data-value">
-            Why Is Our Data Valuable to Cybercriminals?
-        </h2>
+        <section id="data-value">
 
-        <p>
-            Data has become one of the most valuable resources in the digital
-            world. Cybercriminals may target personal information because it
-            can be used for different malicious purposes.
-        </p>
+            <h2>
+                Why Is Our Data Valuable to Cybercriminals?
+            </h2>
 
-        <p>
-            Stolen credentials can be used to access accounts. Personal
-            information can support identity theft or fraud. Other types of
-            data may be sold, leaked, used for blackmail, or combined with
-            information from other sources to create detailed profiles of
-            victims.
-        </p>
+            <p>
+                Data has become extremely valuable in the digital world.
+                Cybercriminals may target personal information for different
+                malicious purposes.
+            </p>
 
-        <p>
-            This is why even information that may seem harmless on its own
-            can become valuable when combined with other data.
-        </p>
+            <p>
+                Stolen credentials can be used to access online accounts.
+                Personal information can also be used for identity theft,
+                fraud, or other forms of abuse.
+            </p>
+
+            <p>
+                Stolen information may also be sold, leaked, or used to
+                pressure victims. Even information that appears harmless
+                can become valuable when combined with other pieces of data.
+            </p>
+
+        </section>
+
 
 
         <!-- =========================
              SECTION 5
         ========================= -->
 
-        <h2 id="digital-identity">
-            What Is Digital Identity?
-        </h2>
+        <section id="digital-identity">
 
-        <p>
-            Our identity does not exist only in the physical world.
-            Every time we create an account, interact with a website,
-            publish something online, or use a digital service, we contribute
-            to our <strong>digital identity</strong>.
-        </p>
+            <h2>
+                What Is Digital Identity?
+            </h2>
 
-        <p>
-            A digital identity can include usernames, email addresses,
-            profiles, photographs, online activity, account history, and
-            other information associated with a person.
-        </p>
+            <p>
+                Digital identity represents the information associated with
+                a person in the digital world.
+            </p>
 
-        <p>
-            The more services we use, the more pieces of information can become
-            connected to our digital identity.
-        </p>
+            <p>
+                Your online accounts, interactions with websites,
+                publications, profiles, and digital services all contribute
+                to your digital identity.
+            </p>
+
+            <h3>
+                Your digital identity can include
+            </h3>
+
+            <ul class="content-list">
+
+                <li>Usernames</li>
+
+                <li>Email addresses</li>
+
+                <li>Online profiles</li>
+
+                <li>Photos</li>
+
+                <li>Digital activity</li>
+
+                <li>Account history</li>
+
+            </ul>
+
+            <p>
+                The more digital services we use, the more connected pieces
+                of information make up our digital identity.
+            </p>
+
+        </section>
+
 
 
         <!-- =========================
              SECTION 6
         ========================= -->
 
-        <h2 id="identity-stolen">
-            What Happens When a Digital Identity Is Stolen?
-        </h2>
+        <section id="identity-stolen">
 
-        <p>
-            If an attacker gains access to someone's credentials or personal
-            information, they may be able to impersonate that person.
-        </p>
+            <h2>
+                What Happens When a Digital Identity Is Stolen?
+            </h2>
 
-        <p>
-            This can lead to unauthorized access to accounts, financial fraud,
-            privacy violations, or the misuse of the victim's identity.
-        </p>
+            <p>
+                If attackers obtain someone's credentials or personal
+                information, they may be able to impersonate that person
+                or gain unauthorized access to their accounts.
+            </p>
 
-        <p>
-            Identity theft is therefore not simply a matter of losing a
-            password. It can affect a person's privacy, finances, reputation,
-            and ability to control their own digital presence.
-        </p>
+            <p>
+                This can lead to financial fraud, privacy violations,
+                unauthorized purchases, account takeovers, or misuse
+                of personal information.
+            </p>
+
+            <p>
+                The consequences can affect not only a person's privacy
+                and finances, but also their reputation and digital presence.
+            </p>
+
+        </section>
+
 
 
         <!-- =========================
              SECTION 7
         ========================= -->
 
-        <h2 id="cybersecurity-protection">
-            How Does Cybersecurity Protect Us?
-        </h2>
+        <section id="cybersecurity-protection">
 
-        <p>
-            Cybersecurity uses a combination of technologies, processes,
-            policies, and human awareness to reduce cyber risks.
-        </p>
+            <h2>
+                How Does Cybersecurity Protect Us?
+            </h2>
 
-        <p>
-            Strong passwords, multi-factor authentication, software updates,
-            encryption, firewalls, secure network configurations, monitoring,
-            and user awareness are just some of the measures used to protect
-            digital systems.
-        </p>
+            <p>
+                Cybersecurity combines technologies, processes, policies,
+                and human awareness to reduce security risks.
+            </p>
 
-        <p>
-            No single security measure can prevent every attack. Effective
-            cybersecurity relies on multiple layers of protection working
-            together.
-        </p>
+            <h3>
+                Common security measures include
+            </h3>
+
+            <ul class="content-list">
+
+                <li>Using strong and unique passwords</li>
+
+                <li>Enabling multi-factor authentication</li>
+
+                <li>Keeping software and systems updated</li>
+
+                <li>Encrypting sensitive information</li>
+
+                <li>Using firewalls and security tools</li>
+
+                <li>Monitoring systems for suspicious activity</li>
+
+                <li>Learning how to recognize cyber threats</li>
+
+            </ul>
+
+            <p>
+                Effective cybersecurity relies on multiple layers of protection
+                rather than a single security measure.
+            </p>
+
+        </section>
+
 
 
         <!-- =========================
              SECTION 8
         ========================= -->
 
-        <h2 id="it-problem">
-            Is Cybersecurity Only an IT Problem?
-        </h2>
+        <section id="it-problem">
 
-        <p>
-            Not at all.
-        </p>
+            <h2>
+                Is Cybersecurity Only an IT Problem?
+            </h2>
 
-        <p>
-            Technology is an important part of cybersecurity, but people also
-            play a major role. A strong security system can still be weakened
-            by a careless click on a malicious link, a reused password, or
-            sensitive information shared with the wrong person.
-        </p>
+            <p>
+                Not at all.
+            </p>
 
-        <p>
-            Cybersecurity is therefore a shared responsibility involving
-            individuals, organizations, security professionals, developers,
-            administrators, and many others.
-        </p>
+            <p>
+                Technology plays an important role in cybersecurity,
+                but people are equally important.
+            </p>
+
+            <p>
+                Clicking on a malicious link, reusing passwords,
+                sharing sensitive information, or ignoring security warnings
+                can create opportunities for attackers.
+            </p>
+
+            <p>
+                This is why cybersecurity is a shared responsibility.
+                Everyone who uses digital technology has a role to play
+                in protecting information and systems.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             KEY POINTS
+        ========================= -->
+
+        <div class="key-points">
+
+            <h2>
+                Key Points
+            </h2>
+
+            <ul>
+
+                <li>
+                    Cybersecurity protects systems, networks, devices,
+                    applications, and data.
+                </li>
+
+                <li>
+                    Personal data exists across many digital environments.
+                </li>
+
+                <li>
+                    Cybercriminals can use stolen information for fraud,
+                    identity theft, and unauthorized access.
+                </li>
+
+                <li>
+                    Digital identity is built from our online accounts,
+                    activities, and information.
+                </li>
+
+                <li>
+                    Cybersecurity is a shared responsibility between
+                    technology and people.
+                </li>
+
+            </ul>
+
+        </div>
+
 
 
         <!-- =========================
@@ -810,21 +937,26 @@
         <section class="conclusion">
 
             <h2>
-                Final Takeaway
+                Conclusion
             </h2>
 
             <p>
                 Cybersecurity is about much more than protecting computers.
-                It is about protecting the information, identities, systems,
-                and digital services that have become part of everyday life.
-                As technology continues to evolve, understanding cybersecurity
-                becomes increasingly important for everyone.
+                It is about protecting the information, identities,
+                systems, and digital services that have become part
+                of our everyday lives.
+            </p>
+
+            <p>
+                Understanding what we protect and why it matters is the
+                first step toward becoming more secure in the digital world.
             </p>
 
         </section>
 
 
     </main>
+
 
 
     <!-- =========================
