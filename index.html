@@ -210,12 +210,24 @@
 
 
         .navbar-brand {
-            font-family: 'DM Serif Display', serif;
-            color: var(--pink) !important;
-            font-weight: 400;
-            font-size: 1.5rem;
-        }
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
 
+.logo-photo img {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--pink);
+    transition: 0.3s ease;
+}
+
+.logo-photo img:hover {
+    transform: scale(1.08);
+    border-color: var(--burgundy-light);
+}
 
         .nav-link {
             font-family: 'Quicksand', sans-serif;
@@ -977,10 +989,9 @@
 
         <div class="container">
 
-            <a class="navbar-brand" href="#home">
-                GK 
-            </a>
-
+         <a class="navbar-brand logo-photo" href="#home">
+             <img src="images/G(1).png" alt="Ghita KHAIF-ALLAH">
+        </a>
 
             <button
                 class="navbar-toggler"
