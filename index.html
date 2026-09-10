@@ -196,22 +196,22 @@
            NAVBAR
         ========================= */
 
-        .navbar {
-            background: rgba(21, 16, 23, 0.55);
-            backdrop-filter: blur(10px);
-            transition: background 0.35s ease, box-shadow 0.35s ease;
-        }
+.navbar {
+    height: 75px;
+    background: rgba(21, 16, 23, 0.55);
+    backdrop-filter: blur(10px);
+    transition: background 0.35s ease, box-shadow 0.35s ease;
+}
 
+.navbar.scrolled {
+    background: rgba(21, 16, 23, 0.94);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
 
-        .navbar.scrolled {
-            background: rgba(21, 16, 23, 0.94);
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
-        }
-
-
-        .navbar-brand {
+.navbar-brand {
     display: flex;
     align-items: center;
+    height: 75px;
     text-decoration: none;
 }
 
@@ -221,7 +221,8 @@
     object-fit: contain;
     border-radius: 0;
     border: none;
-    transition: 0.3s ease;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
 .logo-photo img:hover {
