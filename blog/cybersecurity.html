@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Cybersecurity articles, notes and tutorials by Ghita KHAIF-ALLAH.">f
+        content="Cybersecurity articles, notes and tutorials by Ghita KHAIF-ALLAH.">
 
     <title>Cybersecurity | Ghita KHAIF-ALLAH</title>
 
@@ -118,22 +118,26 @@
         }
 
 
-        .navbar-brand {
-
-            font-family: 'DM Serif Display', serif;
-
-            color: var(--pink) !important;
-
-            font-size: 1.5rem;
-
-        }
-        .navbar-brand img {
-    height: 42px;
-    width: auto;
-    display: block;
-    object-fit: contain;
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 75px;
+    text-decoration: none;
 }
 
+.logo-photo img {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+    border-radius: 0;
+    border: none;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-photo img:hover {
+    transform: scale(1.08);
+}
 
         .nav-link {
 
@@ -764,10 +768,9 @@
 
         <div class="container">
 
-         <a class="navbar-brand" href="../index.html">
-            <img src="../images/rose.png" alt="Ghita KHAIF-ALLAH">
-        </a>
-
+        <a class="navbar-brand logo-photo" href="../index.html">
+    <img src="../images/rose.png" alt="Ghita KHAIF-ALLAH">
+        </a>    
 
             <button
                 class="navbar-toggler"
