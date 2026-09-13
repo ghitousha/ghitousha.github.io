@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Understanding the CIA Triad: Confidentiality, Integrity and Availability, three fundamental principles of cybersecurity.">
+
+    <title>Understanding the CIA Triad | Ghita Khaifallah</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Quicksand", sans-serif;
+            background: #fff8fb;
+            color: #4f3943;
+            line-height: 1.8;
+        }
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            width: 100%;
+            height: 75px;
+            padding: 0 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: #ffffff;
+            border-bottom: 1px solid #f0e3e8;
+
+            position: relative;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 75px;
+
+            text-decoration: none;
+        }
+
+        .logo-photo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-photo img {
+            width: 95px;
+            height: 95px;
+
+            object-fit: contain;
+
+            border-radius: 0;
+            border: none;
+
+            display: block;
+
+            position: relative;
+            top: 0;
+
+            transition: transform 0.3s ease;
+        }
+
+        .logo-photo img:hover {
+            transform: scale(1.08);
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            text-decoration: none;
+
+            color: #681b3b;
+
+            font-size: 0.95rem;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #9c315c;
+            transform: translateX(-3px);
+        }
+
+
+        /* =========================
+           ARTICLE HEADER
+        ========================= */
+
+        .article-header {
+            max-width: 900px;
+
+            margin: 60px auto 55px;
+
+            padding: 48px 30px;
+
+            text-align: center;
+
+            background: #f9eef3;
+
+            border: 1px solid #f0dfe6;
+
+            border-radius: 24px;
+
+            box-shadow: 0 10px 30px rgba(104, 27, 59, 0.05);
+        }
+
+        .category {
+            display: inline-block;
+
+            padding: 6px 14px;
+            margin-bottom: 18px;
+
+            background: #f1dfe7;
+
+            color: #7a1f45;
+
+            border-radius: 30px;
+
+            font-size: 0.78rem;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .article-header h1 {
+            font-family: "DM Serif Display", serif;
+
+            font-size: clamp(2.4rem, 6vw, 4rem);
+
+            color: #681b3b;
+
+            line-height: 1.2;
+
+            margin-bottom: 18px;
+        }
+
+        .subtitle {
+            max-width: 700px;
+
+            margin: 0 auto 18px;
+
+            color: #795c68;
+
+            font-size: 1.05rem;
+        }
+
+        .meta {
+            color: #9b7283;
+
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        main {
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            padding: 0 25px 70px;
+        }
+
+        .intro {
+            font-size: 1.05rem;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           DEFINITION BOX
+        ========================= */
+
+        .highlight {
+            margin: 35px 0;
+
+            padding: 25px 28px;
+
+            background: #fff;
+
+            border-left: 4px solid #9c315c;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(104, 27, 59, 0.04);
+
+            color: #633d4c;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           IN THIS ARTICLE
+        ========================= */
+
+        .article-nav {
+            margin: 45px 0;
+
+            padding: 25px 28px;
+
+            background: #ffffff;
+
+            border: 1px solid #eee1e6;
+
+            border-radius: 18px;
+
+            box-shadow: 0 8px 25px rgba(104, 27, 59, 0.04);
+        }
+
+        .article-nav h2 {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+
+            font-size: 1.15rem;
+
+            color: #681b3b;
+        }
+
+        .article-nav h2 i {
+            font-size: 1rem;
+        }
+
+        .article-nav ul {
+            list-style: none;
+        }
+
+        .article-nav li {
+            margin: 9px 0;
+        }
+
+        .article-nav li::before {
+            content: "•";
+
+            color: #9c315c;
+
+            font-weight: 700;
+
+            margin-right: 9px;
+        }
+
+        .article-nav a {
+            text-decoration: none;
+
+            color: #6f5260;
+
+            font-size: 0.95rem;
+
+            font-weight: 500;
+
+            transition: 0.25s ease;
+        }
+
+        .article-nav a:hover {
+            color: #9c315c;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            margin-top: 55px;
+        }
+
+        section h2 {
+            scroll-margin-top: 35px;
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 2rem;
+
+            color: #681b3b;
+
+            margin-bottom: 18px;
+        }
+
+        section h3 {
+            margin-top: 25px;
+
+            margin-bottom: 10px;
+
+            color: #7a1f45;
+
+            font-size: 1.15rem;
+        }
+
+        section p {
+            margin-bottom: 16px;
+        }
+
+        ul.content-list {
+            padding-left: 25px;
+
+            margin: 15px 0 20px;
+        }
+
+        ul.content-list li {
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           CIA PRINCIPLES
+        ========================= */
+
+        .cia-list {
+            margin: 25px 0;
+        }
+
+        .cia-item {
+            margin-bottom: 18px;
+
+            padding: 18px 20px;
+
+            background: #ffffff;
+
+            border: 1px solid #eee1e6;
+
+            border-radius: 14px;
+
+            box-shadow: 0 5px 18px rgba(104, 27, 59, 0.03);
+        }
+
+        .cia-item strong {
+            color: #7a1f45;
+        }
+
+
+        /* =========================
+           KEY POINTS
+        ========================= */
+
+        .key-points {
+            margin-top: 50px;
+
+            padding: 28px;
+
+            background: #fdf7f9;
+
+            border: 1px solid #f0e3e8;
+
+            border-radius: 18px;
+        }
+
+        .key-points h2 {
+            font-family: "DM Serif Display", serif;
+
+            color: #681b3b;
+
+            margin-bottom: 15px;
+        }
+
+        .key-points ul {
+            padding-left: 22px;
+        }
+
+        .key-points li {
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           CONCLUSION
+        ========================= */
+
+        .conclusion {
+            margin-top: 55px;
+        }
+
+        .conclusion h2 {
+            font-family: "DM Serif Display", serif;
+
+            color: #681b3b;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            background: #ffffff;
+
+            border-top: 1px solid #f0e3e8;
+
+            color: #9b7283;
+
+            font-size: 0.85rem;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 0 6%;
+            }
+
+            .logo-photo img {
+                width: 95px;
+                height: 95px;
+            }
+
+            .back-link {
+                font-size: 0.82rem;
+            }
+
+            .article-header {
+                margin: 35px 15px 40px;
+
+                padding: 38px 20px;
+
+                border-radius: 20px;
+            }
+
+            .article-header h1 {
+                font-size: 2.4rem;
+            }
+
+            .subtitle {
+                font-size: 0.95rem;
+            }
+
+            main {
+                padding: 0 18px 50px;
+            }
+
+            section h2 {
+                font-size: 1.7rem;
+            }
+
+            .article-nav {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+        <a href="../../index.html" class="navbar-brand logo-photo">
+
+            <img src="../../../images/bur.png" alt="Ghita KHAIF-ALLAH">
+
+        </a>
+
+
+        <a href="../cybersecurity.html" class="back-link">
+
+            <i class="bi bi-arrow-left"></i>
+
+            Back to Cybersecurity
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================
+         ARTICLE HEADER
+    ========================= -->
+
+    <header class="article-header">
+
+        <span class="category">
+            Fundamentals
+        </span>
+
+        <h1>
+            Understanding the CIA Triad
+        </h1>
+
+        <p class="subtitle">
+            Understanding Confidentiality, Integrity and Availability,
+            three fundamental principles of cybersecurity.
+        </p>
+
+        <p class="meta">
+            September 2026 · Cybersecurity Fundamentals
+        </p>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN ARTICLE
+    ========================= -->
+
+    <main>
+
+
+        <!-- INTRODUCTION -->
+
+        <p class="intro">
+            Every day, people create, store, send, and access digital
+            information through online accounts, databases, applications,
+            cloud services, and connected devices.
+        </p>
+
+        <p class="intro">
+            Protecting that information isn't just about stopping attackers
+            from stealing it. It also means making sure the information stays
+            accurate and that the people who are supposed to reach it actually
+            can, when they need to.
+        </p>
+
+
+        <!-- DEFINITION -->
+
+        <div class="highlight">
+
+            The CIA Triad is a fundamental cybersecurity model built around
+            three goals: <strong>Confidentiality, Integrity, and Availability.</strong>
+            Together, they help define what needs to be protected in an
+            information system and why.
+
+        </div>
+
+
+
+        <!-- =========================
+             IN THIS ARTICLE
+        ========================= -->
+
+        <div class="article-nav">
+
+            <h2>
+
+                <i class="bi bi-list"></i>
+
+                In this article
+
+            </h2>
+
+            <ul>
+
+                <li>
+                    <a href="#what-is-cia">
+                        What Does the CIA Triad Actually Describe?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#confidentiality">
+                        What Is Confidentiality?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#integrity">
+                        What Is Integrity?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#availability">
+                        What Is Availability?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#connection">
+                        Why Do the Three Pieces Depend on Each Other?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#hospital">
+                        What Does the CIA Triad Look Like in a Hospital?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#individuals">
+                        Is the CIA Triad Only for Large Organizations?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#practice">
+                        How Can We Put the CIA Triad into Practice?
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- =========================
+             SECTION 1
+        ========================= -->
+
+        <section id="what-is-cia">
+
+            <h2>
+                What Does the CIA Triad Actually Describe?
+            </h2>
+
+            <p>
+                Take a company database holding customer records. If someone
+                outside the company manages to read that data, confidentiality
+                has failed.
+            </p>
+
+            <p>
+                If someone edits the information without permission, integrity
+                has failed. If employees can't get into the database when they
+                need it, availability has failed.
+            </p>
+
+            <p>
+                The model gives security professionals a simple way to check
+                their work: for any system, ask what needs to stay private,
+                what needs to stay accurate, and what needs to stay reachable.
+            </p>
+
+            <p>
+                A defense strategy that only covers one of these questions
+                leaves the other two exposed.
+            </p>
+
+            <div class="cia-list">
+
+                <div class="cia-item">
+                    <strong>Confidentiality</strong> — keeping information
+                    away from people who shouldn't see it.
+                </div>
+
+                <div class="cia-item">
+                    <strong>Integrity</strong> — keeping information accurate
+                    and free from unauthorized changes.
+                </div>
+
+                <div class="cia-item">
+                    <strong>Availability</strong> — making sure information
+                    is accessible when authorized users need it.
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SECTION 2
+        ========================= -->
+
+        <section id="confidentiality">
+
+            <h2>
+                What Is Confidentiality?
+            </h2>
+
+            <p>
+                Confidentiality means restricting information to the people
+                who are actually authorized to see it.
+            </p>
+
+            <p>
+                An employee might have access to their own files but not to
+                payroll records, which stay limited to finance staff.
+            </p>
+
+            <h3>
+                How Can Confidentiality Be Protected?
+            </h3>
+
+            <ul class="content-list">
+
+                <li>Strong and unique passwords</li>
+
+                <li>Multi-factor authentication</li>
+
+                <li>Access controls</li>
+
+                <li>Encryption</li>
+
+                <li>User permissions</li>
+
+                <li>Secure communication</li>
+
+            </ul>
+
+            <p>
+                Encryption in particular makes data unreadable to anyone
+                without the right key, even if they manage to get their
+                hands on it.
+            </p>
+
+            <h3>
+                What Happens When Confidentiality Is Lost?
+            </h3>
+
+            <p>
+                Confidentiality can break down through stolen credentials,
+                phishing, malware, data breaches, weak access controls,
+                or social engineering.
+            </p>
+
+            <p>
+                If an attacker steals someone's login and reads their private
+                files, that's a confidentiality failure. The consequences can
+                range from identity theft to financial or reputational damage.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             SECTION 3
+        ========================= -->
+
+        <section id="integrity">
+
+            <h2>
+                What Is Integrity?
+            </h2>
+
+            <p>
+                Integrity is about whether information can be trusted.
+                It shouldn't be altered, deleted, or tampered with by anyone
+                who isn't authorized to touch it.
+            </p>
+
+            <p>
+                Picture a university database of student grades. If someone
+                changes a grade without permission, the data is technically
+                still there, but it's no longer reliable.
+            </p>
+
+            <p>
+                That's an integrity problem. The information still exists,
+                but users can no longer trust that it represents the truth.
+            </p>
+
+            <h3>
+                How Can Integrity Be Protected?
+            </h3>
+
+            <ul class="content-list">
+
+                <li>Hashing</li>
+
+                <li>Digital signatures</li>
+
+                <li>Backups</li>
+
+                <li>Access controls</li>
+
+                <li>File permissions</li>
+
+                <li>Version control</li>
+
+            </ul>
+
+            <p>
+                These mechanisms can help prevent unauthorized changes or
+                make them easier to detect.
+            </p>
+
+            <p>
+                Integrity matters because so many decisions are made based
+                on what a system says is true. A bank balance, a product price,
+                a medical record, or a company's financial statement all lose
+                their value when they can no longer be trusted.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             SECTION 4
+        ========================= -->
+
+        <section id="availability">
+
+            <h2>
+                What Is Availability?
+            </h2>
+
+            <p>
+                Availability means that systems and information are actually
+                reachable by authorized users when they need them.
+            </p>
+
+            <p>
+                A perfectly secure system that nobody can access during a
+                crisis has still failed at its job.
+            </p>
+
+            <p>
+                An online banking service that goes down when customers try
+                to check their balance is a good example. The data might still
+                be accurate and private, but if the service itself is
+                unreachable, that's an availability failure.
+            </p>
+
+            <h3>
+                How Can Availability Be Protected?
+            </h3>
+
+            <ul class="content-list">
+
+                <li>Regular backups</li>
+
+                <li>Redundant systems</li>
+
+                <li>System monitoring</li>
+
+                <li>Disaster recovery plans</li>
+
+                <li>Software updates</li>
+
+                <li>Network protection</li>
+
+                <li>Protection against denial-of-service attacks</li>
+
+            </ul>
+
+            <p>
+                Redundancy is especially useful because it lets a backup
+                system take over when the primary system becomes unavailable.
+            </p>
+
+            <h3>
+                What Can Cause an Availability Problem?
+            </h3>
+
+            <p>
+                Availability can be affected by hardware failures, network
+                outages, power cuts, software bugs, natural disasters, malware,
+                or denial-of-service attacks.
+            </p>
+
+            <p>
+                For any organization that depends on being online, losing
+                availability can interrupt business operations and affect users.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             SECTION 5
+        ========================= -->
+
+        <section id="connection">
+
+            <h2>
+                Why Do the Three Pieces Depend on Each Other?
+            </h2>
+
+            <p>
+                These three principles are distinct, but they rarely fail
+                in isolation.
+            </p>
+
+            <p>
+                Take online banking again. Confidentiality means only
+                authorized users can see account information. Integrity means
+                that the account balance is accurate and cannot be silently
+                altered. Availability means that the customer can actually
+                access the service.
+            </p>
+
+            <p>
+                Weaken any one of the three and the whole system becomes
+                less trustworthy, even if the other two are working correctly.
+            </p>
+
+            <h3>
+                Can One Cyberattack Affect All Three?
+            </h3>
+
+            <p>
+                Yes. A single attack can affect multiple elements of the
+                CIA Triad at the same time.
+            </p>
+
+            <p>
+                Malware that gets into a company's network might allow an
+                attacker to steal sensitive files, modify or delete records,
+                and lock employees out of their own systems.
+            </p>
+
+            <ul class="content-list">
+
+                <li>
+                    Stealing sensitive files → <strong>Confidentiality</strong>
+                </li>
+
+                <li>
+                    Modifying or deleting records → <strong>Integrity</strong>
+                </li>
+
+                <li>
+                    Locking users out of systems → <strong>Availability</strong>
+                </li>
+
+            </ul>
+
+            <p>
+                This is one reason why cybersecurity relies on layered
+                defenses rather than a single security measure.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             SECTION 6
+        ========================= -->
+
+        <section id="hospital">
+
+            <h2>
+                What Does the CIA Triad Look Like in a Hospital?
+            </h2>
+
+            <p>
+                Hospitals are a good example because all three principles
+                can have real consequences for people's lives.
+            </p>
+
+            <h3>
+                Confidentiality
+            </h3>
+
+            <p>
+                Patient records need to stay private, so only authorized
+                healthcare staff should be able to view them.
+            </p>
+
+            <h3>
+                Integrity
+            </h3>
+
+            <p>
+                Medical records need to remain accurate. An unauthorized
+                modification to a patient's information could lead to an
+                incorrect diagnosis or treatment.
+            </p>
+
+            <h3>
+                Availability
+            </h3>
+
+            <p>
+                Doctors and healthcare staff need access to patient
+                information when treating patients. A system that is
+                unavailable at the wrong moment can seriously disrupt care.
+            </p>
+
+            <p>
+                This is why a hospital's security strategy needs to protect
+                confidentiality, integrity, and availability together.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             SECTION 7
+        ========================= -->
+
+        <section id="individuals">
+
+            <h2>
+                Is the CIA Triad Only for Large Organizations?
+            </h2>
+
+            <p>
+                No. The CIA Triad applies just as much to individuals as it
+                does to small businesses, large organizations, and governments.
+            </p>
+
+            <p>
+                Consider a personal email account.
+            </p>
+
+            <ul class="content-list">
+
+                <li>
+                    A strong password and multi-factor authentication help
+                    protect <strong>confidentiality</strong>.
+                </li>
+
+                <li>
+                    Security settings that prevent unauthorized changes help
+                    support <strong>integrity</strong>.
+                </li>
+
+                <li>
+                    Reliable service uptime and account recovery tools help
+                    support <strong>availability</strong>.
+                </li>
+
+            </ul>
+
+            <p>
+                Even small, everyday security habits can contribute to
+                protecting all three principles.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             SECTION 8
+        ========================= -->
+
+        <section id="practice">
+
+            <h2>
+                How Can We Put the CIA Triad into Practice?
+            </h2>
+
+            <p>
+                No single tool covers everything. Protecting the CIA Triad
+                usually means combining several security practices.
+            </p>
+
+            <h3>
+                Common security practices include
+            </h3>
+
+            <ul class="content-list">
+
+                <li>Using strong and unique passwords</li>
+
+                <li>Enabling multi-factor authentication</li>
+
+                <li>Controlling user permissions</li>
+
+                <li>Encrypting sensitive data</li>
+
+                <li>Keeping systems and software updated</li>
+
+                <li>Creating regular backups</li>
+
+                <li>Monitoring suspicious activity</li>
+
+                <li>Using firewalls and security tools</li>
+
+                <li>Training users to recognize cyber threats</li>
+
+                <li>Preparing a recovery plan</li>
+
+            </ul>
+
+            <p>
+                Effective cybersecurity relies on multiple layers of
+                protection rather than a single security measure.
+                Technology, processes, policies, and human awareness
+                all have a role to play.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             KEY POINTS
+        ========================= -->
+
+        <div class="key-points">
+
+            <h2>
+                Key Points
+            </h2>
+
+            <ul>
+
+                <li>
+                    The CIA Triad stands for
+                    <strong>Confidentiality, Integrity, and Availability.</strong>
+                </li>
+
+                <li>
+                    Confidentiality keeps information away from people
+                    who are not authorized to see it.
+                </li>
+
+                <li>
+                    Integrity keeps information accurate and protected
+                    from unauthorized changes.
+                </li>
+
+                <li>
+                    Availability makes sure authorized users can access
+                    systems and information when they need them.
+                </li>
+
+                <li>
+                    A single cyberattack can affect more than one part
+                    of the CIA Triad.
+                </li>
+
+                <li>
+                    Effective cybersecurity combines technology, processes,
+                    policies, and human awareness.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- =========================
+             CONCLUSION
+        ========================= -->
+
+        <section class="conclusion">
+
+            <h2>
+                Conclusion
+            </h2>
+
+            <p>
+                The CIA Triad provides one of the simplest ways to understand
+                the fundamental goals of cybersecurity.
+            </p>
+
+            <p>
+                Confidentiality asks whether information is protected from
+                unauthorized access. Integrity asks whether information can
+                be trusted and remains accurate. Availability asks whether
+                authorized users can access systems and information when
+                they need them.
+            </p>
+
+            <p>
+                Together, these three principles help organizations and
+                individuals understand what they are trying to protect and
+                why security controls are necessary.
+            </p>
+
+            <p>
+                Understanding the CIA Triad is therefore an important step
+                toward understanding cybersecurity as a whole, because almost
+                every security decision comes back to one of these three
+                questions: <strong>Who should have access? Can this be trusted?
+                Will it be there when it's needed?</strong>
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 Ghita Khaifallah · Cybersecurity Blog
+
+    </footer>
+
+
+</body>
+
+</html>
