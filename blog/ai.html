@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Artificial Intelligence articles, notes and tutorials by Ghita KHAIF-ALLAH.">
+
+    <title>Artificial Intelligence | Ghita KHAIF-ALLAH</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        :root {
+            --bg: #151017;
+            --bg-soft: #1b141b;
+            --card: #211820;
+            --card-border: #392732;
+
+            --burgundy: #8e3a5d;
+            --burgundy-light: #c76a8f;
+
+            --pink: #efa8be;
+            --pink-light: #f7d6e0;
+
+            --text: #fff7fa;
+            --muted: #c9b7c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Quicksand", sans-serif;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(21, 16, 23, 0.55);
+            backdrop-filter: blur(10px);
+            transition: background 0.35s ease, box-shadow 0.35s ease;
+            padding: 14px 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(21, 16, 23, 0.94);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo-photo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-photo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-photo img:hover {
+            transform: scale(1.08);
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text) !important;
+            font-weight: 600;
+            margin-left: 22px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--pink) !important;
+        }
+
+        .navbar-toggler {
+            border-color: var(--burgundy-light);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.15rem rgba(239, 168, 190, 0.25);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .category-hero {
+            padding: 170px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-hero::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: rgba(142, 58, 93, 0.18);
+            border-radius: 50%;
+            filter: blur(90px);
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .category-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 24px;
+
+            background: rgba(142, 58, 93, 0.18);
+            border: 1px solid rgba(199, 106, 143, 0.35);
+
+            color: var(--pink);
+            font-size: 42px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.25),
+                inset 0 0 30px rgba(142, 58, 93, 0.08);
+        }
+
+        .category-hero h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .category-hero h1 span {
+            color: var(--pink);
+        }
+
+        .category-hero p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .articles-section {
+            padding: 40px 20px 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: 2.7rem;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CATEGORY BLOCK
+        ========================= */
+
+        .category-block {
+            max-width: 900px;
+            margin: 0 auto 18px;
+
+            background: var(--card);
+            border: 1px solid var(--card-border);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            transition:
+                border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .category-block:hover {
+            border-color: rgba(199, 106, 143, 0.45);
+        }
+
+        .category-block.active {
+            border-color: rgba(199, 106, 143, 0.55);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        /* =========================
+           CATEGORY HEADER
+        ========================= */
+
+        .category-header {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 23px 25px;
+
+            cursor: pointer;
+
+            background: transparent;
+            border: none;
+
+            color: var(--text);
+            text-align: left;
+
+            font-family: "Quicksand", sans-serif;
+        }
+
+        .category-header-left {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+        }
+
+        .category-number {
+            color: var(--pink);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .category-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .category-arrow {
+            color: var(--pink);
+            font-size: 1.2rem;
+
+            transition: transform 0.3s ease;
+        }
+
+        .category-block.active .category-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* =========================
+           CATEGORY CONTENT
+        ========================= */
+
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+
+            transition: max-height 0.45s ease;
+        }
+
+        .article-list {
+            padding: 0 25px 25px;
+        }
+
+        .article-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 16px 18px;
+
+            margin-top: 10px;
+
+            border-radius: 12px;
+
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+
+            color: var(--text);
+            text-decoration: none;
+
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .article-item:hover {
+            background: rgba(142, 58, 93, 0.15);
+            border-color: rgba(199, 106, 143, 0.35);
+            transform: translateX(5px);
+        }
+
+        .article-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-weight: 600;
+        }
+
+        .article-title i {
+            color: var(--pink);
+            font-size: 0.85rem;
+        }
+
+        .coming-soon {
+            font-size: 0.72rem;
+            font-weight: 700;
+
+            padding: 5px 9px;
+
+            border-radius: 20px;
+
+            color: var(--pink-light);
+            background: rgba(142, 58, 93, 0.22);
+            border: 1px solid rgba(199, 106, 143, 0.25);
+
+            white-space: nowrap;
+        }
+
+        /* =========================
+           BACK LINK
+        ========================= */
+
+        .back-link-wrapper {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--pink);
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--pink-light);
+            transform: translateX(-4px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 30px 20px;
+
+            text-align: center;
+
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .navbar-nav .nav-link {
+                margin-left: 0;
+                padding: 10px 0;
+            }
+
+            .category-hero {
+                padding-top: 145px;
+            }
+
+            .category-header {
+                padding: 20px;
+            }
+
+            .category-header h3 {
+                font-size: 1rem;
+            }
+
+            .article-list {
+                padding: 0 18px 20px;
+            }
+
+            .article-item {
+                gap: 12px;
+            }
+
+            .coming-soon {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+        <div class="container">
+
+            <a class="navbar-brand logo-photo" href="../index.html">
+                <img src="../images/rose.png" alt="Ghita KHAIF-ALLAH">
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#education">
+                            Education
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#certifications">
+                            Certifications
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#blog">
+                            Blog
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="category-hero">
+
+        <div class="container">
+
+            <div class="category-icon">
+                <i class="bi bi-robot"></i>
+            </div>
+
+            <h1>
+                Artificial <span>Intelligence</span>
+            </h1>
+
+            <p>
+                Exploring Artificial Intelligence through machine learning,
+                data, neural networks, smart systems and the technologies
+                I'm learning along the way. ✦
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ARTICLES
+    ========================= -->
+
+    <section class="articles-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Explore My AI Journey
+                </h2>
+
+                <p>
+                    Artificial Intelligence, machine learning, data,
+                    deep learning and real-world applications I'm learning.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 CATEGORY 01
+            ========================= -->
+
+            <div class="category-block">
+
+                <button class="category-header">
+
+                    <div class="category-header-left">
+
+                        <span class="category-number">
+                            01
+                        </span>
+
+                        <h3>
+                            AI Fundamentals
+                        </h3>
+
+                    </div>
+
+                    <i class="bi bi-chevron-down category-arrow"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="article-list">
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                What Is Artificial Intelligence?
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                How Does Artificial Intelligence Work?
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                AI vs Machine Learning vs Deep Learning
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CATEGORY 02
+            ========================= -->
+
+            <div class="category-block">
+
+                <button class="category-header">
+
+                    <div class="category-header-left">
+
+                        <span class="category-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Machine Learning
+                        </h3>
+
+                    </div>
+
+                    <i class="bi bi-chevron-down category-arrow"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="article-list">
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                What Is Machine Learning?
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                Supervised and Unsupervised Learning
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                Classification and Regression
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                Training and Testing a Model
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CATEGORY 03
+            ========================= -->
+
+            <div class="category-block">
+
+                <button class="category-header">
+
+                    <div class="category-header-left">
+
+                        <span class="category-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Data & AI
+                        </h3>
+
+                    </div>
+
+                    <i class="bi bi-chevron-down category-arrow"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="article-list">
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                Why Is Data Important for AI?
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                Data Preprocessing for Machine Learning
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                Features and Labels
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                Evaluating an AI Model
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CATEGORY 04
+            ========================= -->
+
+            <div class="category-block">
+
+                <button class="category-header">
+
+                    <div class="category-header-left">
+
+                        <span class="category-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Deep Learning
+                        </h3>
+
+                    </div>
+
+                    <i class="bi bi-chevron-down category-arrow"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="article-list">
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                What Is Deep Learning?
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                What Are Neural Networks?
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                Introduction to CNNs
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                AI and Computer Vision
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CATEGORY 05
+            ========================= -->
+
+            <div class="category-block">
+
+                <button class="category-header">
+
+                    <div class="category-header-left">
+
+                        <span class="category-number">
+                            05
+                        </span>
+
+                        <h3>
+                            AI Applications
+                        </h3>
+
+                    </div>
+
+                    <i class="bi bi-chevron-down category-arrow"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="article-list">
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                AI in IoT
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                AI in Cybersecurity
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                AI in Healthcare
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="article-item">
+
+                            <span class="article-title">
+                                <i class="bi bi-arrow-right"></i>
+                                AI in Smart Systems
+                            </span>
+
+                            <span class="coming-soon">
+                                Coming soon
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 BACK
+            ========================= -->
+
+            <div class="back-link-wrapper">
+
+                <a
+                    href="../index.html#blog"
+                    class="back-link">
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Back to Blog
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 Ghita KHAIF-ALLAH.
+        Built with HTML, CSS & Bootstrap.
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* Navbar on scroll */
+
+        const navbar =
+            document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+
+            if (window.scrollY > 30) {
+
+                navbar.classList.add('scrolled');
+
+            } else {
+
+                navbar.classList.remove('scrolled');
+
+            }
+
+        });
+
+
+        /* Accordion */
+
+        const categoryHeaders =
+            document.querySelectorAll('.category-header');
+
+
+        categoryHeaders.forEach(header => {
+
+            header.addEventListener('click', () => {
+
+                const category =
+                    header.parentElement;
+
+                const content =
+                    category.querySelector('.category-content');
+
+                const isOpen =
+                    category.classList.contains('active');
+
+
+                document
+                    .querySelectorAll('.category-block')
+                    .forEach(block => {
+
+                        block.classList.remove('active');
+
+                        block
+                            .querySelector('.category-content')
+                            .style.maxHeight = null;
+
+                    });
+
+
+                if (!isOpen) {
+
+                    category.classList.add('active');
+
+                    content.style.maxHeight =
+                        content.scrollHeight + 'px';
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
