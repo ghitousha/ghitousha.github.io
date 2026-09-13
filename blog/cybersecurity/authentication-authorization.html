@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learn the difference between authentication and authorization, how identity is verified, how permissions work, and why access control matters in cybersecurity.">
+
+    <title>Authentication & Authorization | Ghita Khaifallah</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family: 'Quicksand', sans-serif;
+
+            background: #fff8fb;
+
+            color: #4f3943;
+
+            line-height: 1.8;
+
+        }
+
+
+        h1,
+        h2,
+        h3 {
+
+            font-family: 'DM Serif Display', serif;
+
+            font-weight: 400;
+
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(255, 248, 251, 0.94);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #f0dfe6;
+
+            z-index: 1000;
+
+        }
+
+
+        .navbar-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            height: 75px;
+
+        }
+
+
+        .logo-photo img {
+
+            width: 95px;
+
+            height: 95px;
+
+            object-fit: contain;
+
+            display: block;
+
+            transition: transform 0.3s ease;
+
+        }
+
+
+        .logo-photo img:hover {
+
+            transform: scale(1.08);
+
+        }
+
+
+        .back-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #8e3a5d;
+
+            font-weight: 600;
+
+            font-size: 0.95rem;
+
+            transition: 0.3s;
+
+        }
+
+
+        .back-link:hover {
+
+            color: #c76a8f;
+
+        }
+
+
+        /* =========================
+           ARTICLE HEADER
+        ========================= */
+
+        .article-header {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            padding: 155px 25px 60px;
+
+            text-align: center;
+
+        }
+
+
+        .category-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 7px 14px;
+
+            border-radius: 30px;
+
+            background: #f7e6ed;
+
+            color: #681b3b;
+
+            font-size: 0.78rem;
+
+            font-weight: 700;
+
+            letter-spacing: 0.04em;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .article-header h1 {
+
+            font-size: clamp(2.6rem, 6vw, 4.4rem);
+
+            line-height: 1.15;
+
+            color: #681b3b;
+
+            margin: 0 0 20px;
+
+        }
+
+
+        .article-subtitle {
+
+            max-width: 720px;
+
+            margin: 0 auto 22px;
+
+            color: #7b6871;
+
+            font-size: 1.12rem;
+
+        }
+
+
+        .article-meta {
+
+            color: #a18e97;
+
+            font-size: 0.9rem;
+
+        }
+
+
+        /* =========================
+           ARTICLE CONTENT
+        ========================= */
+
+        .article-container {
+
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            padding: 0 25px 100px;
+
+        }
+
+
+        .article-content {
+
+            font-size: 1.03rem;
+
+        }
+
+
+        .article-content p {
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .article-content h2 {
+
+            color: #681b3b;
+
+            font-size: 2rem;
+
+            margin-top: 55px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .article-content h3 {
+
+            color: #8e3a5d;
+
+            font-size: 1.45rem;
+
+            margin-top: 30px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+
+            font-size: 1.12rem;
+
+            color: #5c4650;
+
+        }
+
+
+        /* =========================
+           HIGHLIGHT BOX
+        ========================= */
+
+        .highlight-box {
+
+            margin: 35px 0;
+
+            padding: 28px 30px;
+
+            background: #f9eef3;
+
+            border-left: 4px solid #8e3a5d;
+
+            border-radius: 0 15px 15px 0;
+
+        }
+
+
+        .highlight-box p {
+
+            margin: 0;
+
+            font-size: 1.12rem;
+
+            color: #5b404c;
+
+        }
+
+
+        .highlight-box strong {
+
+            color: #681b3b;
+
+        }
+
+
+        /* =========================
+           ARTICLE NAVIGATION
+        ========================= */
+
+        .article-nav {
+
+            margin: 40px 0;
+
+            padding: 28px 30px;
+
+            background: #ffffff;
+
+            border: 1px solid #f0dfe6;
+
+            border-radius: 18px;
+
+        }
+
+
+        .article-nav h3 {
+
+            margin-top: 0;
+
+            color: #681b3b;
+
+        }
+
+
+        .article-nav ul {
+
+            margin: 10px 0 0;
+
+            padding-left: 20px;
+
+        }
+
+
+        .article-nav a {
+
+            color: #8e3a5d;
+
+            font-weight: 600;
+
+        }
+
+
+        .article-nav a:hover {
+
+            color: #c76a8f;
+
+        }
+
+
+        /* =========================
+           LISTS
+        ========================= */
+
+        .article-content ul {
+
+            padding-left: 25px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .article-content li {
+
+            margin-bottom: 8px;
+
+        }
+
+
+        /* =========================
+           COMPARISON BOX
+        ========================= */
+
+        .comparison-box {
+
+            margin: 30px 0;
+
+            overflow-x: auto;
+
+            background: #ffffff;
+
+            border: 1px solid #f0dfe6;
+
+            border-radius: 16px;
+
+        }
+
+
+        .comparison-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 550px;
+
+        }
+
+
+        .comparison-table th {
+
+            background: #f9eef3;
+
+            color: #681b3b;
+
+            font-weight: 700;
+
+        }
+
+
+        .comparison-table th,
+        .comparison-table td {
+
+            padding: 16px 18px;
+
+            text-align: left;
+
+            border-bottom: 1px solid #f0dfe6;
+
+        }
+
+
+        .comparison-table tr:last-child td {
+
+            border-bottom: none;
+
+        }
+
+
+        /* =========================
+           EXAMPLE BOX
+        ========================= */
+
+        .example-box {
+
+            margin: 30px 0;
+
+            padding: 28px 30px;
+
+            background: #ffffff;
+
+            border: 1px solid #f0dfe6;
+
+            border-radius: 18px;
+
+        }
+
+
+        .example-box h3 {
+
+            margin-top: 0;
+
+            color: #681b3b;
+
+        }
+
+
+        .example-step {
+
+            margin: 18px 0;
+
+            padding: 15px 18px;
+
+            background: #fff8fb;
+
+            border-radius: 12px;
+
+            border-left: 3px solid #efa8be;
+
+        }
+
+
+        .example-step strong {
+
+            color: #681b3b;
+
+        }
+
+
+        /* =========================
+           FLOW
+        ========================= */
+
+        .flow-box {
+
+            margin: 35px 0;
+
+            padding: 25px;
+
+            background: #f9eef3;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            color: #681b3b;
+
+            font-weight: 700;
+
+        }
+
+
+        .flow {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+        }
+
+
+        .flow-item {
+
+            padding: 10px 15px;
+
+            background: #ffffff;
+
+            border: 1px solid #efd9e2;
+
+            border-radius: 10px;
+
+        }
+
+
+        .flow-arrow {
+
+            color: #8e3a5d;
+
+        }
+
+
+        /* =========================
+           KEY POINTS
+        ========================= */
+
+        .key-points {
+
+            margin-top: 55px;
+
+            padding: 30px;
+
+            background: #f9eef3;
+
+            border-radius: 20px;
+
+            border: 1px solid #f0dfe6;
+
+        }
+
+
+        .key-points h2 {
+
+            margin-top: 0;
+
+        }
+
+
+        .key-points ul {
+
+            margin-bottom: 0;
+
+        }
+
+
+        /* =========================
+           CONCLUSION
+        ========================= */
+
+        .conclusion {
+
+            margin-top: 50px;
+
+            padding-top: 35px;
+
+            border-top: 1px solid #f0dfe6;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #681b3b;
+
+            color: #f7d6e0;
+
+            padding: 28px 20px;
+
+            text-align: center;
+
+            font-size: 0.9rem;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+
+                padding: 0 20px;
+
+            }
+
+
+            .logo-photo img {
+
+                width: 80px;
+
+                height: 80px;
+
+            }
+
+
+            .back-link {
+
+                font-size: 0.82rem;
+
+            }
+
+
+            .article-header {
+
+                padding: 130px 20px 50px;
+
+            }
+
+
+            .article-header h1 {
+
+                font-size: 2.7rem;
+
+            }
+
+
+            .article-container {
+
+                padding: 0 20px 70px;
+
+            }
+
+
+            .article-content {
+
+                font-size: 1rem;
+
+            }
+
+
+            .article-content h2 {
+
+                font-size: 1.75rem;
+
+            }
+
+
+            .highlight-box,
+            .example-box,
+            .key-points {
+
+                padding: 22px;
+
+            }
+
+
+            .flow {
+
+                flex-direction: column;
+
+            }
+
+
+            .flow-arrow {
+
+                transform: rotate(90deg);
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+        <a href="../../index.html" class="navbar-brand logo-photo">
+
+            <img
+                src="../../images/rose.png"
+                alt="Ghita KHAIF-ALLAH">
+
+        </a>
+
+
+        <a href="../cybersecurity.html" class="back-link">
+
+            <i class="bi bi-arrow-left"></i>
+
+            Back to Cybersecurity
+
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         ARTICLE HEADER
+    ========================= -->
+
+    <header class="article-header">
+
+        <div class="category-label">
+
+            <i class="bi bi-shield-lock"></i>
+
+            Fundamentals
+
+        </div>
+
+
+        <h1>
+            Authentication &amp; Authorization
+        </h1>
+
+
+        <p class="article-subtitle">
+
+            Understanding identity, access, and permissions.
+
+        </p>
+
+
+        <p class="article-meta">
+
+            September 2026 · Cybersecurity Fundamentals
+
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         ARTICLE
+    ========================= -->
+
+    <main class="article-container">
+
+        <article class="article-content">
+
+
+            <!-- INTRO -->
+
+            <p class="intro">
+
+                When you use a website, an app, or a computer system,
+                security isn't just about protecting the information itself.
+                It's also about controlling who gets to reach that information
+                and what they're allowed to do once they have access.
+
+                That's where authentication and authorization come in.
+
+                Even though people often use the two words almost
+                interchangeably, they answer different questions.
+
+            </p>
+
+
+            <!-- DEFINITION -->
+
+            <div class="highlight-box">
+
+                <p>
+
+                    <strong>Authentication</strong> asks:
+
+                    <strong>“Who are you?”</strong>
+
+                    <br><br>
+
+                    <strong>Authorization</strong> asks:
+
+                    <strong>“What are you allowed to do?”</strong>
+
+                </p>
+
+            </div>
+
+
+            <!-- ARTICLE NAV -->
+
+            <div class="article-nav">
+
+                <h3>
+                    In this article
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#authentication">
+                            What Authentication Actually Does
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#authentication-methods">
+                            How Can a System Verify Your Identity?
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#authorization">
+                            What Authorization Actually Does
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#difference">
+                            Telling the Two Apart
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#why">
+                            Why Both Matter
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#fail">
+                            When Either One Fails
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#together">
+                            How They Work Together
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- AUTHENTICATION -->
+
+            <h2 id="authentication">
+                What Authentication Actually Does
+            </h2>
+
+
+            <p>
+
+                Authentication is the process of verifying someone's identity,
+                making sure you really are the person you claim to be.
+
+                When you log into an account, you might provide a username,
+                a password, a fingerprint, Face ID, or a one-time code.
+
+                The system checks that information before letting you in.
+
+            </p>
+
+
+            <p>
+
+                Say you want to check your email.
+
+                You type in <strong>ghita@example.com</strong> and a password.
+
+                The system compares what you entered against what it has
+                on file, and if it matches, it treats you as the account owner.
+
+                That whole exchange is authentication.
+
+            </p>
+
+
+            <!-- AUTHENTICATION METHODS -->
+
+            <h2 id="authentication-methods">
+                How Can a System Verify Your Identity?
+            </h2>
+
+
+            <p>
+
+                Systems generally verify identity using different types
+                of proof.
+
+            </p>
+
+
+            <h3>
+                Something you know
+            </h3>
+
+
+            <p>
+
+                This is information that only you should know.
+
+            </p>
+
+
+            <ul>
+
+                <li>Password</li>
+
+                <li>PIN</li>
+
+                <li>Security question</li>
+
+            </ul>
+
+
+            <h3>
+                Something you have
+            </h3>
+
+
+            <p>
+
+                This is something you physically possess.
+
+            </p>
+
+
+            <ul>
+
+                <li>Smartphone</li>
+
+                <li>Security key</li>
+
+                <li>Authentication token</li>
+
+            </ul>
+
+
+            <h3>
+                Something you are
+            </h3>
+
+
+            <p>
+
+                This is based on a physical characteristic.
+
+            </p>
+
+
+            <ul>
+
+                <li>Fingerprint</li>
+
+                <li>Face</li>
+
+                <li>Iris</li>
+
+            </ul>
+
+
+            <p>
+
+                Combining more than one of these factors is what people
+                mean by <strong>Multi-Factor Authentication (MFA)</strong>.
+
+                If someone steals your password but doesn't have your phone,
+                they may still be unable to access your account.
+
+            </p>
+
+
+            <!-- AUTHORIZATION -->
+
+            <h2 id="authorization">
+                What Authorization Actually Does
+            </h2>
+
+
+            <p>
+
+                Once a system knows who you are, it still has to figure out
+                what you're allowed to access.
+
+                That's authorization.
+
+                It is really about permissions and access rights rather
+                than identity.
+
+            </p>
+
+
+            <div class="example-box">
+
+                <h3>
+                    A university system
+                </h3>
+
+
+                <div class="example-step">
+
+                    <strong>Student</strong>
+
+                    <br>
+
+                    Can view their grades, view their courses,
+                    and update their profile.
+
+                </div>
+
+
+                <div class="example-step">
+
+                    <strong>Professor</strong>
+
+                    <br>
+
+                    Can view grades for their classes,
+                    add grades, and modify grades.
+
+                </div>
+
+
+                <div class="example-step">
+
+                    <strong>Administrator</strong>
+
+                    <br>
+
+                    Can create accounts, manage users,
+                    and manage the system.
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                These different permissions are part of
+
+                <strong>authorization</strong>.
+
+            </p>
+
+
+            <!-- DIFFERENCE -->
+
+            <h2 id="difference">
+                Telling the Two Apart
+            </h2>
+
+
+            <p>
+
+                The cleanest way to keep them straight is to remember
+                the question each one answers.
+
+            </p>
+
+
+            <div class="comparison-box">
+
+                <table class="comparison-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Authentication
+                            </th>
+
+                            <th>
+                                Authorization
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <strong>Who are you?</strong>
+                            </td>
+
+                            <td>
+                                <strong>What can you do?</strong>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Verifies identity
+                            </td>
+
+                            <td>
+                                Verifies permissions
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Login
+                            </td>
+
+                            <td>
+                                Access control
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Passwords, biometrics, MFA
+                            </td>
+
+                            <td>
+                                Roles, permissions, access rights
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Happens first
+                            </td>
+
+                            <td>
+                                Happens after authentication
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- UNIVERSITY EXAMPLE -->
+
+            <div class="example-box">
+
+                <h3>
+                    Walking into a university building
+                </h3>
+
+
+                <div class="example-step">
+
+                    <strong>Authentication</strong>
+
+                    <br>
+
+                    You show your student card to prove that
+                    you are actually a student.
+
+                </div>
+
+
+                <div class="example-step">
+
+                    <strong>Authorization</strong>
+
+                    <br>
+
+                    Because you are a student, you can enter the library,
+                    but you cannot enter the server room.
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                Authentication tells the system <strong>who you are</strong>.
+
+                Authorization tells the system
+
+                <strong>what you're allowed to do with that identity</strong>.
+
+            </p>
+
+
+            <!-- BANKING -->
+
+            <div class="example-box">
+
+                <h3>
+                    Online banking
+                </h3>
+
+
+                <div class="example-step">
+
+                    <strong>Authentication</strong>
+
+                    <br>
+
+                    You log in with your username and password,
+                    and the bank verifies that you're really you.
+
+                </div>
+
+
+                <div class="example-step">
+
+                    <strong>Authorization</strong>
+
+                    <br>
+
+                    Once you're in, you can check your balance,
+                    review transactions, and transfer money,
+                    but you cannot access another customer's account.
+
+                </div>
+
+            </div>
+
+
+            <!-- WHY -->
+
+            <h2 id="why">
+                Why Both Matter
+            </h2>
+
+
+            <p>
+
+                Without solid authentication and authorization,
+                attackers can end up somewhere they were never
+                supposed to be.
+
+            </p>
+
+
+            <p>
+
+                Imagine a company where every employee, regardless
+                of role, could open every file.
+
+                Someone on the marketing team could access financial
+                records, HR files, stored passwords, or confidential
+                projects that have nothing to do with their job.
+
+                That creates a serious security risk, especially
+                if one account is compromised.
+
+            </p>
+
+
+            <p>
+
+                Good access control keeps people limited to what
+                they actually need.
+
+            </p>
+
+
+            <!-- LEAST PRIVILEGE -->
+
+            <h2>
+                The Principle of Least Privilege
+            </h2>
+
+
+            <p>
+
+                One important cybersecurity principle is called
+                <strong>Least Privilege</strong>.
+
+                The idea is simple:
+
+            </p>
+
+
+            <div class="highlight-box">
+
+                <p>
+
+                    A user should only have the permissions
+                    necessary to perform their job.
+
+                </p>
+
+            </div>
+
+
+            <p>
+
+                A graphic designer doesn't need access to payroll,
+                and giving them that access anyway just creates
+                unnecessary risk.
+
+            </p>
+
+
+            <p>
+
+                In practice, this usually looks like matching
+                each role to a narrow slice of the system:
+
+            </p>
+
+
+            <ul>
+
+                <li>
+                    <strong>Graphic Designer</strong> → Design files
+                </li>
+
+                <li>
+                    <strong>HR Employee</strong> → Employee records
+                </li>
+
+                <li>
+                    <strong>Accountant</strong> → Financial data
+                </li>
+
+                <li>
+                    <strong>System Administrator</strong> → System management
+                </li>
+
+            </ul>
+
+
+            <p>
+
+                If one account gets compromised, the damage can be
+                limited to whatever that account could reach in the
+                first place.
+
+            </p>
+
+
+            <!-- FAILURES -->
+
+            <h2 id="fail">
+                When Either One Fails
+            </h2>
+
+
+            <h3>
+                When authentication fails
+            </h3>
+
+
+            <p>
+
+                If authentication fails, in the ideal case the system
+                simply rejects the login.
+
+                But attackers don't only guess passwords.
+
+                They can use phishing, credential theft, and malware
+                to obtain or misuse someone's credentials.
+
+            </p>
+
+
+            <p>
+
+                This is one reason why strong passwords and
+                <strong>MFA</strong> are important.
+
+            </p>
+
+
+            <h3>
+                When authorization fails
+            </h3>
+
+
+            <p>
+
+                Authorization failures can be just as serious,
+                because they happen after someone has already
+                gained legitimate access.
+
+            </p>
+
+
+            <p>
+
+                Imagine a normal user discovers that they can access
+                an administrator page they were never supposed to see.
+
+                They might suddenly be able to delete users,
+                change permissions, or access confidential data.
+
+            </p>
+
+
+            <p>
+
+                The user may have successfully authenticated,
+                but the system failed to properly control what
+                that user was authorized to do.
+
+            </p>
+
+
+            <div class="highlight-box">
+
+                <p>
+
+                    Someone can be
+
+                    <strong>authenticated correctly</strong>
+
+                    and still be
+
+                    <strong>authorized incorrectly</strong>.
+
+                </p>
+
+            </div>
+
+
+            <!-- TOGETHER -->
+
+            <h2 id="together">
+                How They Work Together
+            </h2>
+
+
+            <p>
+
+                A secure system needs both, in sequence.
+
+                First, authentication figures out who you are.
+
+                Then authorization checks your role against what
+                you're trying to access.
+
+                Only after both steps succeed do you reach the resource.
+
+            </p>
+
+
+            <div class="flow-box">
+
+                <div class="flow">
+
+                    <span class="flow-item">
+                        User
+                    </span>
+
+                    <span class="flow-arrow">
+                        →
+                    </span>
+
+                    <span class="flow-item">
+                        Authentication
+                    </span>
+
+                    <span class="flow-arrow">
+                        →
+                    </span>
+
+                    <span class="flow-item">
+                        Authorization
+                    </span>
+
+                    <span class="flow-arrow">
+                        →
+                    </span>
+
+                    <span class="flow-item">
+                        Access
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                This sequence is why authentication and authorization
+                sit at the center of so much of cybersecurity.
+
+                A typical attack can start with stolen credentials,
+                which allow an attacker to authenticate as the victim.
+
+                Authorization then determines what that compromised
+                account can reach.
+
+            </p>
+
+
+            <p>
+
+                If the compromised account has broad permissions,
+                the potential damage becomes much greater.
+
+                That's the real reason security isn't just about
+                protecting passwords.
+
+                It's about limiting what any single set of credentials
+                can actually do.
+
+            </p>
+
+
+            <!-- KEY TAKEAWAYS -->
+
+            <div class="key-points">
+
+                <h2>
+                    Key Takeaways
+                </h2>
+
+
+                <ul>
+
+                    <li>
+
+                        <strong>Authentication</strong> verifies identity
+                        and answers:
+
+                        <strong>“Who are you?”</strong>
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>Authorization</strong> controls permissions
+                        and answers:
+
+                        <strong>“What are you allowed to do?”</strong>
+
+                    </li>
+
+
+                    <li>
+
+                        Authentication can use passwords, PINs,
+                        biometrics, MFA, and security keys.
+
+                    </li>
+
+
+                    <li>
+
+                        Authorization controls access to resources,
+                        files, databases, accounts, and system functions.
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>Least Privilege</strong> means users
+                        should only have the access their role requires.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONCLUSION -->
+
+            <div class="conclusion">
+
+                <h2>
+                    Conclusion
+                </h2>
+
+
+                <p>
+
+                    Authentication and authorization are two fundamental
+                    concepts in cybersecurity.
+
+                    Authentication makes sure that a user is really
+                    who they claim to be.
+
+                    Authorization determines what that user is allowed
+                    to access or do.
+
+                </p>
+
+
+                <p>
+
+                    They work together to prevent unauthorized access
+                    and limit the potential impact of compromised accounts.
+
+                </p>
+
+
+                <p>
+
+                    The simplest way to remember them is:
+
+                </p>
+
+
+                <div class="highlight-box">
+
+                    <p>
+
+                        <strong>Authentication = Who are you?</strong>
+
+                        <br><br>
+
+                        <strong>Authorization = What can you do?</strong>
+
+                    </p>
+
+                </div>
+
+
+                <p>
+
+                    In a well-built system, knowing someone's identity
+                    is only the first step.
+
+                    The system still has to decide, deliberately,
+                    what that identity is allowed to reach.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Ghita KHAIF-ALLAH.
+            Built with HTML, CSS &amp; Bootstrap.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
