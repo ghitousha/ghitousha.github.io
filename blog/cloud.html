@@ -1,1 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Explore cloud computing fundamentals, cloud services, virtualization, cloud security, and cloud applications.">
+
+    <title>Cloud Computing | Ghita KHAIF-ALLAH</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg: #151017;
+            --bg-soft: #1b141b;
+            --card: #211820;
+            --card-border: #392732;
+
+            --burgundy: #8e3a5d;
+            --burgundy-light: #c76a8f;
+
+            --pink: #efa8be;
+            --pink-light: #f7d6e0;
+
+            --gold: #e8c07a;
+
+            --text: #fff7fa;
+            --muted: #c9b7c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Quicksand", sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(21, 16, 23, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            transition:
+                background 0.35s ease,
+                box-shadow 0.35s ease;
+
+            padding: 14px 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(21, 16, 23, 0.94);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .navbar-brand {
+            color: var(--pink) !important;
+            font-family: "DM Serif Display", serif;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .navbar-brand img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--muted) !important;
+            font-weight: 600;
+            margin-left: 15px;
+            transition: 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--pink) !important;
+        }
+
+        .navbar-toggler {
+            border-color: var(--burgundy-light);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.15rem rgba(239, 168, 190, 0.2);
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .category-hero {
+            min-height: 78vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+
+            padding: 150px 20px 100px;
+        }
+
+        .category-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            background: rgba(142, 58, 93, 0.18);
+
+            border-radius: 50%;
+
+            filter: blur(90px);
+
+            top: 10%;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .hero-icon {
+            width: 85px;
+            height: 85px;
+
+            margin: 0 auto 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(142, 58, 93, 0.35),
+                    rgba(239, 168, 190, 0.12)
+                );
+
+            border: 1px solid rgba(239, 168, 190, 0.2);
+
+            color: var(--pink);
+
+            font-size: 2.5rem;
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-label {
+            color: var(--pink);
+
+            font-size: 0.85rem;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .category-hero h1 {
+            font-family: "DM Serif Display", serif;
+
+            font-size: clamp(3.5rem, 8vw, 6rem);
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    var(--pink),
+                    var(--burgundy-light)
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+        }
+
+        .category-hero p {
+            max-width: 700px;
+
+            margin: 0 auto;
+
+            color: var(--muted);
+
+            font-size: 1.05rem;
+
+            line-height: 1.8;
+        }
+
+        .hero-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 30px;
+
+            padding: 12px 24px;
+
+            border-radius: 50px;
+
+            background: var(--burgundy);
+
+            color: white;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+
+            border: 1px solid rgba(239, 168, 190, 0.2);
+        }
+
+        .hero-button:hover {
+            background: var(--burgundy-light);
+
+            color: white;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(142, 58, 93, 0.35);
+        }
+
+        /* =========================
+           FLOATING SYMBOLS
+        ========================= */
+
+        .floating-symbol {
+            position: absolute;
+
+            color: rgba(239, 168, 190, 0.35);
+
+            font-size: 1.3rem;
+
+            animation: float 5s ease-in-out infinite;
+
+            pointer-events: none;
+        }
+
+        .symbol-1 {
+            top: 24%;
+            left: 10%;
+        }
+
+        .symbol-2 {
+            top: 32%;
+            right: 12%;
+            animation-delay: 1s;
+        }
+
+        .symbol-3 {
+            bottom: 20%;
+            left: 18%;
+            animation-delay: 2s;
+        }
+
+        .symbol-4 {
+            bottom: 15%;
+            right: 18%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .content-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-heading span {
+            display: block;
+
+            color: var(--pink);
+
+            font-size: 0.8rem;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-family: "DM Serif Display", serif;
+
+            font-size: clamp(2.5rem, 5vw, 4rem);
+
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+
+            max-width: 650px;
+
+            margin: auto;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CATEGORY CARDS
+        ========================= */
+
+        .category-card {
+            display: block;
+
+            position: relative;
+
+            height: 100%;
+
+            padding: 35px 30px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(33, 24, 32, 0.98),
+                    rgba(27, 20, 27, 0.98)
+                );
+
+            border: 1px solid var(--card-border);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .category-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            background: rgba(142, 58, 93, 0.13);
+
+            border-radius: 50%;
+
+            filter: blur(45px);
+
+            top: -80px;
+            right: -80px;
+
+            transition: 0.35s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+
+            border-color: rgba(239, 168, 190, 0.4);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .category-card:hover::before {
+            background: rgba(239, 168, 190, 0.16);
+        }
+
+        .category-number {
+            position: relative;
+            z-index: 2;
+
+            color: var(--burgundy-light);
+
+            font-size: 0.85rem;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 25px;
+        }
+
+        .category-icon {
+            position: relative;
+            z-index: 2;
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background: rgba(142, 58, 93, 0.2);
+
+            border: 1px solid rgba(239, 168, 190, 0.12);
+
+            color: var(--pink);
+
+            font-size: 1.5rem;
+
+            margin-bottom: 25px;
+        }
+
+        .category-card h3 {
+            position: relative;
+            z-index: 2;
+
+            color: var(--text);
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 1.7rem;
+
+            margin-bottom: 15px;
+        }
+
+        .category-card p {
+            position: relative;
+            z-index: 2;
+
+            color: var(--muted);
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+        .category-link {
+            position: relative;
+            z-index: 2;
+
+            color: var(--pink);
+
+            font-weight: 700;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            transition: 0.3s ease;
+        }
+
+        .category-card:hover .category-link {
+            gap: 13px;
+            color: var(--pink-light);
+        }
+
+        /* =========================
+           CLOUD NOTE
+        ========================= */
+
+        .cloud-note {
+            margin-top: 80px;
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(142, 58, 93, 0.18),
+                    rgba(33, 24, 32, 0.85)
+                );
+
+            border: 1px solid var(--card-border);
+        }
+
+        .cloud-note h3 {
+            font-family: "DM Serif Display", serif;
+
+            font-size: 2rem;
+
+            margin-bottom: 15px;
+
+            color: var(--pink);
+        }
+
+        .cloud-note p {
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid var(--card-border);
+
+            padding: 35px 0;
+
+            background: var(--bg-soft);
+
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--muted);
+
+            margin: 0;
+
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--pink);
+        }
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+        /* =========================
+           SPARKLES
+        ========================= */
+
+        .sparkle {
+            position: fixed;
+
+            width: 3px;
+            height: 3px;
+
+            background: var(--pink);
+
+            border-radius: 50%;
+
+            opacity: 0.5;
+
+            pointer-events: none;
+
+            animation:
+                sparkleMove 4s linear infinite;
+
+            z-index: 0;
+        }
+
+        @keyframes sparkleMove {
+
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 0.6;
+            }
+
+            70% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 991px) {
+
+            .navbar-nav {
+                padding-top: 15px;
+            }
+
+            .navbar-nav .nav-link {
+                margin-left: 0;
+                padding: 8px 0;
+            }
+
+            .category-hero {
+                min-height: 70vh;
+                padding-top: 130px;
+            }
+
+            .floating-symbol {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .category-hero {
+                padding: 120px 20px 80px;
+            }
+
+            .hero-icon {
+                width: 70px;
+                height: 70px;
+
+                font-size: 2rem;
+            }
+
+            .category-hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .category-hero p {
+                font-size: 0.95rem;
+            }
+
+            .content-section {
+                padding: 70px 0;
+            }
+
+            .category-card {
+                padding: 28px 24px;
+            }
+
+            .cloud-note {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="../index.html">
+
+                <img src="../images/rose.png" alt="Ghita logo">
+
+                GK ♡
+
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#education">
+                            Education
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#certifications">
+                            Certifications
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#blog">
+                            Blog
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         FLOATING SYMBOLS
+    ========================= -->
+
+    <div class="floating-symbol symbol-1">
+        ✦
+    </div>
+
+    <div class="floating-symbol symbol-2">
+        ✧
+    </div>
+
+    <div class="floating-symbol symbol-3">
+        ♡
+    </div>
+
+    <div class="floating-symbol symbol-4">
+        ✦
+    </div>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="category-hero">
+
+        <div class="hero-content">
+
+            <div class="hero-icon">
+
+                <i class="bi bi-cloud"></i>
+
+            </div>
+
+
+            <div class="category-label">
+                Blog Category
+            </div>
+
+
+            <h1>
+                Cloud
+            </h1>
+
+
+            <p>
+                Explore cloud computing, from its fundamental concepts and
+                service models to virtualization, cloud security, and modern
+                cloud applications. Discover how cloud technologies provide
+                flexible, scalable, and accessible computing resources.
+            </p>
+
+
+            <a href="../index.html#blog" class="hero-button">
+
+                <i class="bi bi-arrow-left"></i>
+
+                Back to Blog
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CLOUD CATEGORIES
+    ========================= -->
+
+    <section class="content-section">
+
+        <div class="container">
+
+
+            <div class="section-heading reveal">
+
+                <span>
+                    Explore Cloud
+                </span>
+
+                <h2>
+                    Cloud Topics
+                </h2>
+
+                <p>
+                    Discover the technologies and concepts behind modern
+                    cloud computing, from infrastructure and services to
+                    security and deployment.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- =========================
+                     01 CLOUD FUNDAMENTALS
+                ========================= -->
+
+                <div class="col-lg-4 col-md-6 reveal">
+
+                    <a href="cloud/cloud-fundamentals.html"
+                        class="category-card">
+
+
+                        <div class="category-number">
+                            01
+                        </div>
+
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-cloud"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Cloud Fundamentals
+                        </h3>
+
+
+                        <p>
+                            Learn what cloud computing is, how it works,
+                            its main characteristics, deployment models,
+                            and why organizations use cloud technologies.
+                        </p>
+
+
+                        <div class="category-link">
+
+                            Explore
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </div>
+
+
+                    </a>
+
+                </div>
+
+
+                <!-- =========================
+                     02 CLOUD SERVICES
+                ========================= -->
+
+                <div class="col-lg-4 col-md-6 reveal">
+
+                    <a href="cloud/cloud-services.html"
+                        class="category-card">
+
+
+                        <div class="category-number">
+                            02
+                        </div>
+
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-boxes"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Cloud Services
+                        </h3>
+
+
+                        <p>
+                            Explore IaaS, PaaS, and SaaS and understand
+                            how different cloud service models provide
+                            computing resources and applications.
+                        </p>
+
+
+                        <div class="category-link">
+
+                            Explore
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </div>
+
+
+                    </a>
+
+                </div>
+
+
+                <!-- =========================
+                     03 VIRTUALIZATION
+                ========================= -->
+
+                <div class="col-lg-4 col-md-6 reveal">
+
+                    <a href="cloud/virtualization.html"
+                        class="category-card">
+
+
+                        <div class="category-number">
+                            03
+                        </div>
+
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-pc-display"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Virtualization
+                        </h3>
+
+
+                        <p>
+                            Discover virtual machines, hypervisors,
+                            containers, and how virtualization enables
+                            efficient use of computing resources.
+                        </p>
+
+
+                        <div class="category-link">
+
+                            Explore
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </div>
+
+
+                    </a>
+
+                </div>
+
+
+                <!-- =========================
+                     04 CLOUD SECURITY
+                ========================= -->
+
+                <div class="col-lg-6 col-md-6 reveal">
+
+                    <a href="cloud/cloud-security.html"
+                        class="category-card">
+
+
+                        <div class="category-number">
+                            04
+                        </div>
+
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-shield-lock"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Cloud Security
+                        </h3>
+
+
+                        <p>
+                            Explore identity and access management,
+                            data protection, secure configurations,
+                            threats, and the shared responsibility model
+                            in cloud environments.
+                        </p>
+
+
+                        <div class="category-link">
+
+                            Explore
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </div>
+
+
+                    </a>
+
+                </div>
+
+
+                <!-- =========================
+                     05 CLOUD APPLICATIONS
+                ========================= -->
+
+                <div class="col-lg-6 col-md-6 reveal">
+
+                    <a href="cloud/cloud-applications.html"
+                        class="category-card">
+
+
+                        <div class="category-number">
+                            05
+                        </div>
+
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-cloud-arrow-up"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Cloud Applications
+                        </h3>
+
+
+                        <p>
+                            Discover how applications are deployed in the
+                            cloud, including scalability, storage,
+                            databases, APIs, and modern cloud-based systems.
+                        </p>
+
+
+                        <div class="category-link">
+
+                            Explore
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </div>
+
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================
+                 CLOUD NOTE
+            ========================= -->
+
+            <div class="cloud-note reveal">
+
+
+                <h3>
+                    Computing Beyond the Local Machine
+                </h3>
+
+
+                <p>
+                    Cloud computing makes computing resources available
+                    through the internet, allowing applications, storage,
+                    databases, and infrastructure to scale according to
+                    demand. Understanding the cloud is essential for
+                    building modern, flexible, and connected systems.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+
+                © 2026
+
+                <span>
+                    Ghita KHAIF-ALLAH
+                </span>
+
+                · Cloud Computing & Technology Blog
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         BOOTSTRAP
+    ========================= -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           NAVBAR SCROLL
+        ========================= */
+
+        const navbar =
+            document.querySelector(".navbar");
+
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 40) {
+
+                navbar.classList.add("scrolled");
+
+            } else {
+
+                navbar.classList.remove("scrolled");
+
+            }
+
+        });
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("show");
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(function (element) {
+
+            observer.observe(element);
+
+        });
+
+
+        /* =========================
+           SPARKLES
+        ========================= */
+
+        function createSparkle() {
+
+            const sparkle =
+                document.createElement("div");
+
+
+            sparkle.classList.add("sparkle");
+
+
+            sparkle.style.left =
+                Math.random() * 100 + "vw";
+
+
+            sparkle.style.top =
+                Math.random() * 100 + "vh";
+
+
+            sparkle.style.animationDuration =
+                (3 + Math.random() * 3) + "s";
+
+
+            document.body.appendChild(sparkle);
+
+
+            setTimeout(function () {
+
+                sparkle.remove();
+
+            }, 6000);
+
+        }
+
+
+        setInterval(createSparkle, 900);
+
+    </script>
+
+
+</body>
+
+</html>
