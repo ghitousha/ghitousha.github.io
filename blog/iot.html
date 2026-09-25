@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Explore IoT through understanding and discovering by Ghita KHAIF-ALLAH.">
+        content="IoT articles, notes and tutorials by Ghita KHAIF-ALLAH.">
 
     <title>IoT | Ghita KHAIF-ALLAH</title>
 
@@ -185,7 +185,7 @@
 
         .category-hero {
 
-            padding: 150px 0 70px;
+            padding: 150px 0 80px;
 
             text-align: center;
 
@@ -279,15 +279,46 @@
 
 
         /* =========================
-           CHOICE SECTION
+           ARTICLES SECTION
         ========================= */
 
-        .choice-section {
+        .articles-section {
 
-            padding: 30px 0 120px;
+            padding: 40px 0 110px;
 
         }
 
+
+        .articles-title {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .articles-title h2 {
+
+            font-size: 2rem;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .articles-title p {
+
+            color: var(--muted);
+
+            margin: 0;
+
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
 
         .back-home {
 
@@ -301,7 +332,7 @@
 
             font-weight: 600;
 
-            margin-bottom: 45px;
+            margin-bottom: 30px;
 
             transition: 0.3s;
 
@@ -315,129 +346,86 @@
         }
 
 
-        .choice-title {
-
-            text-align: center;
-
-            margin-bottom: 50px;
-
-        }
-
-
-        .choice-title h2 {
-
-            font-size: 2.2rem;
-
-            margin-bottom: 10px;
-
-        }
-
-
-        .choice-title p {
-
-            color: var(--muted);
-
-            margin: 0;
-
-        }
-
-
         /* =========================
-           CHOICE CARDS
+           CATEGORY ACCORDION
         ========================= */
 
-        .choice-card {
+        .category-block {
 
-            position: relative;
+            max-width: 950px;
 
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: space-between;
-
-            min-height: 330px;
-
-            padding: 42px;
+            margin: 0 auto 22px;
 
             background: var(--card);
 
             border: 1px solid var(--card-border);
 
-            border-radius: 28px;
-
-            color: var(--text);
+            border-radius: 22px;
 
             overflow: hidden;
 
-            transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
+            transition: 0.3s;
 
         }
 
 
-        .choice-card::before {
+        .category-block:hover {
 
-            content: "";
-
-            position: absolute;
-
-            width: 220px;
-
-            height: 220px;
-
-            top: -100px;
-
-            right: -80px;
-
-            background: rgba(142, 58, 93, 0.16);
-
-            border-radius: 50%;
-
-            transition: 0.4s ease;
+            border-color: rgba(239, 168, 190, 0.35);
 
         }
 
 
-        .choice-card:hover {
+        .category-header {
 
-            transform: translateY(-8px);
+            width: 100%;
 
-            border-color: rgba(239, 168, 190, 0.45);
+            border: none;
 
-            box-shadow:
-                0 25px 60px rgba(0, 0, 0, 0.30);
+            background: transparent;
 
             color: var(--text);
 
-        }
+            padding: 25px 30px;
 
+            display: flex;
 
-        .choice-card:hover::before {
+            align-items: center;
 
-            transform: scale(1.3);
+            justify-content: space-between;
 
-            background: rgba(142, 58, 93, 0.24);
+            text-align: left;
 
-        }
-
-
-        .choice-content {
-
-            position: relative;
-
-            z-index: 2;
+            cursor: pointer;
 
         }
 
 
-        .choice-icon {
+        .category-header:hover {
 
-            width: 62px;
+            color: var(--pink);
 
-            height: 62px;
+        }
+
+
+        .category-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+        }
+
+
+        .category-number {
+
+            width: 45px;
+
+            height: 45px;
+
+            flex-shrink: 0;
 
             display: flex;
 
@@ -445,9 +433,7 @@
 
             justify-content: center;
 
-            margin-bottom: 28px;
-
-            border-radius: 18px;
+            border-radius: 14px;
 
             background: rgba(142, 58, 93, 0.25);
 
@@ -455,38 +441,84 @@
 
             color: var(--pink);
 
-            font-size: 1.7rem;
+            font-weight: 700;
+
+            font-size: 0.9rem;
 
         }
 
 
-        .choice-card h3 {
-
-            font-size: 2rem;
-
-            margin-bottom: 12px;
-
-        }
-
-
-        .choice-card p {
-
-            color: var(--muted);
-
-            line-height: 1.8;
+        .category-name {
 
             margin: 0;
 
-            max-width: 430px;
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 1.6rem;
+
+            font-weight: 400;
 
         }
 
 
-        .choice-footer {
+        .category-description {
 
-            position: relative;
+            margin: 4px 0 0;
 
-            z-index: 2;
+            color: var(--muted);
+
+            font-size: 0.9rem;
+
+        }
+
+
+        .toggle-icon {
+
+            color: var(--pink);
+
+            font-size: 1.4rem;
+
+            transition: transform 0.3s ease;
+
+        }
+
+
+        .category-block.active .toggle-icon {
+
+            transform: rotate(45deg);
+
+        }
+
+
+        /* =========================
+           CATEGORY CONTENT
+        ========================= */
+
+        .category-content {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.45s ease;
+
+        }
+
+
+        .category-inner {
+
+            padding: 0 30px 30px;
+
+            border-top: 1px solid rgba(239, 168, 190, 0.08);
+
+        }
+
+
+        /* =========================
+           ARTICLE ITEM
+        ========================= */
+
+        .article-item {
 
             display: flex;
 
@@ -494,61 +526,159 @@
 
             justify-content: space-between;
 
-            margin-top: 35px;
+            gap: 20px;
 
-            padding-top: 20px;
+            padding: 20px 0;
 
-            border-top: 1px solid rgba(239, 168, 190, 0.08);
+            border-bottom: 1px solid rgba(239, 168, 190, 0.08);
+
+            color: var(--text);
+
+            transition: 0.3s;
 
         }
 
 
-        .choice-action {
+        .article-item:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .article-item:hover {
 
             color: var(--pink);
 
-            font-weight: 700;
+            padding-left: 8px;
 
         }
 
 
-        .choice-arrow {
+        .article-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+        }
+
+
+        .article-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: rgba(142, 58, 93, 0.20);
 
             color: var(--pink);
 
-            font-size: 1.2rem;
+        }
 
-            transition: transform 0.3s ease;
+
+        .article-title {
+
+            font-weight: 600;
+
+            margin: 0;
 
         }
 
 
-        .choice-card:hover .choice-arrow {
+        .article-description {
 
-            transform: translateX(7px);
+            color: var(--muted);
+
+            font-size: 0.85rem;
+
+            margin: 3px 0 0;
+
+        }
+
+
+        .article-arrow {
+
+            color: var(--pink);
+
+            font-size: 1.1rem;
+
+            transition: 0.3s;
+
+        }
+
+
+        .article-item:hover .article-arrow {
+
+            transform: translateX(5px);
 
         }
 
 
         /* =========================
-           SMALL LABEL
+           COMING SOON
         ========================= */
 
-        .choice-label {
+        .coming-soon {
 
-            display: inline-block;
+            cursor: default;
 
-            margin-bottom: 12px;
+            opacity: 0.75;
 
-            color: var(--pink);
+        }
 
-            font-size: 0.75rem;
+
+        .coming-soon:hover {
+
+            padding-left: 0;
+
+            color: var(--text);
+
+        }
+
+
+        .coming-soon .article-icon {
+
+            background: rgba(255, 255, 255, 0.04);
+
+            color: #a8959e;
+
+        }
+
+
+        .status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            color: #a8959e;
+
+            font-size: 0.72rem;
 
             font-weight: 700;
 
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
+            white-space: nowrap;
 
         }
 
@@ -592,34 +722,51 @@
             }
 
 
-            .choice-section {
+            .category-header {
 
-                padding: 20px 20px 90px;
-
-            }
-
-
-            .choice-card {
-
-                min-height: 300px;
-
-                padding: 30px;
-
-                margin-bottom: 20px;
+                padding: 22px;
 
             }
 
 
-            .choice-card h3 {
+            .category-inner {
 
-                font-size: 1.8rem;
+                padding: 0 22px 25px;
 
             }
 
 
-            .choice-title h2 {
+            .category-info {
 
-                font-size: 1.9rem;
+                gap: 12px;
+
+            }
+
+
+            .category-name {
+
+                font-size: 1.35rem;
+
+            }
+
+
+            .category-description {
+
+                font-size: 0.82rem;
+
+            }
+
+
+            .article-item {
+
+                align-items: flex-start;
+
+            }
+
+
+            .article-description {
+
+                display: none;
 
             }
 
@@ -641,9 +788,7 @@
 
         <div class="container">
 
-            <a
-                class="navbar-brand logo-photo"
-                href="../index.html">
+            <a class="navbar-brand logo-photo" href="../index.html">
 
                 <img
                     src="../images/rose.png"
@@ -764,10 +909,9 @@
 
             <p>
 
-                Exploring connected devices, sensors,
-                communication technologies, data and
-                smart systems through what I understand
-                and what I discover.
+                Exploring the Internet of Things through connected
+                devices, sensors, communication technologies, data
+                and smart systems I'm learning along the way.
 
                 <span class="sparkle">✦</span>
 
@@ -779,10 +923,10 @@
 
 
     <!-- =========================
-         CHOICE SECTION
+         CONTENT
     ========================= -->
 
-    <main class="choice-section">
+    <main class="articles-section">
 
         <div class="container">
 
@@ -802,150 +946,850 @@
 
             <!-- TITLE -->
 
-            <div class="choice-title">
+            <div class="articles-title">
 
                 <h2>
-                    Choose Your Path
+                    Explore My IoT Journey
                 </h2>
 
                 <p>
-                    Explore IoT through understanding or discovery.
+                    Connected devices, sensors, communication,
+                    data and smart systems I'm learning.
                 </p>
 
             </div>
 
 
             <!-- =========================
-                 CHOICE CARDS
+                 01 — IOT FUNDAMENTALS
             ========================= -->
 
-            <div class="row g-4">
+            <div class="category-block">
 
+                <button
+                    class="category-header"
+                    type="button">
 
-                <!-- =========================
-                     UNDERSTANDING
-                ========================= -->
+                    <div class="category-info">
 
-                <div class="col-lg-6">
+                        <div class="category-number">
+                            01
+                        </div>
 
-                    <a
-                        href="iot/understanding.html"
-                        class="choice-card">
+                        <div>
 
-
-                        <div class="choice-content">
-
-                            <span class="choice-label">
-                                The Foundations
-                            </span>
-
-
-                            <div class="choice-icon">
-
-                                <i class="bi bi-book-half"></i>
-
-                            </div>
-
-
-                            <h3>
-                                Understanding
+                            <h3 class="category-name">
+                                IoT Fundamentals
                             </h3>
 
-
-                            <p>
-
-                                Build a clear understanding of
-                                IoT technologies, from connected
-                                devices and sensors to communication,
-                                data and security.
-
+                            <p class="category-description">
+                                Understanding the foundations of connected systems.
                             </p>
 
                         </div>
 
-
-                        <div class="choice-footer">
-
-                            <span class="choice-action">
-                                Explore Understanding
-                            </span>
+                    </div>
 
 
-                            <i
-                                class="bi bi-arrow-right choice-arrow">
-                            </i>
+                    <i class="bi bi-plus-lg toggle-icon"></i>
 
-                        </div>
+                </button>
 
 
-                    </a>
+                <div class="category-content">
 
-                </div>
-
-
-                <!-- =========================
-                     DISCOVERING
-                ========================= -->
-
-                <div class="col-lg-6">
-
-                    <a
-                        href="iot/discovering.html"
-                        class="choice-card">
+                    <div class="category-inner">
 
 
-                        <div class="choice-content">
+                        <!-- ARTICLE -->
 
-                            <span class="choice-label">
-                                The Real World
-                            </span>
+                        <div class="article-item coming-soon">
 
+                            <div class="article-info">
 
-                            <div class="choice-icon">
+                                <div class="article-icon">
+                                    <i class="bi bi-cpu"></i>
+                                </div>
 
-                                <i class="bi bi-stars"></i>
+                                <div>
+
+                                    <p class="article-title">
+                                        What Is the Internet of Things?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding IoT, connected devices
+                                        and smart environments.
+                                    </p>
+
+                                </div>
 
                             </div>
 
 
-                            <h3>
-                                Discovering
-                            </h3>
-
-
-                            <p>
-
-                                Discover how IoT technologies
-                                are used in the real world,
-                                from connected drones and smart
-                                homes to agriculture, wearables
-                                and smart cities.
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="choice-footer">
-
-                            <span class="choice-action">
-                                Explore Discovering
+                            <span class="status">
+                                Coming soon
                             </span>
 
+                        </div>
 
-                            <i
-                                class="bi bi-arrow-right choice-arrow">
-                            </i>
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-diagram-3"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        How Does IoT Work?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring how devices, networks,
+                                        platforms and applications interact.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
 
                         </div>
 
 
-                    </a>
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-layers"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        The Main Components of an IoT System
+                                    </p>
+
+                                    <p class="article-description">
+                                        Devices, connectivity, data processing
+                                        and applications.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
 
                 </div>
-
 
             </div>
+
+
+            <!-- =========================
+                 02 — SENSORS & DEVICES
+            ========================= -->
+
+            <div class="category-block">
+
+                <button
+                    class="category-header"
+                    type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                Sensors & Devices
+                            </h3>
+
+                            <p class="category-description">
+                                Discovering the devices that collect and interact with data.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-thermometer-half"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        What Are IoT Sensors?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding how sensors collect
+                                        information from the physical world.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-cpu"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Microcontrollers in IoT
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding the role of microcontrollers
+                                        in connected devices.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-motherboard"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        ESP32 and IoT Projects
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring the ESP32 as a platform
+                                        for connected applications.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-house-gear"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Examples of IoT Devices
+                                    </p>
+
+                                    <p class="article-description">
+                                        Smart homes, wearables, industrial
+                                        devices and connected systems.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 03 — CONNECTIVITY
+            ========================= -->
+
+            <div class="category-block">
+
+                <button
+                    class="category-header"
+                    type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                Connectivity & Communication
+                            </h3>
+
+                            <p class="category-description">
+                                Understanding how IoT devices communicate.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-wifi"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        How Do IoT Devices Communicate?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring communication between
+                                        connected devices and systems.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-router"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Wi-Fi and IoT
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding Wi-Fi connectivity
+                                        in IoT environments.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-bluetooth"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Bluetooth and BLE
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring Bluetooth technologies
+                                        used by connected devices.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-broadcast-pin"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        MQTT and IoT Communication
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding lightweight messaging
+                                        for IoT applications.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 04 — DATA & SMART SYSTEMS
+            ========================= -->
+
+            <div class="category-block">
+
+                <button
+                    class="category-header"
+                    type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                Data & Smart Systems
+                            </h3>
+
+                            <p class="category-description">
+                                From collected data to intelligent decisions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-database"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        IoT Data: From Sensors to Applications
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding how sensor data moves
+                                        through an IoT system.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-cloud"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        What Is the IoT Cloud?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding cloud platforms
+                                        and connected devices.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-bar-chart-line"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Data Analytics in IoT
+                                    </p>
+
+                                    <p class="article-description">
+                                        Turning IoT data into useful
+                                        information and insights.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-robot"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        AI and IoT
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring how artificial intelligence
+                                        can make IoT systems smarter.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 05 — IOT SECURITY
+            ========================= -->
+
+            <div class="category-block">
+
+                <button
+                    class="category-header"
+                    type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            05
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                IoT Security
+                            </h3>
+
+                            <p class="category-description">
+                                Protecting connected devices and smart systems.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-shield-lock"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Why Is IoT Security Important?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding the security challenges
+                                        of connected devices.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-key"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Authentication in IoT
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding how IoT devices
+                                        can be securely identified.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-lock"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        How Can IoT Devices Be Secured?
+                                    </p>
+
+                                    <p class="article-description">
+                                        Practical approaches to protecting
+                                        connected devices and systems.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Common IoT Security Risks
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring vulnerabilities and risks
+                                        affecting connected devices.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
 
@@ -970,6 +1814,68 @@
         </div>
 
     </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        const categoryHeaders =
+            document.querySelectorAll('.category-header');
+
+
+        categoryHeaders.forEach(header => {
+
+            header.addEventListener('click', () => {
+
+                const category =
+                    header.parentElement;
+
+                const content =
+                    category.querySelector('.category-content');
+
+
+                const isOpen =
+                    category.classList.contains('active');
+
+
+                /*
+                 * Close all categories
+                 */
+
+                document
+                    .querySelectorAll('.category-block')
+                    .forEach(block => {
+
+                        block.classList.remove('active');
+
+                        block
+                            .querySelector('.category-content')
+                            .style.maxHeight = null;
+
+                    });
+
+
+                /*
+                 * Open selected category
+                 */
+
+                if (!isOpen) {
+
+                    category.classList.add('active');
+
+                    content.style.maxHeight =
+                        content.scrollHeight + 'px';
+
+                }
+
+            });
+
+        });
+
+    </script>
 
 
     <!-- Bootstrap JS -->
