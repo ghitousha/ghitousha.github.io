@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Discover IoT technologies and real-world applications by Ghita KHAIF-ALLAH.">
+
+    <title>IoT Discovering | Ghita KHAIF-ALLAH</title>
+
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =========================
+           COLORS
+        ========================= */
+
+        :root {
+
+            --bg: #151017;
+            --bg-soft: #1b141b;
+
+            --card: #211820;
+            --card-border: #392732;
+
+            --burgundy: #8e3a5d;
+            --burgundy-light: #c76a8f;
+
+            --pink: #efa8be;
+            --pink-light: #f7d6e0;
+
+            --text: #fff7fa;
+            --muted: #c9b7c0;
+
+        }
+
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family: 'Quicksand', sans-serif;
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            overflow-x: hidden;
+
+        }
+
+
+        h1,
+        h2,
+        h3 {
+
+            font-family: 'DM Serif Display', serif;
+
+            font-weight: 400;
+
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+
+            background: rgba(21, 16, 23, 0.92);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid rgba(239, 168, 190, 0.08);
+
+        }
+
+
+        .navbar-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            height: 75px;
+
+            text-decoration: none;
+
+        }
+
+
+        .logo-photo img {
+
+            width: 95px;
+
+            height: 95px;
+
+            object-fit: contain;
+
+            border-radius: 0;
+
+            border: none;
+
+            display: block;
+
+            transition: transform 0.3s ease;
+
+        }
+
+
+        .logo-photo img:hover {
+
+            transform: scale(1.08);
+
+        }
+
+
+        .nav-link {
+
+            color: #ecdfe6 !important;
+
+            font-weight: 600;
+
+            margin-left: 15px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .nav-link:hover {
+
+            color: var(--pink) !important;
+
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .category-hero {
+
+            padding: 150px 0 70px;
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 30%,
+                    rgba(142, 58, 93, 0.30),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(239, 168, 190, 0.10),
+                    transparent 35%
+                ),
+
+                var(--bg);
+
+        }
+
+
+        .category-icon {
+
+            width: 75px;
+
+            height: 75px;
+
+            margin: 0 auto 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 22px;
+
+            background: rgba(142, 58, 93, 0.22);
+
+            border: 1px solid var(--card-border);
+
+            color: var(--pink);
+
+            font-size: 2rem;
+
+            box-shadow:
+                0 15px 40px rgba(142, 58, 93, 0.15);
+
+        }
+
+
+        .category-hero h1 {
+
+            font-size: clamp(2.5rem, 5vw, 4rem);
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .category-hero h1 span {
+
+            color: var(--pink);
+
+            font-style: italic;
+
+        }
+
+
+        .category-hero p {
+
+            max-width: 680px;
+
+            margin: 0 auto;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            font-size: 1.05rem;
+
+        }
+
+
+        .sparkle {
+
+            color: var(--pink);
+
+        }
+
+
+        /* =========================
+           CONTENT SECTION
+        ========================= */
+
+        .category-section {
+
+            padding: 30px 0 120px;
+
+        }
+
+
+        .back-home {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: var(--muted);
+
+            font-weight: 600;
+
+            margin-bottom: 45px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .back-home:hover {
+
+            color: var(--pink);
+
+        }
+
+
+        .section-intro {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .section-intro h2 {
+
+            font-size: 2.2rem;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .section-intro p {
+
+            color: var(--muted);
+
+            margin: 0;
+
+        }
+
+
+        /* =========================
+           CATEGORY CARDS
+        ========================= */
+
+        .category-card {
+
+            position: relative;
+
+            background: var(--card);
+
+            border: 1px solid var(--card-border);
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+
+        }
+
+
+        .category-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color: rgba(239, 168, 190, 0.35);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.28);
+
+        }
+
+
+        .category-header {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 30px;
+
+            border-bottom: 1px solid rgba(239, 168, 190, 0.08);
+
+        }
+
+
+        .category-number {
+
+            min-width: 52px;
+
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background: rgba(142, 58, 93, 0.25);
+
+            border: 1px solid var(--card-border);
+
+            color: var(--pink);
+
+            font-weight: 700;
+
+        }
+
+
+        .category-header h3 {
+
+            margin: 0;
+
+            font-size: 1.7rem;
+
+        }
+
+
+        .category-description {
+
+            padding: 25px 30px 10px;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+        }
+
+
+        .article-list {
+
+            padding: 10px 30px 30px;
+
+        }
+
+
+        .article-link {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 15px 0;
+
+            color: var(--text);
+
+            border-bottom: 1px solid rgba(239, 168, 190, 0.07);
+
+            transition: 0.3s;
+
+        }
+
+
+        .article-link:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .article-link:hover {
+
+            color: var(--pink);
+
+            padding-left: 7px;
+
+        }
+
+
+        .article-link span {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .article-link i {
+
+            color: var(--pink);
+
+        }
+
+
+        .article-arrow {
+
+            color: var(--pink);
+
+            transition: transform 0.3s ease;
+
+        }
+
+
+        .article-link:hover .article-arrow {
+
+            transform: translateX(6px);
+
+        }
+
+
+        /* =========================
+           SMALL LABEL
+        ========================= */
+
+        .category-label {
+
+            display: inline-block;
+
+            margin-bottom: 8px;
+
+            color: var(--pink);
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #100c12;
+
+            color: #8f8290;
+
+            padding: 25px 0;
+
+            text-align: center;
+
+            font-size: 0.9rem;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .category-hero {
+
+                padding: 130px 20px 60px;
+
+            }
+
+
+            .category-hero h1 {
+
+                font-size: 2.7rem;
+
+            }
+
+
+            .category-section {
+
+                padding: 20px 20px 90px;
+
+            }
+
+
+            .category-header {
+
+                padding: 25px;
+
+            }
+
+
+            .category-description {
+
+                padding: 22px 25px 10px;
+
+            }
+
+
+            .article-list {
+
+                padding: 10px 25px 25px;
+
+            }
+
+
+            .section-intro h2 {
+
+                font-size: 1.9rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+        <div class="container">
+
+            <a
+                class="navbar-brand logo-photo"
+                href="../../index.html">
+
+                <img
+                    src="../../images/rose.png"
+                    alt="Ghita KHAIF-ALLAH">
+
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../../index.html">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../../index.html#about">
+
+                            About
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../../index.html#projects">
+
+                            Projects
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../../index.html#blog">
+
+                            Blog
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../../index.html#contact">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="category-hero">
+
+        <div class="container">
+
+            <div class="category-icon">
+
+                <i class="bi bi-stars"></i>
+
+            </div>
+
+
+            <h1>
+                Discovering
+            </h1>
+
+
+            <p>
+
+                Discovering how IoT technologies
+                are used in the real world through
+                connected devices, smart systems
+                and emerging innovations.
+
+                <span class="sparkle">✦</span>
+
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENT
+    ========================= -->
+
+    <main class="category-section">
+
+        <div class="container">
+
+
+            <!-- BACK -->
+
+            <a
+                href="../iot.html"
+                class="back-home">
+
+                <i class="bi bi-arrow-left"></i>
+
+                Back to IoT
+
+            </a>
+
+
+            <!-- TITLE -->
+
+            <div class="section-intro">
+
+                <h2>
+                    IoT in the Real World
+                </h2>
+
+                <p>
+                    Exploring connected technologies and their real-world applications.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 CATEGORIES
+            ========================= -->
+
+            <div class="row g-4">
+
+
+                <!-- =========================
+                     01 CONNECTED DRONES
+                ========================= -->
+
+                <div class="col-12">
+
+                    <div class="category-card">
+
+                        <div class="category-header">
+
+                            <div class="category-number">
+                                01
+                            </div>
+
+                            <div>
+
+                                <span class="category-label">
+                                    Connected Devices
+                                </span>
+
+                                <h3>
+                                    Connected Drones
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-description">
+
+                            Discover how drones combine
+                            sensors, connectivity, cameras,
+                            GPS and intelligent systems to
+                            become connected devices.
+
+                        </div>
+
+
+                        <div class="article-list">
+
+                            <a
+                                href="connected-drones.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    How IoT Makes Drones Connected
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="dji-neo.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    DJI Neo
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="dji-mini-4-pro.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    DJI Mini 4 Pro
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="dji-avata-2.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    DJI Avata 2
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     02 SMART HOMES
+                ========================= -->
+
+                <div class="col-12">
+
+                    <div class="category-card">
+
+                        <div class="category-header">
+
+                            <div class="category-number">
+                                02
+                            </div>
+
+                            <div>
+
+                                <span class="category-label">
+                                    Connected Living
+                                </span>
+
+                                <h3>
+                                    Smart Homes
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-description">
+
+                            Explore how connected devices
+                            can automate homes, improve
+                            comfort and provide smarter
+                            ways to manage everyday life.
+
+                        </div>
+
+
+                        <div class="article-list">
+
+                            <a
+                                href="smart-homes.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    How IoT Makes a Home Smart
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="smart-lighting.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Smart Lighting
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="smart-security.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Smart Security Systems
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="smart-appliances.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Smart Appliances
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     03 SMART AGRICULTURE
+                ========================= -->
+
+                <div class="col-12">
+
+                    <div class="category-card">
+
+                        <div class="category-header">
+
+                            <div class="category-number">
+                                03
+                            </div>
+
+                            <div>
+
+                                <span class="category-label">
+                                    Connected Agriculture
+                                </span>
+
+                                <h3>
+                                    Smart Agriculture
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-description">
+
+                            Discover how IoT helps monitor
+                            crops, soil and environmental
+                            conditions while supporting
+                            smarter agricultural decisions.
+
+                        </div>
+
+
+                        <div class="article-list">
+
+                            <a
+                                href="smart-agriculture.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    IoT in Agriculture
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="smart-irrigation.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Smart Irrigation
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="agriculture-sensors.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Soil & Environmental Sensors
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="smart-greenhouses.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Connected Greenhouses
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     04 WEARABLE DEVICES
+                ========================= -->
+
+                <div class="col-12">
+
+                    <div class="category-card">
+
+                        <div class="category-header">
+
+                            <div class="category-number">
+                                04
+                            </div>
+
+                            <div>
+
+                                <span class="category-label">
+                                    Connected Wearables
+                                </span>
+
+                                <h3>
+                                    Wearable Devices
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-description">
+
+                            Explore how smartwatches,
+                            fitness trackers and other
+                            wearable devices collect,
+                            exchange and use data.
+
+                        </div>
+
+
+                        <div class="article-list">
+
+                            <a
+                                href="wearable-iot.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    IoT and Wearable Devices
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="smartwatches.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Smartwatches
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="fitness-trackers.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Fitness Trackers
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="health-monitoring.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Health & Activity Monitoring
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     05 SMART CITIES
+                ========================= -->
+
+                <div class="col-12">
+
+                    <div class="category-card">
+
+                        <div class="category-header">
+
+                            <div class="category-number">
+                                05
+                            </div>
+
+                            <div>
+
+                                <span class="category-label">
+                                    Connected Cities
+                                </span>
+
+                                <h3>
+                                    Smart Cities
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-description">
+
+                            Discover how connected technologies
+                            can help cities monitor infrastructure,
+                            transportation, energy and public
+                            services.
+
+                        </div>
+
+
+                        <div class="article-list">
+
+                            <a
+                                href="smart-cities.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    IoT in Smart Cities
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="smart-traffic.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Smart Traffic
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="smart-parking.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Smart Parking
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+
+                            <a
+                                href="smart-waste.html"
+                                class="article-link">
+
+                                <span>
+
+                                    <i class="bi bi-arrow-right"></i>
+
+                                    Smart Waste Management
+
+                                </span>
+
+                                <i class="bi bi-chevron-right article-arrow"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <p class="mb-0">
+
+                © 2026 Ghita KHAIF-ALLAH.
+                Built with HTML, CSS & Bootstrap.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+</body>
+
+</html>
