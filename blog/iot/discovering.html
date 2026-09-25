@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Discover IoT technologies and real-world applications by Ghita KHAIF-ALLAH.">
+        content="Discovering IoT through real-world applications, connected technologies and emerging innovations by Ghita KHAIF-ALLAH.">
 
     <title>Discovering IoT | Ghita KHAIF-ALLAH</title>
 
@@ -185,7 +185,7 @@
 
         .category-hero {
 
-            padding: 150px 0 70px;
+            padding: 150px 0 80px;
 
             text-align: center;
 
@@ -279,15 +279,46 @@
 
 
         /* =========================
-           CONTENT SECTION
+           ARTICLES SECTION
         ========================= */
 
-        .category-section {
+        .articles-section {
 
-            padding: 30px 0 120px;
+            padding: 40px 0 110px;
 
         }
 
+
+        .articles-title {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .articles-title h2 {
+
+            font-size: 2rem;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .articles-title p {
+
+            color: var(--muted);
+
+            margin: 0;
+
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
 
         .back-home {
 
@@ -301,7 +332,7 @@
 
             font-weight: 600;
 
-            margin-bottom: 45px;
+            margin-bottom: 30px;
 
             transition: 0.3s;
 
@@ -315,114 +346,176 @@
         }
 
 
-        .section-intro {
-
-            text-align: center;
-
-            margin-bottom: 55px;
-
-        }
-
-
-        .section-intro h2 {
-
-            font-size: 2.2rem;
-
-            margin-bottom: 10px;
-
-        }
-
-
-        .section-intro p {
-
-            color: var(--muted);
-
-            margin: 0;
-
-        }
-
-
         /* =========================
-           ACCORDION
+           CATEGORY ACCORDION
         ========================= */
 
-        .accordion-item {
+        .category-block {
+
+            max-width: 950px;
+
+            margin: 0 auto 22px;
 
             background: var(--card);
 
             border: 1px solid var(--card-border);
 
-            border-radius: 24px !important;
+            border-radius: 22px;
 
             overflow: hidden;
 
-            margin-bottom: 20px;
+            transition: 0.3s;
 
         }
 
 
-        .accordion-button {
+        .category-block:hover {
 
-            background: var(--card);
+            border-color: rgba(239, 168, 190, 0.35);
+
+        }
+
+
+        .category-header {
+
+            width: 100%;
+
+            border: none;
+
+            background: transparent;
 
             color: var(--text);
 
             padding: 25px 30px;
 
-            font-family: 'DM Serif Display', serif;
+            display: flex;
 
-            font-size: 1.5rem;
+            align-items: center;
 
-            box-shadow: none !important;
+            justify-content: space-between;
+
+            text-align: left;
+
+            cursor: pointer;
 
         }
 
 
-        .accordion-button:not(.collapsed) {
-
-            background: var(--card);
+        .category-header:hover {
 
             color: var(--pink);
 
         }
 
 
-        .accordion-button::after {
+        .category-info {
 
-            filter: brightness(0) invert(1);
+            display: flex;
 
-        }
+            align-items: center;
 
-
-        .accordion-button:not(.collapsed)::after {
-
-            filter: none;
+            gap: 18px;
 
         }
 
 
-        .accordion-body {
+        .category-number {
 
-            background: var(--card);
+            width: 45px;
+
+            height: 45px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: rgba(142, 58, 93, 0.25);
+
+            border: 1px solid var(--card-border);
+
+            color: var(--pink);
+
+            font-weight: 700;
+
+            font-size: 0.9rem;
+
+        }
+
+
+        .category-name {
+
+            margin: 0;
+
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 1.6rem;
+
+            font-weight: 400;
+
+        }
+
+
+        .category-description {
+
+            margin: 4px 0 0;
 
             color: var(--muted);
 
-            padding: 0 30px 25px;
-
-            line-height: 1.8;
+            font-size: 0.9rem;
 
         }
 
 
-        .accordion-body p {
+        .toggle-icon {
 
-            margin-bottom: 20px;
+            color: var(--pink);
+
+            font-size: 1.4rem;
+
+            transition: transform 0.3s ease;
+
+        }
+
+
+        .category-block.active .toggle-icon {
+
+            transform: rotate(45deg);
 
         }
 
 
         /* =========================
-           ARTICLE LIST
+           CATEGORY CONTENT
+        ========================= */
+
+        .category-content {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.45s ease;
+
+        }
+
+
+        .category-inner {
+
+            padding: 0 30px 30px;
+
+            border-top: 1px solid rgba(239, 168, 190, 0.08);
+
+        }
+
+
+        /* =========================
+           ARTICLE ITEM
         ========================= */
 
         .article-item {
@@ -433,11 +526,11 @@
 
             justify-content: space-between;
 
-            gap: 15px;
+            gap: 20px;
 
-            padding: 15px 0;
+            padding: 20px 0;
 
-            border-bottom: 1px solid rgba(239, 168, 190, 0.07);
+            border-bottom: 1px solid rgba(239, 168, 190, 0.08);
 
             color: var(--text);
 
@@ -457,98 +550,135 @@
 
             color: var(--pink);
 
-            padding-left: 7px;
+            padding-left: 8px;
 
         }
 
 
-        .article-item span {
+        .article-info {
 
             display: flex;
 
             align-items: center;
 
-            gap: 12px;
+            gap: 14px;
 
         }
 
 
-        .article-item i {
+        .article-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: rgba(142, 58, 93, 0.20);
 
             color: var(--pink);
+
+        }
+
+
+        .article-title {
+
+            font-weight: 600;
+
+            margin: 0;
+
+        }
+
+
+        .article-description {
+
+            color: var(--muted);
+
+            font-size: 0.85rem;
+
+            margin: 3px 0 0;
 
         }
 
 
         .article-arrow {
 
-            transition: transform 0.3s ease;
+            color: var(--pink);
+
+            font-size: 1.1rem;
+
+            transition: 0.3s;
 
         }
 
 
         .article-item:hover .article-arrow {
 
-            transform: translateX(6px);
+            transform: translateX(5px);
 
         }
 
+
+        /* =========================
+           COMING SOON
+        ========================= */
 
         .coming-soon {
 
-            display: flex;
+            cursor: default;
+
+            opacity: 0.75;
+
+        }
+
+
+        .coming-soon:hover {
+
+            padding-left: 0;
+
+            color: var(--text);
+
+        }
+
+
+        .coming-soon .article-icon {
+
+            background: rgba(255, 255, 255, 0.04);
+
+            color: #a8959e;
+
+        }
+
+
+        .status {
+
+            display: inline-flex;
 
             align-items: center;
 
-            justify-content: space-between;
+            gap: 6px;
 
-            gap: 15px;
+            padding: 5px 10px;
 
-            padding: 15px 0;
+            border-radius: 20px;
 
-            color: var(--muted);
+            background: rgba(255, 255, 255, 0.05);
 
-            border-bottom: 1px solid rgba(239, 168, 190, 0.07);
+            color: #a8959e;
 
-        }
-
-
-        .coming-soon:last-child {
-
-            border-bottom: none;
-
-        }
-
-
-        .coming-soon span {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-        }
-
-
-        .coming-soon i {
-
-            color: var(--pink);
-
-        }
-
-
-        .coming-label {
-
-            font-size: 0.75rem;
-
-            letter-spacing: 1px;
-
-            text-transform: uppercase;
-
-            color: var(--pink);
+            font-size: 0.72rem;
 
             font-weight: 700;
+
+            white-space: nowrap;
 
         }
 
@@ -592,32 +722,51 @@
             }
 
 
-            .category-section {
+            .category-header {
 
-                padding: 20px 20px 90px;
-
-            }
-
-
-            .accordion-button {
-
-                padding: 22px 20px;
-
-                font-size: 1.3rem;
+                padding: 22px;
 
             }
 
 
-            .accordion-body {
+            .category-inner {
 
-                padding: 0 20px 22px;
+                padding: 0 22px 25px;
 
             }
 
 
-            .section-intro h2 {
+            .category-info {
 
-                font-size: 1.9rem;
+                gap: 12px;
+
+            }
+
+
+            .category-name {
+
+                font-size: 1.35rem;
+
+            }
+
+
+            .category-description {
+
+                font-size: 0.82rem;
+
+            }
+
+
+            .article-item {
+
+                align-items: flex-start;
+
+            }
+
+
+            .article-description {
+
+                display: none;
 
             }
 
@@ -639,9 +788,7 @@
 
         <div class="container">
 
-            <a
-                class="navbar-brand logo-photo"
-                href="../../index.html">
+            <a class="navbar-brand logo-photo" href="../../index.html">
 
                 <img
                     src="../../images/rose.png"
@@ -762,10 +909,8 @@
 
             <p>
 
-                Discovering how IoT technologies
-                are used in the real world through
-                connected devices, smart systems
-                and emerging innovations.
+                Discovering IoT through real-world applications,
+                connected technologies and emerging innovations.
 
                 <span class="sparkle">✦</span>
 
@@ -780,7 +925,7 @@
          CONTENT
     ========================= -->
 
-    <main class="category-section">
+    <main class="articles-section">
 
         <div class="container">
 
@@ -800,587 +945,878 @@
 
             <!-- TITLE -->
 
-            <div class="section-intro">
+            <div class="articles-title">
 
                 <h2>
-                    IoT in the Real World
+                    Explore IoT in the Real World
                 </h2>
 
                 <p>
-                    Explore how connected technologies are used in everyday life and emerging systems.
+                    Discovering connected technologies and their real-world applications.
                 </p>
 
             </div>
 
 
             <!-- =========================
-                 ACCORDION
+                 01 — CONNECTED DRONES
             ========================= -->
 
-            <div class="accordion" id="iotAccordion">
+            <div class="category-block">
 
+                <button
+                    class="category-header"
+                    type="button">
 
-                <!-- =========================
-                     01 CONNECTED DRONES
-                ========================= -->
+                    <div class="category-info">
 
-                <div class="accordion-item">
+                        <div class="category-number">
+                            01
+                        </div>
 
-                    <h2 class="accordion-header">
+                        <div>
 
-                        <button
-                            class="accordion-button"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#drones">
+                            <h3 class="category-name">
+                                Connected Drones
+                            </h3>
 
-                            01 — Connected Drones
-
-                        </button>
-
-                    </h2>
-
-
-                    <div
-                        id="drones"
-                        class="accordion-collapse collapse show"
-                        data-bs-parent="#iotAccordion">
-
-                        <div class="accordion-body">
-
-                            <p>
-
-                                Explore how drones combine
-                                sensors, connectivity, cameras,
-                                GPS and intelligent systems to
-                                become connected devices.
-
+                            <p class="category-description">
+                                Discovering how drones combine connectivity, sensors and intelligent systems.
                             </p>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    How IoT Makes Drones Connected
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    DJI Neo
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    DJI Mini 4 Pro
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    DJI Avata 2
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
 
 
-                <!-- =========================
-                     02 SMART HOMES
-                ========================= -->
+                <div class="category-content">
 
-                <div class="accordion-item">
-
-                    <h2 class="accordion-header">
-
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#smartHomes">
-
-                            02 — Smart Homes
-
-                        </button>
-
-                    </h2>
+                    <div class="category-inner">
 
 
-                    <div
-                        id="smartHomes"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#iotAccordion">
+                        <div class="article-item coming-soon">
 
-                        <div class="accordion-body">
+                            <div class="article-info">
 
-                            <p>
+                                <div class="article-icon">
+                                    <i class="bi bi-airplane"></i>
+                                </div>
 
-                                Explore how connected devices
-                                can automate homes, improve
-                                comfort and provide smarter
-                                ways to manage everyday life.
+                                <div>
 
-                            </p>
+                                    <p class="article-title">
+                                        How IoT Makes Drones Connected
+                                    </p>
 
+                                    <p class="article-description">
+                                        Understanding how connectivity, sensors
+                                        and data make drones smarter.
+                                    </p>
 
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    How IoT Makes a Home Smart
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
+                                </div>
 
                             </div>
 
 
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Smart Lighting
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Smart Security Systems
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Smart Appliances
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
+                            <span class="status">
+                                Coming soon
+                            </span>
 
                         </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-camera"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        DJI Neo
+                                    </p>
+
+                                    <p class="article-description">
+                                        Discovering a compact connected drone
+                                        and the technologies behind it.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        DJI Mini 4 Pro
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring connectivity, intelligent flight
+                                        features and sensing technologies.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-broadcast"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        DJI Avata 2
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring connected flight experiences,
+                                        sensors and intelligent drone technology.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
 
                     </div>
 
                 </div>
-
-
-                <!-- =========================
-                     03 SMART AGRICULTURE
-                ========================= -->
-
-                <div class="accordion-item">
-
-                    <h2 class="accordion-header">
-
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#smartAgriculture">
-
-                            03 — Smart Agriculture
-
-                        </button>
-
-                    </h2>
-
-
-                    <div
-                        id="smartAgriculture"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#iotAccordion">
-
-                        <div class="accordion-body">
-
-                            <p>
-
-                                Discover how IoT helps monitor
-                                crops, soil and environmental
-                                conditions while supporting
-                                smarter agricultural decisions.
-
-                            </p>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    IoT in Agriculture
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Smart Irrigation
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Soil & Environmental Sensors
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Connected Greenhouses
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- =========================
-                     04 WEARABLE DEVICES
-                ========================= -->
-
-                <div class="accordion-item">
-
-                    <h2 class="accordion-header">
-
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#wearables">
-
-                            04 — Wearable Devices
-
-                        </button>
-
-                    </h2>
-
-
-                    <div
-                        id="wearables"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#iotAccordion">
-
-                        <div class="accordion-body">
-
-                            <p>
-
-                                Explore how smartwatches,
-                                fitness trackers and other
-                                wearable devices collect,
-                                exchange and use data.
-
-                            </p>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    IoT and Wearable Devices
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Smartwatches
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Fitness Trackers
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Health & Activity Monitoring
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- =========================
-                     05 SMART CITIES
-                ========================= -->
-
-                <div class="accordion-item">
-
-                    <h2 class="accordion-header">
-
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#smartCities">
-
-                            05 — Smart Cities
-
-                        </button>
-
-                    </h2>
-
-
-                    <div
-                        id="smartCities"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#iotAccordion">
-
-                        <div class="accordion-body">
-
-                            <p>
-
-                                Discover how connected technologies
-                                can help cities monitor infrastructure,
-                                transportation, energy and public
-                                services.
-
-                            </p>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    IoT in Smart Cities
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Smart Traffic
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Smart Parking
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-
-                            <div class="article-item">
-
-                                <span>
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                    Smart Waste Management
-
-                                </span>
-
-                                <span class="coming-label">
-                                    Coming soon
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
 
             </div>
+
+
+            <!-- =========================
+                 02 — SMART HOMES
+            ========================= -->
+
+            <div class="category-block">
+
+                <button
+                    class="category-header"
+                    type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                Smart Homes
+                            </h3>
+
+                            <p class="category-description">
+                                Exploring connected technologies that make everyday homes smarter.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-house"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        How IoT Makes a Home Smart
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding how connected devices
+                                        work together in a smart home.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-lightbulb"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Smart Lighting
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring connected lighting systems
+                                        and automated control.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-shield-lock"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Smart Security Systems
+                                    </p>
+
+                                    <p class="article-description">
+                                        Discovering connected cameras, sensors
+                                        and smart security devices.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-house-gear"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Smart Appliances
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring connected appliances and
+                                        intelligent home automation.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 03 — SMART AGRICULTURE
+            ========================= -->
+
+            <div class="category-block">
+
+                <button
+                    class="category-header"
+                    type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                Smart Agriculture
+                            </h3>
+
+                            <p class="category-description">
+                                Discovering how connected technologies support smarter farming.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-tree"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        IoT in Agriculture
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding how connected devices
+                                        support modern agriculture.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-droplet"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Smart Irrigation
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring connected irrigation systems
+                                        and automated water management.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-thermometer-half"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Soil & Environmental Sensors
+                                    </p>
+
+                                    <p class="article-description">
+                                        Discovering sensors that monitor soil
+                                        and environmental conditions.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-flower1"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Connected Greenhouses
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring connected systems for
+                                        monitoring and controlling greenhouses.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 04 — WEARABLE DEVICES
+            ========================= -->
+
+            <div class="category-block">
+
+                <button
+                    class="category-header"
+                    type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                Wearable Devices
+                            </h3>
+
+                            <p class="category-description">
+                                Exploring connected devices worn by people and the data they collect.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-watch"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        IoT and Wearable Devices
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding how wearable devices
+                                        collect and exchange data.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Smartwatches
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring connected watches and their
+                                        smart features.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-activity"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Fitness Trackers
+                                    </p>
+
+                                    <p class="article-description">
+                                        Discovering how connected devices
+                                        track activity and movement.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-heart-pulse"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Health & Activity Monitoring
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring how wearable sensors collect
+                                        health and activity data.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 05 — SMART CITIES
+            ========================= -->
+
+            <div class="category-block">
+
+                <button
+                    class="category-header"
+                    type="button">
+
+                    <div class="category-info">
+
+                        <div class="category-number">
+                            05
+                        </div>
+
+                        <div>
+
+                            <h3 class="category-name">
+                                Smart Cities
+                            </h3>
+
+                            <p class="category-description">
+                                Discovering how connected technologies support smarter urban environments.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <i class="bi bi-plus-lg toggle-icon"></i>
+
+                </button>
+
+
+                <div class="category-content">
+
+                    <div class="category-inner">
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-buildings"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        IoT in Smart Cities
+                                    </p>
+
+                                    <p class="article-description">
+                                        Understanding how connected technologies
+                                        support modern urban environments.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-stoplights"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Smart Traffic
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring connected systems for traffic
+                                        monitoring and management.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-p-square"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Smart Parking
+                                    </p>
+
+                                    <p class="article-description">
+                                        Discovering connected parking systems
+                                        and real-time availability.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                        <div class="article-item coming-soon">
+
+                            <div class="article-info">
+
+                                <div class="article-icon">
+                                    <i class="bi bi-trash3"></i>
+                                </div>
+
+                                <div>
+
+                                    <p class="article-title">
+                                        Smart Waste Management
+                                    </p>
+
+                                    <p class="article-description">
+                                        Exploring connected systems that improve
+                                        waste collection and management.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="status">
+                                Coming soon
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
 
@@ -1405,6 +1841,68 @@
         </div>
 
     </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        const categoryHeaders =
+            document.querySelectorAll('.category-header');
+
+
+        categoryHeaders.forEach(header => {
+
+            header.addEventListener('click', () => {
+
+                const category =
+                    header.parentElement;
+
+                const content =
+                    category.querySelector('.category-content');
+
+
+                const isOpen =
+                    category.classList.contains('active');
+
+
+                /*
+                 * Close all categories
+                 */
+
+                document
+                    .querySelectorAll('.category-block')
+                    .forEach(block => {
+
+                        block.classList.remove('active');
+
+                        block
+                            .querySelector('.category-content')
+                            .style.maxHeight = null;
+
+                    });
+
+
+                /*
+                 * Open selected category
+                 */
+
+                if (!isOpen) {
+
+                    category.classList.add('active');
+
+                    content.style.maxHeight =
+                        content.scrollHeight + 'px';
+
+                }
+
+            });
+
+        });
+
+    </script>
 
 
     <!-- Bootstrap JS -->
