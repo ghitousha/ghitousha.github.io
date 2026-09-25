@@ -9,7 +9,7 @@
     <meta name="description"
         content="Discover IoT technologies and real-world applications by Ghita KHAIF-ALLAH.">
 
-    <title>IoT Discovering | Ghita KHAIF-ALLAH</title>
+    <title>Discovering IoT | Ghita KHAIF-ALLAH</title>
 
 
     <!-- Bootstrap -->
@@ -343,109 +343,89 @@
 
 
         /* =========================
-           CATEGORY CARDS
+           ACCORDION
         ========================= */
 
-        .category-card {
-
-            position: relative;
+        .accordion-item {
 
             background: var(--card);
 
             border: 1px solid var(--card-border);
 
-            border-radius: 24px;
+            border-radius: 24px !important;
 
             overflow: hidden;
 
-            transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
+            margin-bottom: 20px;
 
         }
 
 
-        .category-card:hover {
+        .accordion-button {
 
-            transform: translateY(-6px);
+            background: var(--card);
 
-            border-color: rgba(239, 168, 190, 0.35);
+            color: var(--text);
 
-            box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.28);
+            padding: 25px 30px;
 
-        }
+            font-family: 'DM Serif Display', serif;
 
+            font-size: 1.5rem;
 
-        .category-header {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 20px;
-
-            padding: 30px;
-
-            border-bottom: 1px solid rgba(239, 168, 190, 0.08);
+            box-shadow: none !important;
 
         }
 
 
-        .category-number {
+        .accordion-button:not(.collapsed) {
 
-            min-width: 52px;
-
-            height: 52px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            border-radius: 16px;
-
-            background: rgba(142, 58, 93, 0.25);
-
-            border: 1px solid var(--card-border);
+            background: var(--card);
 
             color: var(--pink);
 
-            font-weight: 700;
+        }
+
+
+        .accordion-button::after {
+
+            filter: brightness(0) invert(1);
 
         }
 
 
-        .category-header h3 {
+        .accordion-button:not(.collapsed)::after {
 
-            margin: 0;
-
-            font-size: 1.7rem;
+            filter: none;
 
         }
 
 
-        .category-description {
+        .accordion-body {
 
-            padding: 25px 30px 10px;
+            background: var(--card);
 
             color: var(--muted);
+
+            padding: 0 30px 25px;
 
             line-height: 1.8;
 
         }
 
 
-        .article-list {
+        .accordion-body p {
 
-            padding: 10px 30px 30px;
+            margin-bottom: 20px;
 
         }
 
 
-        .article-link {
+        /* =========================
+           ARTICLE LIST
+        ========================= */
+
+        .article-item {
 
             display: flex;
 
@@ -457,23 +437,23 @@
 
             padding: 15px 0;
 
-            color: var(--text);
-
             border-bottom: 1px solid rgba(239, 168, 190, 0.07);
+
+            color: var(--text);
 
             transition: 0.3s;
 
         }
 
 
-        .article-link:last-child {
+        .article-item:last-child {
 
             border-bottom: none;
 
         }
 
 
-        .article-link:hover {
+        .article-item:hover {
 
             color: var(--pink);
 
@@ -482,7 +462,7 @@
         }
 
 
-        .article-link span {
+        .article-item span {
 
             display: flex;
 
@@ -493,7 +473,7 @@
         }
 
 
-        .article-link i {
+        .article-item i {
 
             color: var(--pink);
 
@@ -502,39 +482,73 @@
 
         .article-arrow {
 
-            color: var(--pink);
-
             transition: transform 0.3s ease;
 
         }
 
 
-        .article-link:hover .article-arrow {
+        .article-item:hover .article-arrow {
 
             transform: translateX(6px);
 
         }
 
 
-        /* =========================
-           SMALL LABEL
-        ========================= */
+        .coming-soon {
 
-        .category-label {
+            display: flex;
 
-            display: inline-block;
+            align-items: center;
 
-            margin-bottom: 8px;
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 15px 0;
+
+            color: var(--muted);
+
+            border-bottom: 1px solid rgba(239, 168, 190, 0.07);
+
+        }
+
+
+        .coming-soon:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .coming-soon span {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .coming-soon i {
 
             color: var(--pink);
 
+        }
+
+
+        .coming-label {
+
             font-size: 0.75rem;
 
-            font-weight: 700;
-
-            letter-spacing: 2px;
+            letter-spacing: 1px;
 
             text-transform: uppercase;
+
+            color: var(--pink);
+
+            font-weight: 700;
 
         }
 
@@ -585,23 +599,18 @@
             }
 
 
-            .category-header {
+            .accordion-button {
 
-                padding: 25px;
+                padding: 22px 20px;
 
-            }
-
-
-            .category-description {
-
-                padding: 22px 25px 10px;
+                font-size: 1.3rem;
 
             }
 
 
-            .article-list {
+            .accordion-body {
 
-                padding: 10px 25px 25px;
+                padding: 0 20px 22px;
 
             }
 
@@ -747,7 +756,7 @@
 
 
             <h1>
-                Discovering
+                Discovering <span>IoT</span>
             </h1>
 
 
@@ -798,63 +807,58 @@
                 </h2>
 
                 <p>
-                    Exploring connected technologies and their real-world applications.
+                    Explore how connected technologies are used in everyday life and emerging systems.
                 </p>
 
             </div>
 
 
             <!-- =========================
-                 CATEGORIES
+                 ACCORDION
             ========================= -->
 
-            <div class="row g-4">
+            <div class="accordion" id="iotAccordion">
 
 
                 <!-- =========================
                      01 CONNECTED DRONES
                 ========================= -->
 
-                <div class="col-12">
+                <div class="accordion-item">
 
-                    <div class="category-card">
+                    <h2 class="accordion-header">
 
-                        <div class="category-header">
+                        <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#drones">
 
-                            <div class="category-number">
-                                01
-                            </div>
+                            01 — Connected Drones
 
-                            <div>
+                        </button>
 
-                                <span class="category-label">
-                                    Connected Devices
-                                </span>
-
-                                <h3>
-                                    Connected Drones
-                                </h3>
-
-                            </div>
-
-                        </div>
+                    </h2>
 
 
-                        <div class="category-description">
+                    <div
+                        id="drones"
+                        class="accordion-collapse collapse show"
+                        data-bs-parent="#iotAccordion">
 
-                            Discover how drones combine
-                            sensors, connectivity, cameras,
-                            GPS and intelligent systems to
-                            become connected devices.
+                        <div class="accordion-body">
 
-                        </div>
+                            <p>
+
+                                Explore how drones combine
+                                sensors, connectivity, cameras,
+                                GPS and intelligent systems to
+                                become connected devices.
+
+                            </p>
 
 
-                        <div class="article-list">
-
-                            <a
-                                href="connected-drones.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -864,14 +868,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="dji-neo.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -881,14 +885,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="dji-mini-4-pro.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -898,14 +902,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="dji-avata-2.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -915,9 +919,11 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
                         </div>
 
@@ -930,46 +936,41 @@
                      02 SMART HOMES
                 ========================= -->
 
-                <div class="col-12">
+                <div class="accordion-item">
 
-                    <div class="category-card">
+                    <h2 class="accordion-header">
 
-                        <div class="category-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#smartHomes">
 
-                            <div class="category-number">
-                                02
-                            </div>
+                            02 — Smart Homes
 
-                            <div>
+                        </button>
 
-                                <span class="category-label">
-                                    Connected Living
-                                </span>
-
-                                <h3>
-                                    Smart Homes
-                                </h3>
-
-                            </div>
-
-                        </div>
+                    </h2>
 
 
-                        <div class="category-description">
+                    <div
+                        id="smartHomes"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#iotAccordion">
 
-                            Explore how connected devices
-                            can automate homes, improve
-                            comfort and provide smarter
-                            ways to manage everyday life.
+                        <div class="accordion-body">
 
-                        </div>
+                            <p>
+
+                                Explore how connected devices
+                                can automate homes, improve
+                                comfort and provide smarter
+                                ways to manage everyday life.
+
+                            </p>
 
 
-                        <div class="article-list">
-
-                            <a
-                                href="smart-homes.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -979,14 +980,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="smart-lighting.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -996,14 +997,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="smart-security.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1013,14 +1014,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="smart-appliances.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1030,9 +1031,11 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
                         </div>
 
@@ -1045,46 +1048,41 @@
                      03 SMART AGRICULTURE
                 ========================= -->
 
-                <div class="col-12">
+                <div class="accordion-item">
 
-                    <div class="category-card">
+                    <h2 class="accordion-header">
 
-                        <div class="category-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#smartAgriculture">
 
-                            <div class="category-number">
-                                03
-                            </div>
+                            03 — Smart Agriculture
 
-                            <div>
+                        </button>
 
-                                <span class="category-label">
-                                    Connected Agriculture
-                                </span>
-
-                                <h3>
-                                    Smart Agriculture
-                                </h3>
-
-                            </div>
-
-                        </div>
+                    </h2>
 
 
-                        <div class="category-description">
+                    <div
+                        id="smartAgriculture"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#iotAccordion">
 
-                            Discover how IoT helps monitor
-                            crops, soil and environmental
-                            conditions while supporting
-                            smarter agricultural decisions.
+                        <div class="accordion-body">
 
-                        </div>
+                            <p>
+
+                                Discover how IoT helps monitor
+                                crops, soil and environmental
+                                conditions while supporting
+                                smarter agricultural decisions.
+
+                            </p>
 
 
-                        <div class="article-list">
-
-                            <a
-                                href="smart-agriculture.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1094,14 +1092,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="smart-irrigation.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1111,14 +1109,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="agriculture-sensors.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1128,14 +1126,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="smart-greenhouses.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1145,9 +1143,11 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
                         </div>
 
@@ -1160,46 +1160,41 @@
                      04 WEARABLE DEVICES
                 ========================= -->
 
-                <div class="col-12">
+                <div class="accordion-item">
 
-                    <div class="category-card">
+                    <h2 class="accordion-header">
 
-                        <div class="category-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#wearables">
 
-                            <div class="category-number">
-                                04
-                            </div>
+                            04 — Wearable Devices
 
-                            <div>
+                        </button>
 
-                                <span class="category-label">
-                                    Connected Wearables
-                                </span>
-
-                                <h3>
-                                    Wearable Devices
-                                </h3>
-
-                            </div>
-
-                        </div>
+                    </h2>
 
 
-                        <div class="category-description">
+                    <div
+                        id="wearables"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#iotAccordion">
 
-                            Explore how smartwatches,
-                            fitness trackers and other
-                            wearable devices collect,
-                            exchange and use data.
+                        <div class="accordion-body">
 
-                        </div>
+                            <p>
+
+                                Explore how smartwatches,
+                                fitness trackers and other
+                                wearable devices collect,
+                                exchange and use data.
+
+                            </p>
 
 
-                        <div class="article-list">
-
-                            <a
-                                href="wearable-iot.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1209,14 +1204,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="smartwatches.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1226,14 +1221,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="fitness-trackers.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1243,14 +1238,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="health-monitoring.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1260,9 +1255,11 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
                         </div>
 
@@ -1275,46 +1272,41 @@
                      05 SMART CITIES
                 ========================= -->
 
-                <div class="col-12">
+                <div class="accordion-item">
 
-                    <div class="category-card">
+                    <h2 class="accordion-header">
 
-                        <div class="category-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#smartCities">
 
-                            <div class="category-number">
-                                05
-                            </div>
+                            05 — Smart Cities
 
-                            <div>
+                        </button>
 
-                                <span class="category-label">
-                                    Connected Cities
-                                </span>
-
-                                <h3>
-                                    Smart Cities
-                                </h3>
-
-                            </div>
-
-                        </div>
+                    </h2>
 
 
-                        <div class="category-description">
+                    <div
+                        id="smartCities"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#iotAccordion">
 
-                            Discover how connected technologies
-                            can help cities monitor infrastructure,
-                            transportation, energy and public
-                            services.
+                        <div class="accordion-body">
 
-                        </div>
+                            <p>
+
+                                Discover how connected technologies
+                                can help cities monitor infrastructure,
+                                transportation, energy and public
+                                services.
+
+                            </p>
 
 
-                        <div class="article-list">
-
-                            <a
-                                href="smart-cities.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1324,14 +1316,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="smart-traffic.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1341,14 +1333,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="smart-parking.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1358,14 +1350,14 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
 
-                            <a
-                                href="smart-waste.html"
-                                class="article-link">
+                            <div class="article-item">
 
                                 <span>
 
@@ -1375,9 +1367,11 @@
 
                                 </span>
 
-                                <i class="bi bi-chevron-right article-arrow"></i>
+                                <span class="coming-label">
+                                    Coming soon
+                                </span>
 
-                            </a>
+                            </div>
 
                         </div>
 
